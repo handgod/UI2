@@ -1,0 +1,2185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%" class="no-js">  
+  <head xmlns=""> 
+    <meta charset="utf-8"/>  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>  
+    <meta name="apple-mobile-web-app-capable" content="yes"/>  
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>  
+    <meta name="format-detection" content="telephone=no"/>  
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>  
+    <script src="../../../../../v_3748a75d41e2496bbe69be1c7735d536l_zh_CNs_desktopd_pc/system/lib/base/modernizr-2.8.3.min.js"/>  
+    <script id="__varReplace">
+    	
+    	    	window.__justep = window.__justep || {};
+				window.__justep.isDebug = true;
+				window.__justep.__packageMode = "1";
+				window.__justep.__isPackage = false;;
+				window.__justep.url = location.href;
+				window.__justep.versionInfo = {};
+		 
+    	</script>  
+    <script id="__updateVersion">
+        
+				(function(url, mode){
+					if (("@"+"mode@") === mode) mode = "3";
+					if (("@"+"versionUrl@") === url) url = "system/service/common/app.j";
+					if ((mode!=="1" &amp;&amp; (mode!="2") &amp;&amp; (mode!="3"))) return;
+					var async = (mode=="1");
+					var x5Version = "noApp";
+					var x5AppAgents = /x5app\/([0-9.]*)/.exec(navigator.userAgent);
+					if(x5AppAgents &amp;&amp; x5AppAgents.length &gt; 1){
+					   	x5Version = x5AppAgents[1] || "";
+					} 
+					function createXhr(){
+						try {	
+							return new XMLHttpRequest();
+						}catch (tryMS) {	
+							var version = ["MSXML2.XMLHttp.6.0",
+							               "MSXML2.XMLHttp.3.0",
+							               "MSXML2.XMLHttp",
+							               "Miscrosoft.XMLHTTP"];
+							for(var i = 0; i &lt; version.length; i++){
+								try{
+							    	return new ActiveXObject(version[i]);
+								}catch(e){}
+							}
+						}
+						throw new Error("您的系统或浏览器不支持XHR对象！");
+					}
+					
+					function createGuid(){	
+						var guid = '';	
+						for (var i = 1; i &lt;= 32; i++){		
+							var n = Math.floor(Math.random()*16.0).toString(16);		
+							guid += n;		
+							if((i==8)||(i==12)||(i==16)||(i==20))			
+								guid += '-';	
+						}	
+						return guid;
+					}
+					
+					function parseUrl(href){
+						href = href.split("#")[0];
+						var items = href.split("?");
+						href = items[0];
+						var query = items[1] || "";
+						items = href.split("/");
+						var baseItems = [];
+						var pathItems = [];
+						var isPath = false;
+						for (var i=0; i&lt;items.length; i++){
+							if (mode == "3"){
+								if (items[i] &amp;&amp; (items[i].indexOf("v_") === 0) 
+										&amp;&amp; (items[i].indexOf("l_") !== -1)
+										&amp;&amp; (items[i].indexOf("s_") !== -1)
+										&amp;&amp; (items[i].indexOf("d_") !== -1)
+										|| (items[i]=="v_")){
+									isPath = true;
+									continue;
+								}
+							}else{
+								if (items[i] &amp;&amp; (items[i].indexOf("v-")===0) &amp;&amp; (items[i].charAt(items[i].length-1)=="-") ){
+									isPath = true;
+									continue;
+								}
+							}
+							if (isPath){
+								pathItems.push(items[i]);
+							}else{
+								baseItems.push(items[i]);	
+							}
+							
+						}
+						var base = baseItems.join("/");
+						if (base.charAt(base.length-1)!=="/") base += "/";
+						
+						var path = pathItems.join("/");
+						if (path.charAt(0) !== "/") path = "/" + path;
+						return [base, path, query];
+					}
+					
+					
+					var items = parseUrl(window.location.href);
+					var base = items[0];
+					var path = items[1];
+					var query = items[2];
+					var xhr = createXhr();
+					url += ((url.indexOf("?")!=-1) ? "&amp;" : "?") +"_=" + createGuid();
+					if (mode === "3"){
+						url += "&amp;url=" + path;
+						if (query)
+							url += "&amp;" + query;
+					}
+					xhr.open('GET', base + url, async);
+					
+					if (async){
+						xhr.onreadystatechange=function(){
+							if((xhr.readyState == 4) &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+								var versionInfo = JSON.parse(xhr.responseText);
+								window.__justep.versionInfo = versionInfo;
+								window.__justep.versionInfo.baseUrl = base;
+								if (query){
+									path = path + "?" + query;
+								}
+								path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+								var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+								versionInfo.resourceInfo.indexPageURL = indexUrl;
+								if(versionInfo.resourceInfo.resourceUpdateMode != "md5"){
+									if (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1){
+										versionInfo.resourceInfo.isNewVersion = true;
+									};
+								}
+							}
+						}
+					}
+					
+					try{
+						xhr.send(null);
+						if (!async &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+							var versionInfo = JSON.parse(xhr.responseText);
+							window.__justep.versionInfo = versionInfo;
+							window.__justep.versionInfo.baseUrl = base;
+							if ((mode==="3") &amp;&amp; window.__justep.isDebug){
+								/* 模式3且是调试模式不重定向 */
+							}else{
+								if (query){
+									path = path + "?" + query;
+								}
+								if(versionInfo.resourceInfo.resourceUpdateMode == "md5"){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									versionInfo.resourceInfo.indexPageURL = indexUrl; 
+								}else if (versionInfo.resourceInfo &amp;&amp; versionInfo.resourceInfo.version &amp;&amp; (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1)){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									window.location.href = indexUrl;
+								}
+							}
+						}
+					}catch(e2){}
+				}("@versionUrl@", "@mode@"));
+                 
+        </script>  
+    <link rel="stylesheet" href="../../../../../v_126587a7317f42cfad62ccca7e2ba3e2l_zh_CNs_desktopd_pc/system/components/pc.addon.min.css" include="$model/UI2/system/components/justep/pagerBar/css/pagerBar,$model/UI2/system/components/justep/widgets/css/widgets,$model/UI2/system/components/justep/absoluteLayout/css/absoluteLayout,$model/UI2/system/components/justep/pagerLimitSelect/css/pagerLimitSelect,$model/UI2/system/components/justep/cellLayout/css/cellLayout,$model/UI2/system/components/justep/smartContainer/css/smartContainer"/>
+    <link rel="stylesheet" href="../../../../../v_358fefd1e3704fc8be72fa9af870259al_zh_CNs_desktopd_pc/system/components/bootstrap.min.css" include="$model/UI2/system/components/bootstrap/lib/css/bootstrap,$model/UI2/system/components/bootstrap/lib/css/bootstrap-theme"/>
+    <link rel="stylesheet" href="../../../../../v_58729a093cd440f89a41eaddac3f24b9l_zh_CNs_desktopd_pc/system/components/comp.min.css" include="$model/UI2/system/components/justep/lib/css2/dataControl,$model/UI2/system/components/justep/input/css/datePickerPC,$model/UI2/system/components/justep/messageDialog/css/messageDialog,$model/UI2/system/components/justep/lib/css3/round,$model/UI2/system/components/justep/input/css/datePicker,$model/UI2/system/components/justep/row/css/row,$model/UI2/system/components/justep/attachment/css/attachment,$model/UI2/system/components/justep/barcode/css/barcodeImage,$model/UI2/system/components/bootstrap/dropdown/css/dropdown,$model/UI2/system/components/justep/dataTables/css/dataTables,$model/UI2/system/components/justep/contents/css/contents,$model/UI2/system/components/justep/common/css/forms,$model/UI2/system/components/justep/locker/css/locker,$model/UI2/system/components/justep/menu/css/menu,$model/UI2/system/components/justep/scrollView/css/scrollView,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/dialog/css/dialog,$model/UI2/system/components/justep/bar/css/bar,$model/UI2/system/components/justep/popMenu/css/popMenu,$model/UI2/system/components/justep/lib/css/icons,$model/UI2/system/components/justep/lib/css4/e-commerce,$model/UI2/system/components/justep/toolBar/css/toolBar,$model/UI2/system/components/justep/popOver/css/popOver,$model/UI2/system/components/justep/panel/css/panel,$model/UI2/system/components/bootstrap/carousel/css/carousel,$model/UI2/system/components/justep/wing/css/wing,$model/UI2/system/components/bootstrap/scrollSpy/css/scrollSpy,$model/UI2/system/components/justep/titleBar/css/titleBar,$model/UI2/system/components/justep/lib/css1/linear,$model/UI2/system/components/justep/numberSelect/css/numberList,$model/UI2/system/components/justep/list/css/list,$model/UI2/system/components/justep/dataTables/css/dataTables"/>
+  </head>  
+  <body xmlns="" style="width:100%;height:100%;margin: 0;"> 
+    <script intro="none"/>  
+    <div id="applicationHost" class="applicationHost" style="width:100%;height:100%;" __component-context__="block">
+      <div xid="window" class="window cyUJV3i" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cyUJV3i" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/bootstrap/tabs/tab,$model/UI2/system/components/justep/cellLayout/cellLayout,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/bootstrap/tabs/tabs,">  
+        <style xmlns:xhtml="http://www.w3.org/1999/xhtml">.fn-hover.cyUJV3i{color: blue; cursor: pointer}</style>  
+        <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cyUJV3i" class="cyUJV3i"/>  
+        <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabs1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cyUJV3i" class="cyUJV3i"> 
+          <ul class="nav nav-tabs cyUJV3i" xid="ul1" __cid="cyUJV3i"> 
+            <li class="active cyUJV3i" xid="li1" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cyUJV3i"> 
+              <a content="tabContent1" xid="tabItem1" __cid="cyUJV3i" class="cyUJV3i">函数概述</a> 
+            </li>  
+            <li role="presentation" xid="li2" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cyUJV3i" class="cyUJV3i"> 
+              <a content="tabContent2" xid="tabItem2" __cid="cyUJV3i" class="cyUJV3i">常用函数</a> 
+            </li>  
+            <li xid="li3" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cyUJV3i" class="cyUJV3i"> 
+              <a content="tabContent3" xid="tabItem3" __cid="cyUJV3i" class="cyUJV3i">生成编号</a> 
+            </li>  
+            <li xid="li4" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cyUJV3i" class="cyUJV3i"> 
+              <a content="tabContent4" xid="tabItem4" __cid="cyUJV3i" class="cyUJV3i">组织函数</a> 
+            </li>  
+            <li xid="li5" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cyUJV3i" class="cyUJV3i"> 
+              <a content="tabContent5" xid="tabItem5" __cid="cyUJV3i" class="cyUJV3i">自定义函数</a> 
+            </li> 
+          </ul>  
+          <div class="tab-content cyUJV3i" xid="div1" __cid="cyUJV3i"> 
+            <div class="tab-pane active cyUJV3i" xid="tabContent1" __cid="cyUJV3i"> 
+              <div class="x-cell-layout cyUJV3i" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout1" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cyUJV3i"> 
+                <table cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:286px;" __cid="cyUJV3i" class="cyUJV3i"> 
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 15px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 800px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">X5的业务模型层提供了开放的函数表达式引擎，用于为各层模型的业务规则提供表达式描述支持。</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">业务表达式应用于：</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">    数据模型：默认值表达式、KSQL的嵌入表达式......</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">    流程模型：分支条件表达式、执行者规则表达式......</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">    组织模型：数据权限表达式......</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 10px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 10px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 10px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">业务表达式中的函数，在X5的业务模型中是一种开放的模型元素————"fn"。</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">模型元素fn把代码世界的函数用模型描述的方式引入到X5的模型世界中，每个fn用模型描述定义了函数的名称、参数、返回值和它所对应的Java函数。</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 10px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 10px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 10px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">X5的业务模型中自带了大量的常用函数（常用函数的模型定义见：/BIZ/system/logic/fn），这些常用函数包括：    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">    通用函数（字符串函数、数值函数、日期函数、类型转换函数......）</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">    数据函数（获取数据、自动生成编号......）</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">    组织函数（当前部门、当前岗位、当前人、组织的上级、组织的下级、指定角色的组织、指定岗位的组织......）</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">    流程函数（拥有某个环节权限的人、流程环节的提交者、流程环节的执行者、流程是否经过某个环节......）</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">除了平台自带的函数，开发人员也可以在业务模型中创建自定义的模型函数，扩展业务表达式的规则描述能力。</td> 
+                  </tr> 
+                </table> 
+              </div> 
+            </div>  
+            <div class="tab-pane cyUJV3i" xid="tabContent2" __cid="cyUJV3i"> 
+              <div class="x-cell-layout cyUJV3i" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout2" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cyUJV3i"> 
+                <table cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1315px;HEIGHT:734px;" __cid="cyUJV3i" class="cyUJV3i"> 
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 15px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 120px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 500px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 150px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 500px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 19px; color: rgb(255, 0, 0);" __cid="cyUJV3i" class="cyUJV3i">本案例中的所有函数可以单击测试运行。</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 25px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 25px; text-align: center; font-weight: bold; background-color: rgb(51, 102, 255); color: rgb(255, 255, 255);" __cid="cyUJV3i" class="cyUJV3i">字符串类</td>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="4" style="height: 25px; text-align: center; background-color: rgb(51, 102, 255); color: rgb(255, 255, 255); font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">数值类</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 15px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="3" style="height: 45px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">截取字符串</td>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="3" style="height: 45px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); text-align: left;" componentId="label1" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label1" class="xui-autofill x-cell-control cyUJV3i" title="fn" style="text-align:left;" __cid="cyUJV3i">subString('(026)5554112', 5, 12)</label> 
+                    </td>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">四舍五入</td>  
+                    <td style="height: 15px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label37" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label37" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">round(123.562)</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 15px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 15px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 15px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px; text-align: center; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">保留两位小数</td>  
+                    <td style="height: 15px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 15px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label19" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label19" class=" x-cell-control cyUJV3i" title="fn" style="border-color:#C0C0C0;" __cid="cyUJV3i">round(123.256 * 100) / 100</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-size: 14px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-weight: bold; font-size: 14px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">合并字符串</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" componentId="label2" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label2" class=" x-cell-control cyUJV3i" style="background-color:transparent;" title="fn" __cid="cyUJV3i">concat('北京','起步科技','有限公司')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">数值格式化</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label20" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label20" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">decimalFormat(10000000.1, '#,###.000' )</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label21" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label21" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">decimalFormat(10000000.1, '#,###.##' )</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-size: 14px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">去掉两头空格</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label3" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label3" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">trim(' Justep X5业务开发平台 ')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">大于数值的最小整数</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label22" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label22" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">ceil(12.2)</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-size: 14px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-weight: bold; font-size: 14px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 25px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 25px; text-align: center; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(153, 204, 0);" __cid="cyUJV3i" class="cyUJV3i">文件</td>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="4" style="height: 25px; font-weight: bold; background-color: rgb(153, 204, 0); color: rgb(255, 255, 255); text-align: center;" __cid="cyUJV3i" class="cyUJV3i">人民币</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-size: 14px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-weight: bold; font-size: 14px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">文件名</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label4" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label4" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">nameOfFile('/justep.ogn/dev.dpt')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">转换为人民币</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label23" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label23" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">toChineseMoney(12531.11)</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label5" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label5" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">nameNoExtOfFile('/justep.ogn/dev.dpt')</label> 
+                    </td>  
+                    <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">最多2位小数</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; text-align: center; font-size: 14px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px; text-align: right; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">文件路径</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px;" componentId="label6" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label6" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">pathOfFile('/justep.ogn/dev.dpt')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="height: 38px; font-weight: bold; text-align: right;" __cid="cyUJV3i" class="cyUJV3i">转换为中文数字</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label25" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label25" class=" x-cell-control cyUJV3i" title="fn" style="border-color:#C0C0C0;" __cid="cyUJV3i">toChineseNumber(12354111.2332, false)</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label38" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label38" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">toChineseNumber(12354111.2332, true)</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 25px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 25px; font-weight: bold; text-align: center; color: rgb(255, 255, 255); background-color: rgb(204, 153, 255);" __cid="cyUJV3i" class="cyUJV3i">日期类</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">今天</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" componentId="label7" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label7" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentDate()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">昨天</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label27" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label27" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">addDays(currentDate(), -1)</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; font-size: 14px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">明天</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" componentId="label8" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label8" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">addDays(currentDate(), 1)</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">今年的1月1日</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label28" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label28" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">firstDateOfYear(currentDate())</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; font-size: 14px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">去年的1月1日</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" componentId="label9" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label9" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">firstDateOfYear(addMonths(currentDate(), -12))</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">明年的1月1日</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label29" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label29" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">firstDateOfYear(addMonths(currentDate(), 12))</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">本月的1日</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" componentId="label10" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label10" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">firstDateOfMonth(currentDate())</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">上月的1日</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label30" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label30" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">firstDateOfMonth(addMonths(currentDate(), -1))</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="3" style="height: 57px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">当前时间</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label11" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label11" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentDateTime()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="3" style="height: 57px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">转换为日期时间</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label31" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label31" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">toDateTime('1980-01-01 11:11:11')</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label12" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label12" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentDate()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label32" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label32" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">toDate('1980-01-01')</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" componentId="label13" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label13" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentTime()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label33" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label33" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">toTime('12:12:12')</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="3" style="height: 57px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">时间差</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label14" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label14" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">dateDiff('year', toDate('1980-01-01'), currentDate())</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="3" style="height: 57px; font-weight: bold; text-align: right; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">日期格式化</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label34" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label34" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">dateFormat(currentDateTime(), 'yyyy年MM月dd日 HH时mm分ss秒' )</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label15" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label15" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">dateDiff('month', toDateTime('1980-01-01 11:11:11'), currentDateTime())</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label35" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label35" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">dateFormat(currentDate(), 'yyyy-MM-dd' )</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; color: rgb(0, 0, 255); border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i">第一个参数：year、quarter、month、day、week、hour、minute、second、millisecond</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">第二个参数的格式化模式参见JDK中的SimpleDateFormat</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-top-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">判断时间范围</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="6" style="height: 19px;" componentId="label16" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label16" class=" x-cell-control cyUJV3i" __cid="cyUJV3i">判断时间在某一个日期段范围内，可以用 时间 &gt;= 起始日期的零点 AND 时间 &lt; 截止日期加一天的零点</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="6" style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label17" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label17" class=" x-cell-control cyUJV3i" __cid="cyUJV3i">例如：判断时间在本月范围内，可以用 {时间} &gt;= firstDateOfMonth(currentDate()) AND {时间} &lt; firstDateOfMonth(addMonths(currentDate(), 1)</label> 
+                    </td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr> 
+                </table> 
+              </div> 
+            </div>  
+            <div class="tab-pane cyUJV3i" xid="tabContent3" __cid="cyUJV3i"> 
+              <div class="x-cell-layout cyUJV3i" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout3" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cyUJV3i"> 
+                <table cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1265px;HEIGHT:429px;" __cid="cyUJV3i" class="cyUJV3i"> 
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 15px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td class="first-row first-cell cyUJV3i" style="WIDTH:80px;" __cid="cyUJV3i"/>  
+                    <td style="width: 500px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td class="first-row first-cell cyUJV3i" style="WIDTH:80px;" __cid="cyUJV3i"/>  
+                    <td style="width: 500px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td class="first-row first-cell cyUJV3i" style="WIDTH:80px;" __cid="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="5" style="height: 19px; color: rgb(255, 0, 0);" __cid="cyUJV3i" class="cyUJV3i">本案例中的所有函数可以单击测试运行。</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 25px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="5" style="height: 25px; text-align: center; font-weight: bold; background-color: rgb(51, 102, 255); color: rgb(255, 255, 255);" __cid="cyUJV3i" class="cyUJV3i">生成编号</td>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">按照关键字产生一个自动递增的整型序号</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">按照关键字产生一个临时的递增整型序号</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label39" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label39" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">nextSeq('justep')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label46" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label46" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">tempNextSeq('justep')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">按照关键字和序号格式，产生一个自动递增的组合编号</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">按照关键字和序号格式，产生一个临时的递增组合编号</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label40" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label40" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">nextSeqString('AAA','0000')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label47" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label47" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">tempNextSeqString('AAA','0000')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">产生一个'yyyyMMdd00000'格式的递增组合编号</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; color: rgb(0, 0, 255);" __cid="cyUJV3i" class="cyUJV3i">产生临时递增序号不会真的让序号递增，可以看做是递增序号的预览</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 20px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 20px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 20px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 20px;" componentId="label41" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label41" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">createSerialNumberByCurrentDate()</label> 
+                    </td>  
+                    <td style="height: 20px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 20px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 20px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 20px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 25px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="5" style="height: 25px; text-align: center; font-weight: bold; background-color: rgb(153, 204, 0); color: rgb(255, 255, 255);" __cid="cyUJV3i" class="cyUJV3i">应用实例</td>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">为请假申请生成单据号，格式为 'QJ' + 六位递增序号 = QJ000001</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="4" style="height: 19px;" componentId="label42" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label42" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">nextSeqString('QJ', '000000')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="5" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">为请假申请产生单据号，格式为 'QJ-' + 机构编码 + '-' + 两位年 + 四位递增序号 = QJ-JUSTEP-20120001</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="4" style="height: 19px;" componentId="label43" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label43" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">nextSeqString(concat('QJ-', currentOrgCode(), '-', dateFormat(currentDate(), 'yyyy')), '0000')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="5" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">为请假申请产生单据号，格式为 'QJ' + 四位年 + 两位月 + 五位递增序号 = QJ20121100001</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="4" style="height: 19px;" componentId="label44" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label44" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">nextSeqString(concat('QJ', dateFormat(currentDate(), 'yyyyMM')), '00000')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="2" style="height: 19px; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">为请假申请产生单据号，格式为 'QJ-' + 四位年 + '-' + 六位递增序号（序号不分年度）</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 21px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 21px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 21px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="4" style="height: 21px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label45" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label45" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">concat('QJ-', dateFormat(currentDate(), 'yyyy'), '-', decimalFormat(nextSeq('QJ'), '000000'))</label> 
+                    </td>  
+                    <td style="height: 21px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr> 
+                </table> 
+              </div> 
+            </div>  
+            <div class="tab-pane cyUJV3i" xid="tabContent4" __cid="cyUJV3i"> 
+              <div class="x-cell-layout cyUJV3i" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout4" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cyUJV3i"> 
+                <table cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1205px;HEIGHT:628px;" __cid="cyUJV3i" class="cyUJV3i"> 
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 15px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 200px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 300px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 300px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 300px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td class="first-row first-cell cyUJV3i" style="WIDTH:80px;" __cid="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="5" style="height: 19px; color: rgb(255, 0, 0);" __cid="cyUJV3i" class="cyUJV3i">本案例中的所有函数可以单击测试运行。</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 25px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="5" style="height: 25px; text-align: center; font-weight: bold; background-color: rgb(51, 102, 255); color: rgb(255, 255, 255);" __cid="cyUJV3i" class="cyUJV3i">组织函数</td>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: right; height: 8px;" __cid="cyUJV3i" class="cyUJV3i">当前机构</td>  
+                    <td style="height: 8px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" componentId="label48" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label48" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentOgnID()</label> 
+                    </td>  
+                    <td style="height: 8px;" componentId="label53" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label53" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentOgnCode()</label> 
+                    </td>  
+                    <td style="height: 8px;" componentId="label58" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label58" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentOgnName()</label> 
+                    </td>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192); height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192); height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192); height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192); height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: right; height: 19px;" __cid="cyUJV3i" class="cyUJV3i">当前部门</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label49" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label49" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentDeptID()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label54" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label54" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentDeptCode()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label59" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label59" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentDeptName()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cyUJV3i" class="cyUJV3i">当前岗位</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label50" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label50" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPosID()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label55" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label55" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPosCode()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label60" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label60" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPosName()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: right; height: 19px;" __cid="cyUJV3i" class="cyUJV3i">当前人员</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label51" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label51" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonID()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label56" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label56" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonCode()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label61" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label61" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonName()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: right; height: 19px;" __cid="cyUJV3i" class="cyUJV3i">当前人员成员</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label52" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label52" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonMemberID()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label57" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label57" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonMemberCode()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label62" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label62" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonMemberName()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px; color: rgb(0, 0, 255);" __cid="cyUJV3i" class="cyUJV3i">X5支持一人多岗，每个Person（人员）在组织中可以有多个工作岗位，每个具体工作岗位下的人员就是PersonMember（人员成员）</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-bottom-color: rgb(192, 192, 192); border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-bottom-color: rgb(192, 192, 192); border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-bottom-color: rgb(192, 192, 192); border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-bottom-color: rgb(192, 192, 192); border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: right; height: 19px;" __cid="cyUJV3i" class="cyUJV3i">操作者</td>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label63" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label63" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">operatorID()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label64" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label64" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">operatorCode()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label65" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label65" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">operatorName()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td rowSpan="2" style="font-weight: bold; text-align: right; height: 38px;" __cid="cyUJV3i" class="cyUJV3i">当前人员成员（带代理者）</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label66" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label66" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonMemberNameWithAgent()</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label67" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label67" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">currentPersonMemberFNameWithAgent()</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px; color: rgb(0, 0, 255);" __cid="cyUJV3i" class="cyUJV3i">在委托代理的使用场景下，Person委托Operator代理他的一部分业务处理，这时Operator和Person是两个人，Person是委托人，Operator是代理人（即操作者）</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">按编码获取组织</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label68" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label68" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findOrgUnitsByCode('Shanghai Branch')</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label69" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label69" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findOrgUnitsByCode('Branch Manager')</label> 
+                    </td>  
+                    <td style="height: 19px;" componentId="label70" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label70" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findOrgUnitsByCode('000038')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取上海分公司（机构）</td>  
+                    <td style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取分公司经理（岗位）</td>  
+                    <td style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取人员成员</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cyUJV3i" class="cyUJV3i">按编码获取下级组织</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px;" componentId="label71" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label71" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findOrgChildrenByCode(orgUnitsToOrgFIDs(findOrgUnitsByCode('Shanghai Branch')), 'Branch Manager', true, true)</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取上海分公司（机构）下的分公司经理（岗位）</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cyUJV3i" class="cyUJV3i">获取组织下的人员成员</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px;" componentId="label72" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label72" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findPersonMembersInOrg(orgUnitsToOrgFIDs(findOrgUnitsByCode('Shanghai Branch')), true)</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取上海分公司（机构）下的所有人员成员</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px;" componentId="label73" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label73" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findPersonMembersInOrg(orgUnitsToOrgFIDs(findOrgChildrenByCode(orgUnitsToOrgFIDs(findOrgUnitsByCode('Shanghai Branch')), 'Branch Manager', true, true)), true)</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取上海分公司（机构）下的分公司经理（岗位）下的人员成员</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cyUJV3i" class="cyUJV3i">按过滤条件获取下级组织</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px;" componentId="label74" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label74" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findOrgChildren2(orgUnitsToOrgFIDs(findOrgUnitsByCode('Shanghai Branch')), 'org.sFCode like ''%/Branch Manager/%''', null, false, true, true)</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取上海分公司（机构）下的分公司经理（岗位）下的人员成员</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cyUJV3i" class="cyUJV3i">按角色获取组织</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px;" componentId="label75" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label75" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">findOrgUnitsHasRoleByCode('system', currentOgnID(), true)</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="3" style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cyUJV3i" class="cyUJV3i">获取当前机构中拥有system角色的人员成员（即系统管理员）</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: right; height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="font-weight: bold; text-align: center; height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr> 
+                </table> 
+              </div> 
+            </div>  
+            <div class="tab-pane cyUJV3i" xid="tabContent5" __cid="cyUJV3i"> 
+              <div class="x-cell-layout cyUJV3i" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout5" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cyUJV3i"> 
+                <table cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:885px;HEIGHT:474px;" __cid="cyUJV3i" class="cyUJV3i"> 
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 15px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 180px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 260px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 200px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 10px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="width: 200px;" class="first-row first-cell cyUJV3i" __cid="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">除了平台提供的大量基础函数，开发者还可以自定义模型函数，扩展业务模型的表达式描述能力。</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">自定义模型函数非常简单，只需要两步：</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">　　1、编写一个Java函数</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i">　　2、创建模型函数，映射到Java函数</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 25px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 25px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 25px; color: rgb(255, 255, 255); text-align: center; background-color: rgb(51, 102, 255); font-weight: bold;" __cid="cyUJV3i" class="cyUJV3i">自定义函数</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 7px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 7px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: left;" __cid="cyUJV3i" class="cyUJV3i">获取某个产品的库存数量</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label76" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label76" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">getStock('牛肉干')</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 19px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: left;" __cid="cyUJV3i" class="cyUJV3i">判断产品数量是否超出库存</td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" componentId="label77" __cid="cyUJV3i" class="cyUJV3i"> 
+                      <label xmlns="http://www.w3.org/1999/xhtml" xid="label77" class=" x-cell-control cyUJV3i" title="fn" __cid="cyUJV3i">isStockOver('牛肉干', 50)</label> 
+                    </td>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td style="height: 8px;" class="first-col cyUJV3i" __cid="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 8px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td colSpan="8" style="height: 19px; text-align: left; color: rgb(0, 0, 255);" __cid="cyUJV3i" class="cyUJV3i">本案例的函数模型文件参见：/BIZ/demo/fn/logic/fn/custom.fn.m，代码参见：/BIZ/demo/fn/logic/code/dsrc/CustomFn.java</td> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr>  
+                  <tr __cid="cyUJV3i" class="cyUJV3i"> 
+                    <td class="first-col cyUJV3i" style="HEIGHT:19px;" __cid="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px; font-weight: bold; text-align: center;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/>  
+                    <td style="height: 19px;" __cid="cyUJV3i" class="cyUJV3i"/> 
+                  </tr> 
+                </table> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="wdTestFn" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-config="{&quot;height&quot;:&quot;60%&quot;,&quot;src&quot;:&quot;$model/UI2/demo/common/process/dialogs/testFn.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;width&quot;:&quot;60%&quot;}" __cid="cyUJV3i" class="cyUJV3i"> 
+          <div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay cyUJV3i" __cid="cyUJV3i"></div>  
+          <div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog cyUJV3i" style="display:none;" __cid="cyUJV3i">  
+            <div class="x-dialog-title cyUJV3i" __cid="cyUJV3i"> 
+              <button class="close cyUJV3i" __cid="cyUJV3i"> 
+                <span __cid="cyUJV3i" class="cyUJV3i">×</span> 
+              </button>  
+              <div class="x-dialog-title-text cyUJV3i" __cid="cyUJV3i"/> 
+            </div>  
+            <div class="x-dialog-body cyUJV3i" __cid="cyUJV3i"/> 
+          </div> 
+        </span> 
+      </div>
+    </div>  
+    <div id="downloadGCF" style="display:none;padding:50px;"> 
+      <span>您使用的浏览器需要下载插件才能使用,</span>  
+      <a id="downloadGCFLink" href="#">下载地址</a>  
+      <p>(安装后请重新打开浏览器)</p> 
+    </div>  
+    <script>
+    	
+    	            //判断浏览器, 判断GCF
+    	 			var browser = {
+    			        isIe: function () {
+    			            return navigator.appVersion.indexOf("MSIE") != -1;
+    			        },
+    			        navigator: navigator.appVersion,
+    			        getVersion: function() {
+    			            var version = 999; // we assume a sane browser
+    			            if (navigator.appVersion.indexOf("MSIE") != -1)
+    			                // bah, IE again, lets downgrade version number
+    			                version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+    			            return version;
+    			        }
+    			    };
+    				function isGCFInstalled(){
+    			      try{
+    			        var i = new ActiveXObject('ChromeTab.ChromeFrame');
+    			        if (i) {
+    			          return true;
+    			        }
+    			      }catch(e){}
+    			      return false;
+    				}
+    	            //判断浏览器, 判断GCF
+    	            var __continueRun = true;
+    				if (browser.isIe() &amp;&amp; (browser.getVersion() &lt; 10) &amp;&amp; !isGCFInstalled()) {
+    					document.getElementById("applicationHost").style.display = 'none';
+    					document.getElementById("downloadGCF").style.display = 'block';
+    					var downloadLink = "/" + location.pathname.match(/[^\/]+/)[0] + "/v8.msi";
+    					document.getElementById("downloadGCFLink").href = downloadLink; 
+    					__continueRun = false;
+    	            }
+		 	
+    	</script>  
+    <script id="_metaJS" src="../../../../../v_2d9c21f436d14b4faf4546a63910fbb2l_zh_CNs_desktopd_pc/system/config/meta.js"> </script>  
+    <script id="_requireJS" src="../../../../../v_b5936299aa56417b966f0029166be392l_zh_CNs_desktopd_pc/system/lib/require/require.2.1.10.js"> </script>  
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_52176fcbed7644ddb8632170de15808cl_zh_CNs_desktopd_pc/system/core.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_f99241ec691f4047b4fa99f2786489c9l_zh_CNs_desktopd_pc/system/common.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_e8db93eacd9646daa8924a5dae7b04del_zh_CNs_desktopd_pc/system/components/comp.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_91b273d84c8446e890e2a65904f657b5l_zh_CNs_desktopd_pc/system/components/comp2.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_4f1cb5cf315049098c97815f0d41060cl_zh_CNs_desktopd_pc/system/components/pc.addon.min.js"></script>
+    <script id="_mainScript">
+        
+			if (__continueRun) {
+                window.__justep.cssReady = function(fn){
+                	var promises = [];
+                	for (var p in window.__justep.__ResourceEngine.__loadingCss){
+                		if(window.__justep.__ResourceEngine.__loadingCss.hasOwnProperty(p))
+                			promises.push(window.__justep.__ResourceEngine.__loadingCss[p].promise());
+                	}
+                	$.when.apply($, promises).done(fn);
+                };
+                
+            	window.__justep.__ResourceEngine = {
+            		readyRegExp : navigator.platform === 'PLAYSTATION 3' ? /^complete$/ : /^(complete|loaded)$/,
+            		url: window.location.href,	
+            		/*contextPath: 不包括语言 */
+            		contextPath: "",
+            		serverPath: "",
+            		__loadedJS: [],
+            		__loadingCss: {},
+            		onLoadCss: function(url, node){
+            			if (!this.__loadingCss[url]){
+            				this.__loadingCss[url] = $.Deferred();	
+                			if (node.attachEvent &amp;&amp;
+                                    !(node.attachEvent.toString &amp;&amp; node.attachEvent.toString().indexOf('[native code') &lt; 0) &amp;&amp;
+                                    !(typeof opera !== 'undefined' &amp;&amp; opera.toString() === '[object Opera]')) {
+                                node.attachEvent('onreadystatechange', this.onLinkLoad.bind(this));
+                            } else {
+                                node.addEventListener('load', this.onLinkLoad.bind(this), false);
+                                node.addEventListener('error', this.onLinkError.bind(this), false);
+                            }
+            			}
+            		},
+            		
+            		onLinkLoad: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+            	        if (evt.type === 'load' ||
+                                (this.readyRegExp.test(target.readyState))) {
+            	        	var url = target.getAttribute("href");
+            	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+            	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+            	        	}
+                        }
+            		},
+            		
+            		onLinkError: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+        	        	var url = target.getAttribute("href");
+        	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+        	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+        	        	}
+            		},
+            		
+            		initContextPath: function(){
+            			var baseURL = document.getElementById("_requireJS").src;
+            			var before = location.protocol + "//" + location.host;
+            			var after = "/system/lib/require/require.2.1.10";
+            			var i = baseURL.indexOf(after);
+            			if (i !== -1){
+    	        			var middle = baseURL.substring(before.length, i);
+    						var items = middle.split("/");
+    						
+    						
+    						if ((items[items.length-1].indexOf("v_") === 0) 
+    								&amp;&amp; (items[items.length-1].indexOf("l_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("s_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("d_") !== -1)
+    								|| (items[items.length-1]=="v_")){
+    							items.splice(items.length-1, 1);
+    						}
+    						
+    						
+    						if (items.length !== 1){
+    							window.__justep.__ResourceEngine.contextPath = items.join("/");
+    						}else{
+    							window.__justep.__ResourceEngine.contextPath = before;
+    						}
+    						var index = window.__justep.__ResourceEngine.contextPath.lastIndexOf("/");
+    						if (index != -1){
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath.substr(0, index);
+    						}else{
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath;
+    						}
+            			}else{
+            				throw new Error(baseURL + " hasn't  " + after);
+            			}
+            		},
+            	
+            		loadJs: function(urls){
+            			if (urls &amp;&amp; urls.length&gt;0){
+            				var loadeds = this._getResources("script", "src").concat(this.__loadedJS);
+    	       				for (var i=0; i&lt;urls.length; i++){
+								var url = urls[i];
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					this.__loadedJS[this.__loadedJS.length] = url;
+    	        					/*
+    	        					var script = document.createElement("script");
+    	        					script.src = url;
+    	        					document.head.appendChild(script);
+    	        					*/
+    	        					//$("head").append("&lt;script  src='" + url + "'/&gt;");
+									var url = require.toUrl("$UI" + url);
+    	        					$.ajax({
+    	        						url: url,
+    	        						dataType: "script",
+    	        						cache: true,
+    	        						async: false,
+    	        						success: function(){}
+    	        						});
+    	        				} 
+    	       				}
+            			}
+            		},
+            		
+            		loadCss: function(styles){
+           				var loadeds = this._getResources("link", "href");
+            			if (styles &amp;&amp; styles.length&gt;0){
+            				for (var i=0; i&lt;styles.length; i++){
+    	       					var url = window.__justep.__ResourceEngine.contextPath + styles[i].url
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					var include = styles[i].include || "";
+    	        					var link = $("&lt;link type='text/css' rel='stylesheet' href='" + url + "' include='" + include + "'/&gt;");
+    	        					this.onLoadCss(url, link[0]);
+    	        					$("head").append(link);
+    	        				} 
+            				}
+            			}
+            			
+            		},
+            		
+            		
+            		_isLoaded: function(url, loadeds){
+            			if (url){
+            				var newUrl = "";
+            				var items = url.split("/");
+            				var isVls = false;
+            				for (var i=0; i&lt;items.length; i++){
+            					if (isVls){
+                					newUrl += "/" + items[i];
+            					}else{
+                					if (items[i] &amp;&amp; (items[i].indexOf("v_")===0)
+            								&amp;&amp; (items[i].indexOf("l_")!==-1)
+            								&amp;&amp; (items[i].indexOf("s_")!==-1)
+            								&amp;&amp; (items[i].indexOf("d_")!==-1)
+            								|| (items[i]=="v_")){
+                						isVls = true;
+                					}
+            					}
+            				}
+            				if (!newUrl)
+            					newUrl = url;
+            				
+            				for (var i=0; i&lt;loadeds.length; i++){
+								var originUrl = this._getOriginUrl(loadeds[i]);
+								if (originUrl &amp;&amp; (originUrl.indexOf(newUrl)!==-1)){
+									return true;
+								}
+    						}
+            			}
+    					return false;
+            		},
+
+					_getOriginUrl: function(url){
+						var result = "";
+						if (url &amp;&amp; (url.indexOf(".md5_")!==-1)){
+							url = url.split("#")[0];
+							url = url.split("?")[0];
+							var items = url.split(".");
+							for (var i=0; i&lt;items.length; i++){
+								if ((i===items.length-2) &amp;&amp; (items[i].indexOf("md5_")!==-1)){
+									continue;
+								}else{
+									if (i&gt;0) result += ".";
+									result += items[i];
+								}
+							}
+						}else{
+							result = url;
+						}
+						return result;
+					},
+            		
+            		_getResources: function(tag, attr){
+    					var result = [];
+    					var scripts = $(tag);
+    					for (var i=0; i&lt;scripts.length; i++){
+    						var v = scripts[i][attr];
+    						if (v){
+    							result[result.length] = v;
+    						}
+    					}
+    					return result;
+            		}
+            	};
+            	
+            	window.__justep.__ResourceEngine.initContextPath();
+    			requirejs.config({
+    				baseUrl: window.__justep.__ResourceEngine.contextPath + '/v_95f7c557a7ff4b868884d0e3b6c8853el_zh_CNs_desktopd_pc/demo/fn/process/fnExample',
+    			    paths: {
+    			    	/* 解决require.normalizeName与require.toUrl嵌套后不一致的bug   */
+    			    	'$model/UI2/v_': window.__justep.__ResourceEngine.contextPath + '/v_95f7c557a7ff4b868884d0e3b6c8853el_zh_CNs_desktopd_pc',
+    			    	'$model/UI2': window.__justep.__ResourceEngine.contextPath + '/v_95f7c557a7ff4b868884d0e3b6c8853el_zh_CNs_desktopd_pc',
+    			    	'$model': window.__justep.__ResourceEngine.serverPath,
+    			        'text': window.__justep.__ResourceEngine.contextPath + '/v_95f7c557a7ff4b868884d0e3b6c8853el_zh_CNs_desktopd_pc/system/lib/require/text.2.0.10',
+    			        'bind': window.__justep.__ResourceEngine.contextPath + '/v_95f7c557a7ff4b868884d0e3b6c8853el_zh_CNs_desktopd_pc/system/lib/bind/bind',
+    			        'jquery': window.__justep.__ResourceEngine.contextPath + '/v_95f7c557a7ff4b868884d0e3b6c8853el_zh_CNs_desktopd_pc/system/lib/jquery/jquery-1.11.1.min'
+    			    },
+    			    map: {
+    				        '*': {
+    				            res: '$model/UI2/system/lib/require/res',
+    				            cordova: '$model/UI2/system/lib/require/cordova',
+    				            w: '$model/UI2/system/lib/require/w',
+    				            css: '$model/UI2/system/lib/require/css'
+    				        }
+    				},
+    				waitSeconds: 300
+    			});
+    			
+    			requirejs(['require', 'jquery', '$model/UI2/system/lib/base/composition', '$model/UI2/system/lib/base/url', '$model/UI2/system/lib/route/hashbangParser', '$model/UI2/system/components/justep/versionChecker/versionChecker', '$model/UI2/system/components/justep/loadingBar/loadingBar', '$model/UI2/system/lib/jquery/domEvent',  '$model/UI2/system/lib/cordova/cordova'],  function (require, $, composition, URL, HashbangParser,versionChecker) { 
+    				document.addEventListener('deviceready', function() {
+    	                if (navigator &amp;&amp; navigator.splashscreen &amp;&amp; navigator.splashscreen.hide) {
+    	                	/*延迟隐藏，视觉效果更理想*/
+    	                	setTimeout(function() {navigator.splashscreen.hide();}, 800);
+    	                }
+    	            }, false);
+					setTimeout(function(){
+						versionChecker.check();
+					},2000);
+    				var context = {};
+    				context.model = '$model/UI2/demo/fn/process/fnExample/mainActivity.w' + (document.location.search || "");
+    				context.view = $('#applicationHost').children()[0];
+    				var element = document.getElementById('applicationHost');
+
+					    				
+    				
+    				var ownerid = new URL(window.__justep.__ResourceEngine.url).getParam("$ownerid");
+    				var pwindow = opener;
+    				if (!pwindow &amp;&amp; window.parent &amp;&amp; window.parent.window){
+    					pwindow = window.parent.window;
+    				}
+    				if(ownerid &amp;&amp; pwindow 
+    						&amp;&amp; pwindow.__justep &amp;&amp; pwindow.__justep.windowOpeners
+    						&amp;&amp; pwindow.__justep.windowOpeners[ownerid]
+    						&amp;&amp; $.isFunction(pwindow.__justep.windowOpeners[ownerid].sendToWindow)){
+    					window.__justep.setParams = function(params){
+    						/* 给windowOpener提供再次传参数的接口  */
+    						params = params || {};
+    						composition.setParams(document.getElementById('applicationHost'), params);
+    					};
+    					var winOpener = pwindow.__justep.windowOpeners[ownerid];
+    					if(winOpener) winOpener.window = window;
+    					$(window).unload(function(event){
+    						if(winOpener &amp;&amp; winOpener.dispatchCloseEvent) winOpener.dispatchCloseEvent();
+    					});
+    					var params = winOpener.sendToWindow();
+						context.owner = winOpener;
+						context.params = params || {};
+	        			composition.compose(element, context);
+    				}else{
+        				var params =  {};
+    					var state = new HashbangParser(window.location.hash).parse().__state;
+    					if (state){
+    						params = state.get("");
+    						try{
+    							params = JSON.parse(params);
+    							if (params.hasOwnProperty("__singleValue__")){
+    								params = params.__singleValue__;
+    							}
+    						}catch(e1){}
+    					}
+    					context.noUpdateState = true;
+        				context.params = params;
+        				composition.compose(element, context);
+    				}
+    			});    
+            }
+		 	
+        </script> 
+  </body> 
+</html>

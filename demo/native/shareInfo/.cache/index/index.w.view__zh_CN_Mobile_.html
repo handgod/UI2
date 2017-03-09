@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" class="main13 cuYbMbq" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cuYbMbq" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/popMenu/popMenu,$model/UI2/system/components/justep/menu/menu,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/panel/panel,">  
+  <style xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml">.h5.cuYbMbq{line-height: 2; color: rgb(33, 33, 33)} .text-black.cuYbMbq{color: rgb(51, 51, 51)} .text-white.cuYbMbq{color: rgb(255, 255, 255)} .o-img4.cuYbMbq{width: 50px; height: 50px} .x-titlebar.cuYbMbq{background-color: rgb(170, 170, 170); color: rgb(119, 119, 119); border-bottom: 1px solid rgb(153, 153, 153)} .panel-heading.cuYbMbq{border-color: rgb(239, 239, 239)} .o-nopadding.cuYbMbq{padding-left: 0; padding-right: 0} .lead.cuYbMbq{line-height: 36px; text-align: justify} .x-panel-bottom.cuYbMbq{padding: 5px 10px} .x-panel-bottom.cuYbMbq .input-group.cuYbMbq .input-group-addon.cuYbMbq{background-color: rgb(255, 255, 255); border-left: 0; border-right: 0; border-top: 0; border-radius: 0 0 0 8px} .x-panel-bottom.cuYbMbq .input-group.cuYbMbq .form-control.cuYbMbq{width: auto; border-left: 0; border-right: 0; border-top: 0; border-radius: 0 0 8px 0} .x-panel-bottom.cuYbMbq .input-group.cuYbMbq .form-control.cuYbMbq:focus{box-shadow: none; border-color: rgb(239, 239, 239)} .x-panel-bottom.cuYbMbq .form-control-feedback.cuYbMbq{right: 15px}</style>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cuYbMbq" class="cuYbMbq"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/popMenu/popMenu" class="x-popMenu cuYbMbq" xid="popMenu" data-bind="component:{name:'$model/UI2/system/components/justep/popMenu/popMenu'}" data-config="{&quot;anchor&quot;:&quot;popMenuBtn&quot;,&quot;direction&quot;:&quot;right-bottom&quot;}" __cid="cuYbMbq"> 
+    <div class="x-popMenu-overlay cuYbMbq" xid="div3" __cid="cuYbMbq"/>  
+    <ul component="$model/UI2/system/components/justep/menu/menu" class="x-menu dropdown-menu x-popMenu-content cuYbMbq" xid="menu2" data-bind="component:{name:'$model/UI2/system/components/justep/menu/menu'}" __cid="cuYbMbq"> 
+      <li class="x-menu-item cuYbMbq" xid="shareItem" __cid="cuYbMbq" data-bind="event:{click:$model._callModelFn.bind($model, 'shareClick')}"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cuYbMbq" xid="button11" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-ios7-redo&quot;,&quot;label&quot;:&quot;分享&quot;}" __cid="cuYbMbq"> 
+          <i xid="i10" class="icon-ios7-redo cuYbMbq" __cid="cuYbMbq"/>  
+          <span xid="span21" __cid="cuYbMbq" class="cuYbMbq">分享</span> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cuYbMbq" xid="item2" __cid="cuYbMbq"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cuYbMbq" xid="button15" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-ios7-star-outline&quot;,&quot;label&quot;:&quot;收藏&quot;}" __cid="cuYbMbq"> 
+          <i xid="i14" class="icon-ios7-star-outline cuYbMbq" __cid="cuYbMbq"/>  
+          <span xid="span25" __cid="cuYbMbq" class="cuYbMbq">收藏</span> 
+        </a> 
+      </li>  
+      <li class="x-menu-item cuYbMbq" xid="item3" __cid="cuYbMbq"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cuYbMbq" xid="button13" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-ios7-albums-outline&quot;,&quot;label&quot;:&quot;截屏&quot;}" __cid="cuYbMbq"> 
+          <i xid="i12" class="icon-ios7-albums-outline cuYbMbq" __cid="cuYbMbq"/>  
+          <span xid="span23" __cid="cuYbMbq" class="cuYbMbq">截屏</span> 
+        </a> 
+      </li>  
+      <li class="x-menu-divider divider cuYbMbq" xid="divider1" __cid="cuYbMbq"/>  
+      <li class="x-menu-item cuYbMbq" xid="item4" __cid="cuYbMbq"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-icon-left cuYbMbq" xid="button14" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-display&quot;,&quot;label&quot;:&quot;夜间模式&quot;}" __cid="cuYbMbq"> 
+          <i xid="i13" class="icon-android-display cuYbMbq" __cid="cuYbMbq"/>  
+          <span xid="span24" __cid="cuYbMbq" class="cuYbMbq">夜间模式</span> 
+        </a> 
+      </li> 
+    </ul> 
+  </div>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full x-card x-has-iosstatusbar pciuMz6b-iosstatusbar cuYbMbq" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cuYbMbq"> 
+    <div class="x-panel-top cuYbMbq" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" data-config="{&quot;height&quot;:49}" __cid="cuYbMbq"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cuYbMbq" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" __cid="cuYbMbq"> 
+        <div class="x-titlebar-left text-white cuYbMbq" __cid="cuYbMbq"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cuYbMbq" xid="button6" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-arrow-left-c&quot;,&quot;label&quot;:&quot;搜索&quot;}" __cid="cuYbMbq"> 
+            <i xid="i6" class="icon-arrow-left-c cuYbMbq" __cid="cuYbMbq"/>  
+            <span xid="span6" __cid="cuYbMbq" class="cuYbMbq">搜索</span> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title cuYbMbq" __cid="cuYbMbq"> 
+          <a class="pull-right cuYbMbq" __cid="cuYbMbq"> 
+            <span class="badge cuYbMbq" __cid="cuYbMbq" data-bind="event:{click:$model._callModelFn.bind($model, 'postClick')}">1915跟贴</span> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-right  text-white cuYbMbq" __cid="cuYbMbq"> 
+          <div class="empty cuYbMbq" __cid="cuYbMbq"/>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cuYbMbq" xid="popMenuBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:popMenuBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-more&quot;}" __cid="cuYbMbq"> 
+            <i xid="i1" class="icon-android-more cuYbMbq" __cid="cuYbMbq"/>  
+            <span xid="span1" __cid="cuYbMbq" class="cuYbMbq"/> 
+          </a> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content x-cards panel-body cuYbMbq" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cuYbMbq"> 
+      <h3 class=" text-black cuYbMbq" __cid="cuYbMbq">全国约1亿人口跨省流动 迁移致养老压力失衡</h3>  
+      <div class="h6 text-muted cuYbMbq" __cid="cuYbMbq"> 
+        <span __cid="cuYbMbq" class="cuYbMbq">学习小组</span>  
+        <span __cid="cuYbMbq" class="cuYbMbq">10-12 09：31</span>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link pull-right cuYbMbq" xid="share" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:shareClick" data-config="{&quot;icon&quot;:&quot;icon-ios7-redo&quot;,&quot;label&quot;:&quot;分享&quot;}" __cid="cuYbMbq"> 
+          <i xid="i3" class="icon-ios7-redo cuYbMbq" __cid="cuYbMbq"/>  
+          <span xid="span3" __cid="cuYbMbq" class="cuYbMbq">分享</span> 
+        </a> 
+      </div>  
+      <div class="h6 cuYbMbq" __cid="cuYbMbq"> 
+        <img alt="" class="img-responsive cuYbMbq" __cid="cuYbMbq" data-bind="attr:{src:$model.getImageUrl('./img/4.jpg')}"/> 
+      </div>  
+      <div class="text-black lead cuYbMbq" __cid="cuYbMbq">目前，全国约有一亿的人口在跨省流动，其中九成以上是劳动年龄人口。这种不平衡的人口迁移流动使得人口净流入地和净流出地的老龄化程度差异较大，给就业、养老带来了巨大的压力。10日举行的“人口、劳动力流动与空间集聚”全国学术研讨会探讨了这一困局，并提出了尽快提高养老和医疗保险统筹层次等建议。 生育、死亡、迁移是人口变化的三大主要特征。由于生育、死亡的变化相对稳定，中国未来人口变化更多取决于迁移。
+        <br __cid="cuYbMbq" class="cuYbMbq"/>根据第六次人口普查数据，2010年全国跨省流动人口数量为8587万，约占总人口的38.8%。南开大学经济学院人口与发展研究所所长陈卫民认为，跨省流动人口正在持续增加中，2014年全国跨省流动人口数量估计达9830万人。 对跨省流动人口进行分析可以发现，90%以上流动人口是劳动年龄人口，65岁以上的人口仅占1.32%。 
+        <br __cid="cuYbMbq" class="cuYbMbq"/>大量劳动年龄人口的迁移流动直接影响了各个省市的老龄化程度。广东、上海、浙江、北京、江苏等人口净流入地的老龄化程度因此减轻，同时河南、四川、安徽、贵州等人口净流出地的老龄化程度加剧。 这种人口迁移流动状况导致了目前养老保险的不公平：经济越发达的地区，吸引了更多更优质的劳动力流入，缴纳养老保险的人数更多，养老压力相对更低;而经济越落后的地区，更多劳动力流出，缴纳养老保险的人数减少，老年抚养比更高，养老压力更大。数据显示，2013年制度抚养比最低的后几位省市都是人口净流入较大的省市，而制度抚养比高的省市多为人口净流出的省市。 
+        <br __cid="cuYbMbq" class="cuYbMbq"/>陈卫民认为，鉴于劳动力流动对流出地和流入地社会保障制度的不同影响，我国的养老社会保险需要继续提高统筹层次，直至实现全国统筹。由于医疗社会保险统筹层次更低，绝大部分是地市级，提高医疗保险统筹层次更具有紧迫性。
+      </div>  
+      <div class="h5 cuYbMbq" __cid="cuYbMbq"> 
+        <span __cid="cuYbMbq" class="cuYbMbq">来源：</span>  
+        <span __cid="cuYbMbq" class="cuYbMbq">新华社</span> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom cuYbMbq" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cuYbMbq"> 
+      <div class="input-group cuYbMbq" xid="div1" __cid="cuYbMbq"> 
+        <span class="input-group-addon cuYbMbq" xid="span2" __cid="cuYbMbq"> 
+          <i xid="i2" class="icon-edit text-muted cuYbMbq" __cid="cuYbMbq"/> 
+        </span>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-inputText cuYbMbq" xid="nameInput" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cuYbMbq"/> 
+      </div>  
+      <span class="form-control-feedback cuYbMbq" aria-hidden="true" xid="span4" __cid="cuYbMbq"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-label o-nopadding cuYbMbq" xid="button9" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;发送&quot;}" __cid="cuYbMbq"> 
+          <i xid="i8" __cid="cuYbMbq" class="cuYbMbq"/>  
+          <span class="text-muted cuYbMbq" xid="span5" __cid="cuYbMbq">发送</span> 
+        </a> 
+      </span> 
+    </div>  
+    <style __cid="cuYbMbq" class="cuYbMbq">.x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-top {height: 49px;}.x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-content { top: 49px;bottom: nullpx;}.x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-top {height: 69px;}.iosstatusbar .x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-content { top: 69px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-top {height: 49px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pciuMz6b-iosstatusbar &gt;.x-panel-content {top: 49px;}</style> 
+  </div> 
+</div>

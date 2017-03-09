@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cFv2eUj" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cFv2eUj" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/org/orgSelect,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onModelConstructDone:modelModelConstructDone" __cid="cFv2eUj" class="cFv2eUj"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcFfyMNv-iosstatusbar cFv2eUj" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cFv2eUj"> 
+    <div class="x-panel-top cFv2eUj" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cFv2eUj"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cFv2eUj" xid="titleBar1" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;消息推送&quot;}" __cid="cFv2eUj"> 
+        <div class="x-titlebar-left cFv2eUj" xid="div1" __cid="cFv2eUj"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cFv2eUj" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cFv2eUj"> 
+            <i xid="i1" class="icon-chevron-left cFv2eUj" __cid="cFv2eUj"/>  
+            <span xid="span1" __cid="cFv2eUj" class="cFv2eUj"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title cFv2eUj" xid="div2" __cid="cFv2eUj">消息推送</div>  
+        <div class="x-titlebar-right  cFv2eUj" xid="div3" __cid="cFv2eUj">
+          <div class="empty cFv2eUj" __cid="cFv2eUj"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cFv2eUj" style="padding:8.75px" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cFv2eUj"> 
+      <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group cFv2eUj" xid="controlGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}" __cid="cFv2eUj"> 
+        <div class="x-control-group-title cFv2eUj" xid="controlGroupTitle1" __cid="cFv2eUj"> 
+          <span xid="span2" __cid="cFv2eUj" class="cFv2eUj"/> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cFv2eUj" xid="labelEdit1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cFv2eUj"> 
+          <label class="x-label cFv2eUj" xid="label1" __cid="cFv2eUj">发送给：</label>  
+          <div class="x-edit cFv2eUj" xid="div4" __cid="cFv2eUj"> 
+            <div class="input-group cFv2eUj" component="$model/UI2/system/components/justep/org/orgSelect" xid="orgSelect1" bind-ref="sendData.ref('targets')" bind-labelRef="sendData.ref('targetNames')" itemValue="sFID" __cid="cFv2eUj"> 
+              <input component="$model/UI2/system/components/justep/input/input" class="form-control cFv2eUj" xid="input1" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;readonly&quot;:true}" __cid="cFv2eUj"/>  
+              <span class="input-group-btn cFv2eUj" xid="span3" __cid="cFv2eUj"> 
+                <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cFv2eUj" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;icon&quot;:&quot;icon-android-search&quot;}" __cid="cFv2eUj"> 
+                  <i class="icon-android-search cFv2eUj" xid="i2" __cid="cFv2eUj"/>  
+                  <span xid="span4" __cid="cFv2eUj" class="cFv2eUj"/> 
+                </a> 
+              </span> 
+            </div> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cFv2eUj" xid="labelTextarea1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cFv2eUj"> 
+          <label class="x-label cFv2eUj" xid="label2" __cid="cFv2eUj">消息标题：</label>  
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cFv2eUj" xid="input20" data-bind="component:{ref:sendData.ref('title'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cFv2eUj"/> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cFv2eUj" xid="labelInput1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cFv2eUj"> 
+          <label class="x-label cFv2eUj" xid="label3" __cid="cFv2eUj">消息类型：</label>  
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cFv2eUj" xid="input2" data-bind="component:{ref:sendData.ref('type'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cFv2eUj"/> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cFv2eUj" xid="labelInput2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cFv2eUj"> 
+          <label class="x-label cFv2eUj" xid="label4" __cid="cFv2eUj">消息页面：</label>  
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cFv2eUj" xid="input3" data-bind="component:{ref:sendData.ref('url'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cFv2eUj"/> 
+        </div>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default center-block cFv2eUj" xid="send" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:sendClick" data-config="{&quot;label&quot;:&quot;发送&quot;}" __cid="cFv2eUj"> 
+          <i xid="i3" __cid="cFv2eUj" class="cFv2eUj"/>  
+          <span xid="span5" __cid="cFv2eUj" class="cFv2eUj">发送</span> 
+        </a> 
+      </div>  
+      <h3 xid="h31" class="text-center cFv2eUj" __cid="cFv2eUj">注意：打开此功能后，接收到消息时，将会提示alert</h3>
+    </div>  
+    <style __cid="cFv2eUj" class="cFv2eUj">.x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcFfyMNv-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="windowDialog" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-config="{&quot;src&quot;:&quot;$model/UI2/system/components/justep/common/demo/dialog.w&quot;,&quot;status&quot;:&quot;normal&quot;}" __cid="cFv2eUj" class="cFv2eUj">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog-overlay cFv2eUj" __cid="cFv2eUj"/>
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-dialog cFv2eUj" style="display:none;" __cid="cFv2eUj">
+      <xhtml:div class="x-dialog-title cFv2eUj" __cid="cFv2eUj">
+        <xhtml:button class="close cFv2eUj" __cid="cFv2eUj">
+          <xhtml:span __cid="cFv2eUj" class="cFv2eUj">×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text cFv2eUj" __cid="cFv2eUj"/>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body cFv2eUj" __cid="cFv2eUj"/>
+    </xhtml:div>
+  </span> 
+</div>

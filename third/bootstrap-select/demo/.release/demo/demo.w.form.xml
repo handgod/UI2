@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cMjQ7Jb" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cMjQ7Jb" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/panel/panel,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcyIzq2i-iosstatusbar cMjQ7Jb" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cMjQ7Jb"> 
+    <div class="x-panel-top cMjQ7Jb" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cMjQ7Jb"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cMjQ7Jb" xid="titleBar1" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;bootstrap-switch&quot;}" __cid="cMjQ7Jb"> 
+        <div class="x-titlebar-left cMjQ7Jb" xid="div1" __cid="cMjQ7Jb"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cMjQ7Jb" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="cMjQ7Jb"> 
+            <i xid="i1" class="icon-chevron-left cMjQ7Jb" __cid="cMjQ7Jb"/>  
+            <span xid="span1" __cid="cMjQ7Jb" class="cMjQ7Jb"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title cMjQ7Jb" xid="div2" __cid="cMjQ7Jb">bootstrap-switch</div>  
+        <div class="x-titlebar-right  cMjQ7Jb" xid="div3" __cid="cMjQ7Jb">
+          <div class="empty cMjQ7Jb" __cid="cMjQ7Jb"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cMjQ7Jb" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cMjQ7Jb"> 
+      <div class="container cMjQ7Jb" __cid="cMjQ7Jb"> 
+        <form class="form-horizontal cMjQ7Jb" role="form" __cid="cMjQ7Jb"> 
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label for="basic" class="col-lg-2 control-label cMjQ7Jb" __cid="cMjQ7Jb">"Basic" (liveSearch disabled)</label>  
+            <div class="col-lg-10 cMjQ7Jb" __cid="cMjQ7Jb"> 
+              <select id="basic" class="selectpicker show-tick form-control cMjQ7Jb" __cid="cMjQ7Jb"> 
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">cow</option>  
+                <option data-subtext="option subtext" __cid="cMjQ7Jb" class="cMjQ7Jb">bull</option>  
+                <option class="get-class cMjQ7Jb" disabled="true" __cid="cMjQ7Jb">ox</option>  
+                <optgroup label="test" data-subtext="optgroup subtext" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+                  <option __cid="cMjQ7Jb" class="cMjQ7Jb">ASD</option>  
+                  <option selected="true" __cid="cMjQ7Jb" class="cMjQ7Jb">Bla</option>  
+                  <option __cid="cMjQ7Jb" class="cMjQ7Jb">Ble</option> 
+                </optgroup> 
+              </select> 
+            </div> 
+          </div> 
+        </form>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <form class="form-horizontal cMjQ7Jb" role="form" __cid="cMjQ7Jb"> 
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label for="basic" class="col-lg-2 control-label cMjQ7Jb" __cid="cMjQ7Jb">"Basic" (liveSearch enabled)</label>  
+            <div class="col-lg-10 cMjQ7Jb" __cid="cMjQ7Jb"> 
+              <select id="basic" class="selectpicker show-tick form-control cMjQ7Jb" data-live-search="true" __cid="cMjQ7Jb"> 
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">cow</option>  
+                <option data-subtext="option subtext" __cid="cMjQ7Jb" class="cMjQ7Jb">bull</option>  
+                <option class="get-class cMjQ7Jb" disabled="true" __cid="cMjQ7Jb">ox</option>  
+                <optgroup label="test" data-subtext="optgroup subtext" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+                  <option __cid="cMjQ7Jb" class="cMjQ7Jb">ASD</option>  
+                  <option selected="true" __cid="cMjQ7Jb" class="cMjQ7Jb">Bla</option>  
+                  <option __cid="cMjQ7Jb" class="cMjQ7Jb">Ble</option> 
+                </optgroup> 
+              </select> 
+            </div> 
+          </div> 
+        </form>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <form class="form-horizontal cMjQ7Jb" role="form" __cid="cMjQ7Jb"> 
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label for="basic2" class="col-lg-2 control-label cMjQ7Jb" __cid="cMjQ7Jb">"Basic" (multiple, maxOptions=1)</label>  
+            <div class="col-lg-10 cMjQ7Jb" __cid="cMjQ7Jb"> 
+              <select id="basic2" class="show-tick form-control cMjQ7Jb" multiple="true" __cid="cMjQ7Jb"> 
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">cow</option>  
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">bull</option>  
+                <option class="get-class cMjQ7Jb" disabled="true" __cid="cMjQ7Jb">ox</option>  
+                <optgroup label="test" data-subtext="another test" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+                  <option __cid="cMjQ7Jb" class="cMjQ7Jb">ASD</option>  
+                  <option selected="true" __cid="cMjQ7Jb" class="cMjQ7Jb">Bla</option>  
+                  <option __cid="cMjQ7Jb" class="cMjQ7Jb">Ble</option> 
+                </optgroup> 
+              </select> 
+            </div> 
+          </div> 
+        </form>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <form class="form-horizontal cMjQ7Jb" role="form" __cid="cMjQ7Jb"> 
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label for="maxOption2" class="col-lg-2 control-label cMjQ7Jb" __cid="cMjQ7Jb">multiple, show-menu-arrow, maxOptions=2</label>  
+            <div class="col-lg-10 cMjQ7Jb" __cid="cMjQ7Jb"> 
+              <select id="maxOption2" class="selectpicker show-menu-arrow form-control cMjQ7Jb" multiple="true" data-max-options="2" __cid="cMjQ7Jb"> 
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">chicken</option>  
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">turkey</option>  
+                <option disabled="true" __cid="cMjQ7Jb" class="cMjQ7Jb">duck</option>  
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">goose</option> 
+              </select> 
+            </div> 
+          </div> 
+        </form>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <form class="form-inline cMjQ7Jb" __cid="cMjQ7Jb"> 
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label class="col-md-1 control-label cMjQ7Jb" for="lunch" __cid="cMjQ7Jb">Lunch:</label> 
+          </div>  
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <select id="lunch" class="selectpicker cMjQ7Jb" data-live-search="true" title="Please select a lunch ..." __cid="cMjQ7Jb"> 
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Hot Dog, Fries and a Soda</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Burger, Shake and a Smile</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Sugar, Spice and all things nice</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Baby Back Ribs</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">A really really long option made to illustrate an issue with the live search in an inline form</option> 
+            </select> 
+          </div> 
+        </form>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <form class="form-horizontal cMjQ7Jb" role="form" __cid="cMjQ7Jb"> 
+          <div class="form-group form-group-lg cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label for="error" class="col-lg-2 control-label cMjQ7Jb" __cid="cMjQ7Jb">error</label>  
+            <div class="col-lg-10 error cMjQ7Jb" __cid="cMjQ7Jb"> 
+              <select id="error" class="selectpicker show-tick form-control cMjQ7Jb" __cid="cMjQ7Jb"> 
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">pen</option>  
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">pencil</option>  
+                <option selected="true" __cid="cMjQ7Jb" class="cMjQ7Jb">brush</option> 
+              </select> 
+            </div> 
+          </div> 
+        </form>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <form class="form-horizontal cMjQ7Jb" role="form" __cid="cMjQ7Jb"> 
+          <div class="form-group has-error form-group-lg cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label class="control-label col-lg-2 cMjQ7Jb" for="country" __cid="cMjQ7Jb">error type 2</label>  
+            <div class="col-lg-10 cMjQ7Jb" __cid="cMjQ7Jb"> 
+              <select id="country" name="country" class="form-control selectpicker cMjQ7Jb" __cid="cMjQ7Jb"> 
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">Argentina</option>  
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">United State</option>  
+                <option __cid="cMjQ7Jb" class="cMjQ7Jb">Mexico</option> 
+              </select>  
+              <p class="help-block cMjQ7Jb" __cid="cMjQ7Jb">No service available in the selected country</p> 
+            </div> 
+          </div> 
+        </form>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <nav class="navbar navbar-default cMjQ7Jb" role="navigation" __cid="cMjQ7Jb"> 
+          <div class="container-fluid cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <div class="navbar-header cMjQ7Jb" __cid="cMjQ7Jb"> 
+              <a class="navbar-brand cMjQ7Jb" href="#" __cid="cMjQ7Jb">Navbar</a> 
+            </div>  
+            <form class="navbar-form navbar-left cMjQ7Jb" role="search" __cid="cMjQ7Jb"> 
+              <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+                <select class="selectpicker cMjQ7Jb" multiple="true" data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true" __cid="cMjQ7Jb"> 
+                  <optgroup label="filter1" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option1</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option2</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option3</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option4</option> 
+                  </optgroup>  
+                  <optgroup label="filter2" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option1</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option2</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option3</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option4</option> 
+                  </optgroup>  
+                  <optgroup label="filter3" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option1</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option2</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option3</option>  
+                    <option __cid="cMjQ7Jb" class="cMjQ7Jb">option4</option> 
+                  </optgroup> 
+                </select> 
+              </div>  
+              <div class="input-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+                <input type="text" class="form-control cMjQ7Jb" placeholder="Search" name="q" __cid="cMjQ7Jb"/>  
+                <div class="input-group-btn cMjQ7Jb" __cid="cMjQ7Jb"> 
+                  <button class="btn btn-default cMjQ7Jb" type="submit" __cid="cMjQ7Jb"> 
+                    <i class="glyphicon glyphicon-search cMjQ7Jb" __cid="cMjQ7Jb"/> 
+                  </button> 
+                </div> 
+              </div>  
+              <button type="submit" class="btn btn-default cMjQ7Jb" __cid="cMjQ7Jb">Search</button> 
+            </form> 
+          </div> 
+        </nav>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <select id="first-disabled" class="selectpicker cMjQ7Jb" data-hide-disabled="true" data-live-search="true" __cid="cMjQ7Jb"> 
+          <optgroup disabled="disabled" label="disabled" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Hidden</option> 
+          </optgroup>  
+          <optgroup label="Fruit" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Apple</option>  
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Orange</option> 
+          </optgroup>  
+          <optgroup label="Vegetable" __cid="cMjQ7Jb" class="cMjQ7Jb"> 
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Corn</option>  
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Carrot</option> 
+          </optgroup> 
+        </select>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <select id="first-disabled2" class="selectpicker cMjQ7Jb" multiple="true" data-hide-disabled="true" data-size="5" __cid="cMjQ7Jb"> 
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Apple</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Banana</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Orange</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Pineapple</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Apple2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Banana2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Orange2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Pineapple2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Apple2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Banana2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Orange2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Pineapple2</option> 
+        </select>  
+        <button id="special" class="btn btn-default cMjQ7Jb" __cid="cMjQ7Jb">Hide selected by disabling</button>  
+        <button id="special2" class="btn btn-default cMjQ7Jb" __cid="cMjQ7Jb">Reset</button>  
+        <p __cid="cMjQ7Jb" class="cMjQ7Jb">Just select 1st element, click button and check list again</p>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <div class="input-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+          <span class="input-group-addon cMjQ7Jb" __cid="cMjQ7Jb">@</span>  
+          <select class="form-control selectpicker cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">One</option>  
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Two</option>  
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Three</option> 
+          </select> 
+        </div>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <div class="input-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+          <span class="input-group-addon cMjQ7Jb" __cid="cMjQ7Jb">@</span>  
+          <select class="form-control selectpicker cMjQ7Jb" data-mobile="true" __cid="cMjQ7Jb"> 
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">One</option>  
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Two</option>  
+            <option __cid="cMjQ7Jb" class="cMjQ7Jb">Three</option> 
+          </select> 
+        </div>  
+        <p __cid="cMjQ7Jb" class="cMjQ7Jb">With 
+          <code __cid="cMjQ7Jb" class="cMjQ7Jb">data-mobile="true"</code> option.
+        </p>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <select id="done" class="selectpicker cMjQ7Jb" multiple="true" data-done-button="true" __cid="cMjQ7Jb"> 
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Apple</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Banana</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Orange</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Pineapple</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Apple2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Banana2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Orange2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Pineapple2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Apple2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Banana2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Orange2</option>  
+          <option __cid="cMjQ7Jb" class="cMjQ7Jb">Pineapple2</option> 
+        </select>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <select id="tokens" class="selectpicker cMjQ7Jb" multiple="true" data-live-search="true" __cid="cMjQ7Jb"> 
+          <option data-tokens="first" __cid="cMjQ7Jb" class="cMjQ7Jb">I actually am called "first"</option>  
+          <option data-tokens="second" __cid="cMjQ7Jb" class="cMjQ7Jb">And me "second"</option>  
+          <option data-tokens="last" __cid="cMjQ7Jb" class="cMjQ7Jb">I am "last"</option> 
+        </select>  
+        <hr __cid="cMjQ7Jb" class="cMjQ7Jb"/>  
+        <form class="form-inline cMjQ7Jb" __cid="cMjQ7Jb"> 
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <label class="col-md-1 control-label cMjQ7Jb" for="lunchBegins" __cid="cMjQ7Jb">Lunch (Begins search):</label> 
+          </div>  
+          <div class="form-group cMjQ7Jb" __cid="cMjQ7Jb"> 
+            <select id="lunchBegins" class="selectpicker cMjQ7Jb" data-live-search="true" data-live-search-style="begins" title="Please select a lunch ..." __cid="cMjQ7Jb"> 
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Hot Dog, Fries and a Soda</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Burger, Shake and a Smile</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Sugar, Spice and all things nice</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">Baby Back Ribs</option>  
+              <option __cid="cMjQ7Jb" class="cMjQ7Jb">A really really long option made to illustrate an issue with the live search in an inline form</option> 
+            </select> 
+          </div> 
+        </form> 
+      </div> 
+    </div>  
+    <style __cid="cMjQ7Jb" class="cMjQ7Jb">.x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcyIzq2i-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

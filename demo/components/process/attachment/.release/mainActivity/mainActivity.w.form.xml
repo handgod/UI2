@@ -1,0 +1,1807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cANZneu" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cANZneu" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/attachment/attachment,$model/UI2/system/components/justep/cellLayout/cellLayout,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/select/radioGroup,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/textarea/textarea,$model/UI2/system/components/justep/attachment/attachmentImage,$model/UI2/system/components/bootstrap/tabs/tab,$model/UI2/system/components/justep/blob/blobImage,$model/UI2/system/components/justep/attachment/attachmentPC,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/button/radio,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/bootstrap/tabs/tabs,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cANZneu" class="cANZneu"> 
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Editor_Single" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default2" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default3" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default4" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <filter name="filter1" xid="filter2" __cid="cANZneu" class="cANZneu">DEMO_Attachment = 'Attachment_Editor_Single'</filter>
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Editor_Multi" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default5" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default6" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default7" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <filter name="filter2" xid="filter3" __cid="cANZneu" class="cANZneu">DEMO_Attachment = 'Attachment_Editor_Multi'</filter>
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Define" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default9" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default10" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default11" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <filter name="filter4" xid="filter5" __cid="cANZneu" class="cANZneu">DEMO_Attachment = 'Attachment_Define'</filter>
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Template" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default13" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default14" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default15" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <filter name="filter5" xid="filter6" __cid="cANZneu" class="cANZneu">DEMO_Attachment = 'Attachment_Template'</filter>
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Extend_Style" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default17" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default18" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default19" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <filter name="filter6" xid="filter7" __cid="cANZneu" class="cANZneu">DEMO_Attachment = 'Attachment_Extend_Style'</filter>
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Extend_Permission" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default20" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default21" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default22" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Extend_LimitUpload" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default26" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default27" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default28" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dAttachment_Image" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default38" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default39" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default40" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <filter name="filter3" xid="filter4" __cid="cANZneu" class="cANZneu">DEMO_Attachment = 'Attachment_Image'</filter>
+    </div>
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Extend_SetTemplate" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default30" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default31" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default32" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dBlobImage" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu">
+      <reader xid="default41" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default42" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default43" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <filter name="filter0" xid="filter1" __cid="cANZneu" class="cANZneu">DEMO_Attachment = 'BlobImage'</filter>
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="false" xid="dAttachment_Extend_SetTemplate_Temp" concept="DEMO_Attachment" __cid="cANZneu" class="cANZneu"> 
+      <reader xid="default33" action="/demo/common/logic/action/queryDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <writer xid="default34" action="/demo/common/logic/action/saveDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>  
+      <creator xid="default35" action="/demo/common/logic/action/createDEMO_AttachmentAction" __cid="cANZneu" class="cANZneu"/>
+    </div>
+  </div>  
+  <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabPanelMain" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cANZneu" class="cANZneu"> 
+    <ul class="nav nav-tabs cANZneu" xid="ul1" __cid="cANZneu"> 
+      <li class="active cANZneu" xid="li9" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu"> 
+        <a content="tabContent1" xid="tabInit" bind-visible="!$model.tabItemVisible()" __cid="cANZneu" class="cANZneu">初始化</a> 
+      </li>  
+      <li role="presentation" xid="li10" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+        <a content="tabContent2" xid="tabMain" bind-visible="$model.tabItemVisible()" __cid="cANZneu" class="cANZneu">附件组件</a> 
+      </li>  
+      <li xid="li11" bind-click="li11Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+        <a content="tabContent3" xid="tabDefine" bind-visible="$model.tabItemVisible()" __cid="cANZneu" class="cANZneu">文档关联与模板填充</a> 
+      </li>  
+      <li xid="li12" bind-click="li12Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+        <a content="tabContent4" xid="tabExtend" bind-visible="$model.tabItemVisible()" __cid="cANZneu" class="cANZneu">编程扩展</a> 
+      </li> 
+    </ul>  
+    <div class="tab-content cANZneu" xid="div27" __cid="cANZneu"> 
+      <div class="tab-pane active cANZneu" xid="tabContent1" __cid="cANZneu"> 
+        <div xid="div3" style="height:38px;" __cid="cANZneu" class="cANZneu"/>  
+        <div xid="div1" style="height:73px;" __cid="cANZneu" class="cANZneu"> 
+          <div component="$model/UI2/system/components/bootstrap/row/row" class="row cANZneu" xid="row1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cANZneu"> 
+            <div class="col col-xs-4 cANZneu" xid="col1" __cid="cANZneu"/>  
+            <div class="col col-xs-4 cANZneu" xid="col2" __cid="cANZneu"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn x-blue cANZneu" xid="btnInit" style="float:left;margin-top:15px;margin-right:20px;width:250px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:btnInitClick" data-config="{&quot;label&quot;:&quot;初始化附件演示数据&quot;}" __cid="cANZneu"> 
+                <i xid="i3" __cid="cANZneu" class="cANZneu"/>  
+                <span xid="span3" __cid="cANZneu" class="cANZneu">初始化附件演示数据</span> 
+              </a> 
+            </div>  
+            <div class="col col-xs-4 cANZneu" xid="col3" __cid="cANZneu"/> 
+          </div> 
+        </div>  
+        <div xid="div2" style="height:50px;" __cid="cANZneu" class="cANZneu"> 
+          <div component="$model/UI2/system/components/bootstrap/row/row" class="row cANZneu" xid="row2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cANZneu"> 
+            <div class="col col-xs-4 cANZneu" xid="col4" __cid="cANZneu"/>  
+            <div class="col col-xs-4 cANZneu" xid="col5" __cid="cANZneu"/>  
+            <div class="col col-xs-4 cANZneu" xid="col6" __cid="cANZneu"/> 
+          </div> 
+        </div> 
+      </div>  
+      <div class="tab-pane cANZneu" xid="tabContent2" __cid="cANZneu"> 
+        <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabs3" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cANZneu" class="cANZneu"> 
+          <ul class="nav nav-tabs cANZneu" xid="ul2" __cid="cANZneu"> 
+            <li class="active cANZneu" xid="li13" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu"> 
+              <a content="tabContent5" xid="tabDescription" __cid="cANZneu" class="cANZneu">概述</a> 
+            </li>  
+            <li role="presentation" xid="li14" bind-click="li14Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent6" xid="tabAttachmentEditor" __cid="cANZneu" class="cANZneu">attachment（附件编辑器）</a> 
+            </li>  
+            <li xid="li1" bind-click="li1Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent7" xid="tabItem1" __cid="cANZneu" class="cANZneu">attachmentPC（附件编辑器）</a> 
+            </li>  
+            <li xid="li2" bind-click="li2Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent8" xid="attachmentImage" __cid="cANZneu" class="cANZneu">attachmentImage(附件图片)</a> 
+            </li> 
+          </ul>  
+          <div class="tab-content cANZneu" xid="div28" __cid="cANZneu"> 
+            <div class="tab-pane active cANZneu" xid="tabContent5" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout1" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1230px;HEIGHT:535px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 10px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 150px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 750px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 15px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 15px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 15px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 15px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 15px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 15px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 15px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 15px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">附件组件</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cANZneu" class="cANZneu">附件组件用于为业务数据增加关联非结构化文档附件的能力。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cANZneu" class="cANZneu">附件组件需要关联到业务数据提供的一个Text字段上，这个字段用于存储以JSON格式记录的关联文档信息。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cANZneu" class="cANZneu">附件组件支持各种格式文档的上传、下载、删除，同时支持Office文档的在线编辑、留痕和版本管理。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cANZneu" class="cANZneu">附件组件按交互模式分为多个组件：attachment、attachmentPC、attachmentImage。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; text-align: center; font-weight: bold; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">属性</td>
+                    <td style="height: 19px; text-align: center; font-weight: bold; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">说明</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">bind-ref</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">指向业务数据中用于存储关联文档JSON数据的Text字段</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid; height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu">limit</td>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu">附件个数（-1表示不限，1表示单行模式）</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid; height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid; height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu">access</td>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu">附件编辑权限（列表、读取、下载、上传、删除）</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid; height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="border: 1px solid rgb(128, 128, 128); height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">sub-path</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">指定附件在“文档中心”的存储目录（支持业务表达式定义，例如：concat('个人文档/',currentPersonName())）</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">keyID</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">附件组件的文档关联标识，用于在文档关联设置中区别同一个页面中的不同附件组件</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">bind</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">附件组件内各种操作按钮的显示控制</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">　　bind-visible</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">绑定是否显示事件</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">　　bind-text</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">　　bind-enable</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">　　bind-disable</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 10px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">文档存储</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="3" style="height: 19px;" __cid="cANZneu" class="cANZneu">所有的附件文档统一存储在文档服务器（runtime/DocServer）中，文档服务器除了提供基于文件的文档存取能力，还提供office、pdf、text等文档的全文检索能力。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 10px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="2" style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">文档管理</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cANZneu" class="cANZneu">X5为所有的附件文档提供统一的文档管理功能——文档中心，在文档中心里可以对归档后的文件进行分类授权、查询、编辑等全方位管理。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent6" __cid="cANZneu"> 
+              <h3 xid="h32" style="font-size:12px;font-style:normal;" __cid="cANZneu" class="cANZneu">attachment（附件编辑器）组件，用于手机端列表形式的附件关联和编辑。</h3>  
+              <div xid="div44" style="background-color:#8080FF;padding-top:10px;padding-left:10px;width:auto;height:auto;padding-bottom:10px;margin-right:5px;margin-left:5px;" __cid="cANZneu" class="cANZneu"> 
+                <label xid="label6" style="color:#FFFFFF;font-weight:bold;" __cid="cANZneu" class="cANZneu">单行模式（limit=1）</label>  
+                <a component="$model/UI2/system/components/justep/button/button" class="btn x-yellow cANZneu" xid="button3" style="float:right;margin-top:-5px;margin-right:10px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'dAttachment_Editor_Single.save'}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="cANZneu"> 
+                  <i xid="i5" __cid="cANZneu" class="cANZneu"/>  
+                  <span xid="span5" __cid="cANZneu" class="cANZneu">保存</span> 
+                </a> 
+              </div>  
+              <div component="$model/UI2/system/components/justep/attachment/attachment" access="duud" xid="attachment1" limit="1" bind-ref="dAttachment_Editor_Single.ref('fAttachment')" __cid="cANZneu" class="cANZneu"> 
+                <div class="x-attachment cANZneu" xid="div42" __cid="cANZneu"> 
+                  <div class="x-attachment-content x-card-border cANZneu" xid="div40" __cid="cANZneu"> 
+                    <div class="x-doc-process cANZneu" xid="div38" __cid="cANZneu"> 
+                      <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar3" __cid="cANZneu"/> 
+                    </div>  
+                    <div data-bind="foreach:$attachmentItems" xid="div36" __cid="cANZneu" class="cANZneu"> 
+                      <div class="x-attachment-cell cANZneu" xid="div35" __cid="cANZneu"> 
+                        <div class="x-attachment-item x-item-other cANZneu" data-bind="click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()}" xid="div34" __cid="cANZneu"> 
+                          <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a3" __cid="cANZneu"/> 
+                        </div> 
+                      </div> 
+                    </div>  
+                    <div class="x-attachment-cell cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div32" __cid="cANZneu"> 
+                      <div class="x-attachment-item x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div30" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div48" __cid="cANZneu"> 
+                      <div class="x-attachment-item x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div47" __cid="cANZneu"/> 
+                    </div>  
+                    <div style="clear:both;" xid="div46" __cid="cANZneu" class="cANZneu"/> 
+                  </div> 
+                </div> 
+              </div>  
+              <div xid="div45" style="background-color:#8080FF;padding-top:10px;padding-left:10px;width:auto;height:auto;padding-bottom:10px;margin-right:5px;margin-left:5px;" __cid="cANZneu" class="cANZneu"> 
+                <label xid="label7" style="color:#FFFFFF;font-weight:bold;" __cid="cANZneu" class="cANZneu">多行模式（limit=-1 或 limit&gt;1）</label>  
+                <a component="$model/UI2/system/components/justep/button/button" class="btn x-yellow cANZneu" xid="button4" style="float:right;margin-top:-5px;margin-right:10px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'dAttachment_Editor_Multi.save'}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="cANZneu"> 
+                  <i xid="i4" __cid="cANZneu" class="cANZneu"/>  
+                  <span xid="span4" __cid="cANZneu" class="cANZneu">保存</span> 
+                </a> 
+              </div>  
+              <div component="$model/UI2/system/components/justep/attachment/attachment" access="duud" xid="attachment3" bind-ref="dAttachment_Editor_Multi.ref('fAttachment')" __cid="cANZneu" class="cANZneu"> 
+                <div class="x-attachment cANZneu" xid="div52" __cid="cANZneu"> 
+                  <div class="x-attachment-content x-card-border cANZneu" xid="div51" __cid="cANZneu"> 
+                    <div class="x-doc-process cANZneu" xid="div50" __cid="cANZneu"> 
+                      <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar4" __cid="cANZneu"/> 
+                    </div>  
+                    <div data-bind="foreach:$attachmentItems" xid="div49" __cid="cANZneu" class="cANZneu"> 
+                      <div class="x-attachment-cell cANZneu" xid="div54" __cid="cANZneu"> 
+                        <div class="x-attachment-item x-item-other cANZneu" data-bind="click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()}" xid="div53" __cid="cANZneu"> 
+                          <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a4" __cid="cANZneu"/> 
+                        </div> 
+                      </div> 
+                    </div>  
+                    <div class="x-attachment-cell cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div29" __cid="cANZneu"> 
+                      <div class="x-attachment-item x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div37" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div39" __cid="cANZneu"> 
+                      <div class="x-attachment-item x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div41" __cid="cANZneu"/> 
+                    </div>  
+                    <div style="clear:both;" xid="div43" __cid="cANZneu" class="cANZneu"/> 
+                  </div> 
+                </div> 
+              </div>  
+              <div xid="div31" style="height:20px;" __cid="cANZneu" class="cANZneu"> 
+                <label xid="label5" style="font-weight:bold;" __cid="cANZneu" class="cANZneu">JSON数据</label> 
+              </div>  
+              <div xid="div33" style="height:200px;" __cid="cANZneu" class="cANZneu"> 
+                <textarea component="$model/UI2/system/components/justep/textarea/textarea" class="form-control cANZneu" xid="textarea2" style="height:100%;width:100%;" bind-disable="true" data-bind="component:{ref:dAttachment_Editor_Multi.ref('fAttachment'),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cANZneu"/> 
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent7" __cid="cANZneu"> 
+              <h3 xid="h31" style="font-size:12px;font-style:normal;" __cid="cANZneu" class="cANZneu">attachmentPC（附件编辑器）组件，用于PC端列表形式的附件关联和编辑。可以上传模板</h3>  
+              <div xid="div23" style="background-color:#8080FF;padding-top:10px;padding-left:10px;width:auto;height:auto;padding-bottom:10px;margin-right:5px;margin-left:5px;" __cid="cANZneu" class="cANZneu"> 
+                <label xid="label1" style="color:#FFFFFF;font-weight:bold;" __cid="cANZneu" class="cANZneu">单行模式（limit=1）</label>  
+                <a component="$model/UI2/system/components/justep/button/button" class="btn x-yellow cANZneu" xid="button1" style="float:right;margin-top:-5px;margin-right:10px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'dAttachment_Editor_Single.save'}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="cANZneu"> 
+                  <i xid="i1" __cid="cANZneu" class="cANZneu"/>  
+                  <span xid="span6" __cid="cANZneu" class="cANZneu">保存</span> 
+                </a> 
+              </div>  
+              <div component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentPC1" bind-ref="dAttachment_Editor_Single.ref('fAttachment')" limit="1" __cid="cANZneu" class="cANZneu"> 
+                <div class="x-attachment-pc cANZneu" xid="div4" __cid="cANZneu"> 
+                  <div class="x-attachment-content x-card-border cANZneu" xid="div5" __cid="cANZneu"> 
+                    <div class="x-doc-process cANZneu" xid="div6" __cid="cANZneu"> 
+                      <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar2" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div7" __cid="cANZneu"> 
+                      <div class="x-attachment-cell x-attachment-item cANZneu" xid="div8" __cid="cANZneu"> 
+                        <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div9" __cid="cANZneu"> 
+                          <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a1" __cid="cANZneu"/> 
+                        </div> 
+                      </div> 
+                    </div>  
+                    <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div10" __cid="cANZneu"> 
+                      <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div11" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div12" __cid="cANZneu"> 
+                      <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div13" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div14" __cid="cANZneu"> 
+                      <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div15" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div16" __cid="cANZneu"> 
+                      <div class="x-item-name cANZneu" xid="div17" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a2" __cid="cANZneu"/>  
+                        <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span2" __cid="cANZneu"/> 
+                      </div>  
+                      <div class="x-item-edit cANZneu" xid="div18" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a5" __cid="cANZneu">编辑</a> 
+                      </div>  
+                      <div class="x-item-download cANZneu" xid="div19" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a6" __cid="cANZneu">历史</a> 
+                      </div>  
+                      <div class="x-item-download cANZneu" xid="div20" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a7" __cid="cANZneu">下载</a> 
+                      </div>  
+                      <div class="x-item-delete cANZneu" xid="div21" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a8" __cid="cANZneu">删除</a> 
+                      </div> 
+                    </div>  
+                    <div style="clear:both;" xid="div22" __cid="cANZneu" class="cANZneu"/> 
+                  </div> 
+                </div> 
+              </div>  
+              <div xid="div24" style="background-color:#8080FF;padding-top:10px;padding-left:10px;width:auto;height:auto;padding-bottom:10px;margin-right:5px;margin-left:5px;" __cid="cANZneu" class="cANZneu"> 
+                <label xid="label2" style="color:#FFFFFF;font-weight:bold;" __cid="cANZneu" class="cANZneu">多行模式（limit=-1 或 limit&gt;1）</label>  
+                <a component="$model/UI2/system/components/justep/button/button" class="btn x-yellow cANZneu" xid="button2" style="float:right;margin-top:-5px;margin-right:10px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'dAttachment_Editor_Multi.save'}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="cANZneu"> 
+                  <i xid="i2" __cid="cANZneu" class="cANZneu"/>  
+                  <span xid="span7" __cid="cANZneu" class="cANZneu">保存</span> 
+                </a> 
+              </div>  
+              <div component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentPC2" bind-ref="dAttachment_Editor_Multi.ref('fAttachment')" __cid="cANZneu" class="cANZneu"> 
+                <div class="x-attachment-pc cANZneu" xid="div25" __cid="cANZneu"> 
+                  <div class="x-attachment-content x-card-border cANZneu" xid="div26" __cid="cANZneu"> 
+                    <div class="x-doc-process cANZneu" xid="div55" __cid="cANZneu"> 
+                      <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar5" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div56" __cid="cANZneu"> 
+                      <div class="x-attachment-cell x-attachment-item cANZneu" xid="div57" __cid="cANZneu"> 
+                        <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div58" __cid="cANZneu"> 
+                          <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a9" __cid="cANZneu"/> 
+                        </div> 
+                      </div> 
+                    </div>  
+                    <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div59" __cid="cANZneu"> 
+                      <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div60" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div61" __cid="cANZneu"> 
+                      <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div62" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div63" __cid="cANZneu"> 
+                      <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div64" __cid="cANZneu"/> 
+                    </div>  
+                    <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div65" __cid="cANZneu"> 
+                      <div class="x-item-name cANZneu" xid="div66" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a10" __cid="cANZneu"/>  
+                        <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span8" __cid="cANZneu"/> 
+                      </div>  
+                      <div class="x-item-edit cANZneu" xid="div67" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a11" __cid="cANZneu">编辑</a> 
+                      </div>  
+                      <div class="x-item-download cANZneu" xid="div68" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a12" __cid="cANZneu">历史</a> 
+                      </div>  
+                      <div class="x-item-download cANZneu" xid="div69" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a13" __cid="cANZneu">下载</a> 
+                      </div>  
+                      <div class="x-item-delete cANZneu" xid="div70" __cid="cANZneu"> 
+                        <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a14" __cid="cANZneu">删除</a> 
+                      </div> 
+                    </div>  
+                    <div style="clear:both;" xid="div71" __cid="cANZneu" class="cANZneu"/> 
+                  </div> 
+                </div> 
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent8" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout9" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:955px;HEIGHT:438px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 15px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 100px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 300px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 300px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="3" style="height: 19px;" __cid="cANZneu" class="cANZneu">attachmentImage2（附件图片）组件和blobImage（二进制图片）组件都是用于图片存取和显示的组件。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="3" style="height: 19px;" __cid="cANZneu" class="cANZneu">这两个组件在展现形式和操作方式上是一致的，但是在物理存储方式和字段数据类型上其实是不同的。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; text-align: center; border: 1px solid rgb(128, 128, 128); font-weight: bold;" __cid="cANZneu" class="cANZneu">attachmentImage2（附件图片）</td>
+                    <td style="height: 19px; text-align: center; border: 1px solid rgb(128, 128, 128); font-weight: bold;" __cid="cANZneu" class="cANZneu">blobImage（二进制图片）</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128); font-weight: bold;" __cid="cANZneu" class="cANZneu">物理存储方式</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">以文件形式存储在文档服务器中</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">以二进制数据存储在数据库字段中</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128); font-weight: bold;" __cid="cANZneu" class="cANZneu">字段数据类型</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">Text</td>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">Blob</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 300px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 300px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 300px; font-weight: bold; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">展现形式</td>
+                    <td style="height: 300px; border: 1px solid rgb(128, 128, 128);" componentId="attachmentImage2" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentImage" access="duud" xid="attachmentImage2" class=" x-cell-control cANZneu" bind-ref="dAttachment_Image.ref('fAttachment')" __cid="cANZneu"> 
+                        <div class="x-attachment x-attachment-image cANZneu" xid="div137" __cid="cANZneu"> 
+                          <div data-bind="foreach:$attachmentItems,event:{mouseover:function(){$model.$state.set('remove')},mouseout:function(){$model.$state.set('browse')}}" xid="div138" __cid="cANZneu" class="cANZneu"> 
+                            <img class="x-item-attachment-img cANZneu" data-bind="attr:{src:$model.getPictureUrl($object)},click:$model.showInfullScreen.bind($model,$object)" xid="image3" __cid="cANZneu"/>  
+                            <a data-bind="visible:$model.$state.get() == 'remove',click:$model.previewOrRemoveItem.bind($model),enable:$model.$access.get() % 4 &gt;= 2" class="x-remove-barget cANZneu" xid="a34" __cid="cANZneu"/>
+                          </div>  
+                          <div class="x-doc-process cANZneu" xid="div139" __cid="cANZneu"> 
+                            <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar9" __cid="cANZneu"/>
+                          </div>  
+                          <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; (1 &gt; $attachmentItems.get().length)" xid="div140" __cid="cANZneu"> 
+                            <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div141" __cid="cANZneu"/>
+                          </div> 
+                        </div> 
+                      </div>
+                    </td>
+                    <td style="height: 300px; border: 1px solid rgb(128, 128, 128);" componentId="blobImage3" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" class="x-blob x-cell-control cANZneu" component="$model/UI2/system/components/justep/blob/blobImage" style="height:80px;" xid="blobImage3" bind-ref="dBlobImage.ref('fBlobImage')" blobDataModel="dBlobImage.ref('DEMO_Attachment')" blobConcept="DEMO_Attachment" blobRelation="fBlobImage" __cid="cANZneu"> 
+                        <div class="x-blob-bar cANZneu" xid="div143" __cid="cANZneu"> 
+                          <i class="x-blob-edit icon-compose cANZneu" xid="i10" __cid="cANZneu"/>  
+                          <i class="x-blob-del icon-close-round cANZneu" xid="i11" __cid="cANZneu"/>
+                        </div>  
+                        <img class="x-blob-img x-autofill cANZneu" xid="image5" __cid="cANZneu"/>
+                      </div>
+                    </td>
+                    <td style="height: 300px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 300px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 300px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr> 
+                </table>
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div>  
+      <div class="tab-pane cANZneu" xid="tabContent3" __cid="cANZneu"> 
+        <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabs1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cANZneu" class="cANZneu"> 
+          <ul class="nav nav-tabs cANZneu" xid="ul3" __cid="cANZneu"> 
+            <li class="active cANZneu" xid="li3" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu"> 
+              <a content="tabContent9" xid="tabItem2" __cid="cANZneu" class="cANZneu">文档关联</a> 
+            </li>  
+            <li role="presentation" xid="li4" bind-click="li4Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent10" xid="tabItem3" __cid="cANZneu" class="cANZneu">模板填充</a> 
+            </li> 
+          </ul>  
+          <div class="tab-content cANZneu" xid="div72" __cid="cANZneu"> 
+            <div class="tab-pane active cANZneu" xid="tabContent9" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout2" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:424px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 15px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 800px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">“文档关联定义”是运行时对表单中关联附件组件设置的一组属性配置，主要包含：存储目录（根文件夹、子文件夹）、访问权限、文件大小和创建模板等。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">“文档关联定义”在系统提供的“文档管理/文档关联”功能中进行设置，“文档关联定义”的优先级高于设计时组件上的对应属性值。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 10px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">“文档关联定义”一般用于以下场景：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　A、对附件文档的归档目录进行设置</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　B、限制附件的上传文件大小</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　C、为附件设置“模板”</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　D、设置流程中不同环节的附件操作权限</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 10px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">“文档关联定义”的三级作用域：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　A、作用于某个功能Process（的所有活动Activity）</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　B、作用于某个活动Activity</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　C、作用于某个活动的某个附件组件，当一个活动中包含多个附件组件时，用key来识别</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">“文档关联”测试：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　1、打开“文档管理/文档关联”功能</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　2、点击“新增”，选择“演示案例/组件案例/附件组件”，点击“确定”</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　3、选中“/demo/components/process/attachment/attachmentProcess”，点击上方的“key设置”</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　4、点击“新建key”，设置“key”为“docDefineDemo”，“根文件夹”为“文档中心”，“权限”为“读取”</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　5、重新打开当前功能，会看到下面附件组件的全部操作按钮都已被禁用</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid; color: rgb(255, 102, 0);" __cid="cANZneu" class="cANZneu">（下面这个附件组件的key=docDefineDemo）   测试未实现</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" componentId="attachmentPC3" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentPC3" class=" x-cell-control cANZneu" bind-ref="dAttachment_Define.ref('fAttachment')" subPath="'演示案例/附件组件/文档关联'" keyID="docDefineDemo" limit="-1" __cid="cANZneu"> 
+                        <div class="x-attachment-pc cANZneu" xid="div73" __cid="cANZneu"> 
+                          <div class="x-attachment-content x-card-border cANZneu" xid="div74" __cid="cANZneu"> 
+                            <div class="x-doc-process cANZneu" xid="div75" __cid="cANZneu"> 
+                              <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar6" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div76" __cid="cANZneu"> 
+                              <div class="x-attachment-cell x-attachment-item cANZneu" xid="div77" __cid="cANZneu"> 
+                                <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div78" __cid="cANZneu"> 
+                                  <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a15" __cid="cANZneu"/> 
+                                </div> 
+                              </div> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div79" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div80" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div81" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div82" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div83" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div84" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div85" __cid="cANZneu"> 
+                              <div class="x-item-name cANZneu" xid="div86" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a16" __cid="cANZneu"/>  
+                                <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span9" __cid="cANZneu"/> 
+                              </div>  
+                              <div class="x-item-edit cANZneu" xid="div87" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a17" __cid="cANZneu">编辑</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div88" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a18" __cid="cANZneu">历史</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div89" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a19" __cid="cANZneu">下载</a> 
+                              </div>  
+                              <div class="x-item-delete cANZneu" xid="div90" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a20" __cid="cANZneu">删除</a> 
+                              </div> 
+                            </div>  
+                            <div style="clear:both;" xid="div91" __cid="cANZneu" class="cANZneu"/> 
+                          </div> 
+                        </div> 
+                      </div>
+                    </td>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent10" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout3" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:975px;HEIGHT:839px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 15px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 100px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 300px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 100px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 300px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">附件组件支持从模板创建新文档，和基于Word书签的文档填充能力。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">设置模板：</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　文档模板在“文档关联”中进行配置，可以对同一个界面上不同的附件组件配置不同的模板（key设置）。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　如果为一个附件组件配置了多个模板，在选择“从模板新建”时，会自动弹出“选择模板”对话框。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">模板填充：</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　在Word文档中，用Word自身的书签来定义填充域，每个填充域由开始和结束两个书签来标识。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　开始位置的书签名称就是填充域的名称，而结束位置的书签名称是在域名城的后面多加一个单词“End”。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　例如：填充域是title，开始位置的书签名称就是title，结束位置的书签名称是titleEnd。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　代码中一般在onOfficeLoaded事件中进行数据填充，参照下面组件的示例代码。</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">模板测试：</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　1、打开“文档管理/文档关联”功能</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　2、点击“新增”，选择“演示案例/组件案例/附件组件”，点击“确定”</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　3、选中“/demo/components/process/attachment/attachmentProcess”，点击上方的“key设置”</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　4、点击“新建key”，设置“key”为“docTemplateDemo”，“根文件夹”为“文档中心”</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　5、点击“新增”模板，点击“选择模板”，依次增加“演示案例/组件案例/附件组件/附件模板”下的三个示例模板</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px;" __cid="cANZneu" class="cANZneu">　　5、重新打开当前功能，点击下面附件组件的“从模板新建”</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu">（下面这个附件组件的key=docTemplateDemo）</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px; border: 1px solid rgb(128, 128, 128);" componentId="attachmentEditor_Template" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentEditor_Template" class=" x-cell-control cANZneu" bind-ref="dAttachment_Template.ref('fAttachment')" keyID="docTemplateDemo" limit="-1" onOfficeLoaded="attachmentEditor_TemplateOfficeLoaded" __cid="cANZneu"> 
+                        <div class="x-attachment-pc cANZneu" xid="div92" __cid="cANZneu"> 
+                          <div class="x-attachment-content x-card-border cANZneu" xid="div93" __cid="cANZneu"> 
+                            <div class="x-doc-process cANZneu" xid="div94" __cid="cANZneu"> 
+                              <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar7" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div95" __cid="cANZneu"> 
+                              <div class="x-attachment-cell x-attachment-item cANZneu" xid="div96" __cid="cANZneu"> 
+                                <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div97" __cid="cANZneu"> 
+                                  <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a21" __cid="cANZneu"/> 
+                                </div> 
+                              </div> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div98" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div99" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div100" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div101" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div102" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div103" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div104" __cid="cANZneu"> 
+                              <div class="x-item-name cANZneu" xid="div105" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a22" __cid="cANZneu"/>  
+                                <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span10" __cid="cANZneu"/> 
+                              </div>  
+                              <div class="x-item-edit cANZneu" xid="div106" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a23" __cid="cANZneu">编辑</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div107" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a24" __cid="cANZneu">历史</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div108" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a25" __cid="cANZneu">下载</a> 
+                              </div>  
+                              <div class="x-item-delete cANZneu" xid="div109" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a26" __cid="cANZneu">删除</a> 
+                              </div> 
+                            </div>  
+                            <div style="clear:both;" xid="div110" __cid="cANZneu" class="cANZneu"/> 
+                          </div> 
+                        </div> 
+                      </div>
+                    </td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 10px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu">文档填充示例数据</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 25px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 25px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 25px; text-align: center; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">title</td>
+                    <td style="height: 25px; border: 1px solid rgb(128, 128, 128);" componentId="input1" __cid="cANZneu" class="cANZneu">
+                      <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cANZneu" xid="input1" data-bind="component:{ref:dAttachment_Template.ref('fTitle'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cANZneu"/>
+                    </td>
+                    <td style="height: 25px; text-align: center; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">number</td>
+                    <td style="height: 25px; border: 1px solid rgb(128, 128, 128);" componentId="input2" __cid="cANZneu" class="cANZneu">
+                      <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cANZneu" xid="input2" data-bind="component:{ref:dAttachment_Template.ref('fNumber'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cANZneu"/>
+                    </td>
+                    <td style="height: 25px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 25px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 25px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 25px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 25px; text-align: center; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">author</td>
+                    <td style="height: 25px; border: 1px solid rgb(128, 128, 128);" componentId="input3" __cid="cANZneu" class="cANZneu">
+                      <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cANZneu" xid="input3" data-bind="component:{ref:dAttachment_Template.ref('fAuthor'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cANZneu"/>
+                    </td>
+                    <td style="height: 25px; text-align: center; border: 1px solid rgb(128, 128, 128);" __cid="cANZneu" class="cANZneu">createDate</td>
+                    <td style="height: 25px; border: 1px solid rgb(128, 128, 128);" componentId="input4" __cid="cANZneu" class="cANZneu">
+                      <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cANZneu" xid="input4" data-bind="component:{ref:dAttachment_Template.ref('fCreateDate'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cANZneu"/>
+                    </td>
+                    <td style="height: 25px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 25px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 10px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 10px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu">示例代码（onOfficeLoaded事件）</td>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 350px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 350px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td colSpan="4" style="height: 350px; border: 1px solid rgb(128, 128, 128);" componentId="divCode_FillTemplate" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" xid="divCode_FillTemplate" class=" x-cell-control cANZneu" __cid="cANZneu"/>
+                    </td>
+                    <td style="height: 350px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 350px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr> 
+                </table>
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div>  
+      <div class="tab-pane cANZneu" xid="tabContent4" __cid="cANZneu"> 
+        <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabs2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cANZneu" class="cANZneu"> 
+          <ul class="nav nav-tabs cANZneu" xid="ul4" __cid="cANZneu"> 
+            <li class="active cANZneu" xid="li5" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu"> 
+              <a content="tabContent11" xid="tabItem4" __cid="cANZneu" class="cANZneu">扩展样式</a> 
+            </li>  
+            <li role="presentation" xid="li6" bind-click="li6Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent12" xid="tabItem5" __cid="cANZneu" class="cANZneu">设置权限</a> 
+            </li>  
+            <li xid="li7" bind-click="li7Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent13" xid="tabItem6" __cid="cANZneu" class="cANZneu">限制上传</a> 
+            </li>  
+            <li xid="li8" bind-click="li8Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent14" xid="tabItem7" __cid="cANZneu" class="cANZneu">设定模板</a> 
+            </li>  
+            <li xid="li15" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cANZneu" class="cANZneu"> 
+              <a content="tabContent15" xid="tabItem8" __cid="cANZneu" class="cANZneu">Java扩展</a> 
+            </li> 
+          </ul>  
+          <div class="tab-content cANZneu" xid="div112" __cid="cANZneu"> 
+            <div class="tab-pane active cANZneu" xid="tabContent11" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout4" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:200px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 15px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 800px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cANZneu" class="cANZneu">用CSS扩展组件样式：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　附件编辑器的样式全部定义在“/UI/system/components/attachmentEditor2/attachmentEditor2.css”文件中。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　在开发过程中，可以参照原始的CSS定义，对组件的颜色、边框、字体等样式进行定制。（推荐利用浏览器的开发者工具进行CSS调试）</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　如果需要统一定制所有附件组件的样式，可以将新的样式定义在“/UI/system/config/user.css”中。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　下面的示例展示了如何局部定制某些附件组件的样式：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　　　1、在原CSS的基础上，用CSS类选择器 .attr-extend 定义扩展样式（参看：/UI/demo/components/process/attachment/mainActivity.css）；</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　　　2、修改需要新样式的附件组件的class属性，增加 attr-extend。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" componentId="attachmentEditor_Extent_Style" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentEditor_Extent_Style" class=" x-cell-control cANZneu" bind-ref="dAttachment_Extend_Style.ref('fAttachment')" __cid="cANZneu"> 
+                        <div class="x-attachment-pc cANZneu" xid="div113" __cid="cANZneu"> 
+                          <div class="x-attachment-content x-card-border cANZneu" xid="div114" __cid="cANZneu"> 
+                            <div class="x-doc-process cANZneu" xid="div115" __cid="cANZneu"> 
+                              <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar8" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div116" __cid="cANZneu"> 
+                              <div class="x-attachment-cell x-attachment-item cANZneu" xid="div117" __cid="cANZneu"> 
+                                <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div118" __cid="cANZneu"> 
+                                  <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a27" __cid="cANZneu"/> 
+                                </div> 
+                              </div> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div119" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div120" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div121" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div122" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div123" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div124" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div125" __cid="cANZneu"> 
+                              <div class="x-item-name cANZneu" xid="div126" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a28" __cid="cANZneu"/>  
+                                <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span11" __cid="cANZneu"/> 
+                              </div>  
+                              <div class="x-item-edit cANZneu" xid="div127" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a29" __cid="cANZneu">编辑</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div128" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a30" __cid="cANZneu">历史</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div129" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a31" __cid="cANZneu">下载</a> 
+                              </div>  
+                              <div class="x-item-delete cANZneu" xid="div130" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a32" __cid="cANZneu">删除</a> 
+                              </div> 
+                            </div>  
+                            <div style="clear:both;" xid="div131" __cid="cANZneu" class="cANZneu"/> 
+                          </div> 
+                        </div> 
+                      </div>
+                    </td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent12" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout5" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:880px;HEIGHT:260px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td class="first-row first-cell cANZneu" style="WIDTH:80px;" __cid="cANZneu"/>
+                    <td style="width: 800px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">附件组件提供setPermission(access)方法用于运行时设置附件权限，参数access的取值范围如下：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" componentId="radioGroup1" __cid="cANZneu" class="cANZneu">
+                      <span xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/select/radioGroup" class="x-radio-group x-cell-control cANZneu" xid="radioGroup1" bind-foreach="{data:dRadio.datas,afterRender:$model.comp($element)['_doUpdate'].bind($model.comp($element))}" data-bind="component:{ref:dTemp.ref('access'),name:'$model/UI2/system/components/justep/select/radioGroup'}" __cid="cANZneu">
+                        <xhtml:span xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/button/radio" class="x-radio cANZneu" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/button/radio',label:ref('label'),value:ref('value')}" __cid="cANZneu">
+                          <xhtml:input type="radio" __cid="cANZneu" class="cANZneu"/>
+                          <xhtml:label __cid="cANZneu" class="cANZneu"/>
+                        </xhtml:span>
+                      </span>
+                    </td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" componentId="attachmentEditor_Extend_Permission" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentEditor_Extend_Permission" class=" x-cell-control cANZneu" bind-ref="dAttachment_Extend_Permission.ref('fAttachment')" __cid="cANZneu"> 
+                        <div class="x-attachment-pc cANZneu" xid="div153" __cid="cANZneu"> 
+                          <div class="x-attachment-content x-card-border cANZneu" xid="div154" __cid="cANZneu"> 
+                            <div class="x-doc-process cANZneu" xid="div155" __cid="cANZneu"> 
+                              <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar10" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div156" __cid="cANZneu"> 
+                              <div class="x-attachment-cell x-attachment-item cANZneu" xid="div157" __cid="cANZneu"> 
+                                <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div158" __cid="cANZneu"> 
+                                  <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a39" __cid="cANZneu"/> 
+                                </div> 
+                              </div> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div159" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div160" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div161" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div162" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div163" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div164" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div165" __cid="cANZneu"> 
+                              <div class="x-item-name cANZneu" xid="div166" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a40" __cid="cANZneu"/>  
+                                <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span13" __cid="cANZneu"/> 
+                              </div>  
+                              <div class="x-item-edit cANZneu" xid="div167" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a41" __cid="cANZneu">编辑</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div168" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a42" __cid="cANZneu">历史</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div169" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a43" __cid="cANZneu">下载</a> 
+                              </div>  
+                              <div class="x-item-delete cANZneu" xid="div170" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a44" __cid="cANZneu">删除</a> 
+                              </div> 
+                            </div>  
+                            <div style="clear:both;" xid="div171" __cid="cANZneu" class="cANZneu"/> 
+                          </div> 
+                        </div> 
+                      </div>
+                    </td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu">示例代码</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 150px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 150px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 150px; border: 1px solid rgb(128, 128, 128);" componentId="divCode_Permission" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" xid="divCode_Permission" class=" x-cell-control cANZneu" __cid="cANZneu"/>
+                    </td>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent13" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout6" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:336px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 15px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 800px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">本示例展示在附件组件的onStart事件中阻止上传重复文件。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" componentId="attachmentEditor_Extend_LimitUpload" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentEditor_Extend_LimitUpload" class=" x-cell-control cANZneu" bind-ref="dAttachment_Extend_LimitUpload.ref('fAttachment')" onStart="attachmentEditor_Extend_LimitUploadStart" __cid="cANZneu"> 
+                        <div class="x-attachment-pc cANZneu" xid="div172" __cid="cANZneu"> 
+                          <div class="x-attachment-content x-card-border cANZneu" xid="div173" __cid="cANZneu"> 
+                            <div class="x-doc-process cANZneu" xid="div174" __cid="cANZneu"> 
+                              <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar11" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div175" __cid="cANZneu"> 
+                              <div class="x-attachment-cell x-attachment-item cANZneu" xid="div176" __cid="cANZneu"> 
+                                <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div177" __cid="cANZneu"> 
+                                  <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a45" __cid="cANZneu"/> 
+                                </div> 
+                              </div> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div178" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div179" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div180" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div181" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div182" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div183" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div184" __cid="cANZneu"> 
+                              <div class="x-item-name cANZneu" xid="div185" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a46" __cid="cANZneu"/>  
+                                <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span14" __cid="cANZneu"/> 
+                              </div>  
+                              <div class="x-item-edit cANZneu" xid="div186" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a47" __cid="cANZneu">编辑</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div187" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a48" __cid="cANZneu">历史</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div188" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a49" __cid="cANZneu">下载</a> 
+                              </div>  
+                              <div class="x-item-delete cANZneu" xid="div189" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a50" __cid="cANZneu">删除</a> 
+                              </div> 
+                            </div>  
+                            <div style="clear:both;" xid="div190" __cid="cANZneu" class="cANZneu"/> 
+                          </div> 
+                        </div> 
+                      </div>
+                    </td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu">示例代码（onStart事件）</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 250px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 250px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 250px; border: 1px solid rgb(128, 128, 128);" componentId="divCode_LimitUpload" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" xid="divCode_LimitUpload" class=" x-cell-control cANZneu" __cid="cANZneu"/>
+                    </td>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent14" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout7" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:579px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 15px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 800px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">本示例展示运行时通过“onNewFromTemplate”事件，指定文档的新建模板。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu">选择新建模板：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 150px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 150px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 150px; border: 1px solid rgb(128, 128, 128);" componentId="grid1" __cid="cANZneu" class="cANZneu">
+                      <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered x-cell-control cANZneu" xid="grid1" data="dAttachment_Extend_SetTemplate" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;label&quot;:&quot;&lt;div style='width:100%;text-align:center;'&gt;模板&lt;/div&gt;&quot;,&quot;name&quot;:&quot;fAttachment&quot;,&quot;width&quot;:&quot;300&quot;,&quot;xid&quot;:&quot;column1&quot;}],&quot;data&quot;:&quot;dAttachment_Extend_SetTemplate&quot;,&quot;editors&quot;:&quot;EBB5BBACDCEC46D88E407CC1D739EF9A&quot;,&quot;height&quot;:&quot;150&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cANZneu"/>
+                      <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="EBB5BBACDCEC46D88E407CC1D739EF9A" class="x-grid-editors cANZneu" bind-with="comp('grid1').getCellEditorsBindingObject()" __cid="cANZneu">
+                        <xhtml:div xid="editor1" col="fAttachment" __cid="cANZneu" class="cANZneu"> 
+                          <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentPC10" bind-ref="$model.dAttachment_Extend_SetTemplate_Temp.ref('fAttachment')" __cid="cANZneu" class="cANZneu"> 
+                            <div class="x-attachment-pc cANZneu" xid="div223" __cid="cANZneu"> 
+                              <div class="x-attachment-content x-card-border cANZneu" xid="div224" __cid="cANZneu"> 
+                                <div class="x-doc-process cANZneu" xid="div225" __cid="cANZneu"> 
+                                  <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar14" __cid="cANZneu"/> 
+                                </div>  
+                                <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div226" __cid="cANZneu"> 
+                                  <div class="x-attachment-cell x-attachment-item cANZneu" xid="div227" __cid="cANZneu"> 
+                                    <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div228" __cid="cANZneu"> 
+                                      <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a58" __cid="cANZneu"/> 
+                                    </div> 
+                                  </div> 
+                                </div>  
+                                <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div229" __cid="cANZneu"> 
+                                  <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div230" __cid="cANZneu"/> 
+                                </div>  
+                                <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div231" __cid="cANZneu"> 
+                                  <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div232" __cid="cANZneu"/> 
+                                </div>  
+                                <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div233" __cid="cANZneu"> 
+                                  <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div234" __cid="cANZneu"/> 
+                                </div>  
+                                <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div235" __cid="cANZneu"> 
+                                  <div class="x-item-name cANZneu" xid="div236" __cid="cANZneu"> 
+                                    <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a59" __cid="cANZneu"/>  
+                                    <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span16" __cid="cANZneu"/> 
+                                  </div>  
+                                  <div class="x-item-edit cANZneu" xid="div237" __cid="cANZneu"> 
+                                    <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a60" __cid="cANZneu">编辑</a> 
+                                  </div>  
+                                  <div class="x-item-download cANZneu" xid="div238" __cid="cANZneu"> 
+                                    <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a61" __cid="cANZneu">历史</a> 
+                                  </div>  
+                                  <div class="x-item-download cANZneu" xid="div239" __cid="cANZneu"> 
+                                    <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a62" __cid="cANZneu">下载</a> 
+                                  </div>  
+                                  <div class="x-item-delete cANZneu" xid="div240" __cid="cANZneu"> 
+                                    <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a63" __cid="cANZneu">删除</a> 
+                                  </div> 
+                                </div>  
+                                <div style="clear:both;" xid="div241" __cid="cANZneu" class="cANZneu"/> 
+                              </div> 
+                            </div> 
+                          </div> 
+                        </xhtml:div>
+                      </xhtml:div>
+                    </td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid;" __cid="cANZneu" class="cANZneu">用上面选择的模板创建文档：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border: 1px solid rgb(128, 128, 128);" componentId="attachmentEditor_Extend_SetTemplate_Temp" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/attachment/attachmentPC" access="duud" xid="attachmentEditor_Extend_SetTemplate_Temp" class=" x-cell-control cANZneu" bind-ref="dAttachment_Extend_SetTemplate_Temp.ref('fAttachment')" onNewFromTemplate="attachmentEditor_Extend_SetTemplate_TempNewFromTemplate" __cid="cANZneu"> 
+                        <div class="x-attachment-pc cANZneu" xid="div192" __cid="cANZneu"> 
+                          <div class="x-attachment-content x-card-border cANZneu" xid="div193" __cid="cANZneu"> 
+                            <div class="x-doc-process cANZneu" xid="div194" __cid="cANZneu"> 
+                              <div class="progress-bar x-doc-process-bar cANZneu" role="progressbar" style="width:0%;" xid="progressBar12" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell-tpl cANZneu" data-bind="foreach:$attachmentItems" xid="div195" __cid="cANZneu"> 
+                              <div class="x-attachment-cell x-attachment-item cANZneu" xid="div196" __cid="cANZneu"> 
+                                <div class="x-item-other x-item-icon cANZneu" data-bind="event:{mouseover:function(){if($model.$state.get()!='upload'){return;} $model.$activeDoc.set($object)}},click:$model.previewOrRemoveItem.bind($model),style:{opacity: $model.$access.get() % 4 &gt;= 2 || $model.$state.get() == 'remove' ? '1.0' : '0.5',backgroundImage:($model.previewPicture.bind($model,$object))()},css:{'x-doc-item-active':$model.$activeDoc.get() == $object}" xid="div197" __cid="cANZneu"> 
+                                  <a data-bind="visible:$model.$state.get() == 'remove'" class="x-remove-barget cANZneu" xid="a51" __cid="cANZneu"/> 
+                                </div> 
+                              </div> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div198" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-upload cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256" xid="div199" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; ($limit.get() == '-1' || $limit.get() &gt; $attachmentItems.get().length)" xid="div200" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-new-tpl cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $access.get() % 512 &gt;= 256,click:$model.newFormTemplate.bind($model)" xid="div201" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-cell x-attachment-item cANZneu" data-bind="visible:$state.get() == 'upload' &amp;&amp; $attachmentItems.get().length &gt; 0" xid="div202" __cid="cANZneu"> 
+                              <div class="x-item-icon x-item-remove cANZneu" data-bind="click:changeState.bind($object,'remove'),visible:$access.get() % 2048 &gt;= 1024" xid="div203" __cid="cANZneu"/> 
+                            </div>  
+                            <div class="x-attachment-toolbar cANZneu" data-bind="if:$model.$activeDoc.get(),style:{display:$model.$activeDoc.get()?($('html').hasClass('flexboxlegacy')?'flex':'inline-block'):'none'}" xid="div204" __cid="cANZneu"> 
+                              <div class="x-item-name cANZneu" xid="div205" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 4 &gt;= 2),click:$model.previewOrRemoveItem.bind($model,$model.$activeDoc.get()),text:$model.$activeDoc.get().docName.get()" xid="a52" __cid="cANZneu"/>  
+                                <span class="btn btn-link cANZneu" data-bind="enable:false,text:$model.getFormatSize($model.$activeDoc.get())" xid="span15" __cid="cANZneu"/> 
+                              </div>  
+                              <div class="x-item-edit cANZneu" xid="div206" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.editDoc.bind($model,$model.$activeDoc.get())" xid="a53" __cid="cANZneu">编辑</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div207" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 1024 &gt;= 512,click:$model.showHistory.bind($model,$model.$activeDoc.get())" xid="a54" __cid="cANZneu">历史</a> 
+                              </div>  
+                              <div class="x-item-download cANZneu" xid="div208" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:($model.$activeDoc.get().fileID.get() &amp;&amp; $model.$access.get() % 8 &gt;= 4),click:$model.downloadDoc.bind($model,$model.$activeDoc.get())" xid="a55" __cid="cANZneu">下载</a> 
+                              </div>  
+                              <div class="x-item-delete cANZneu" xid="div209" __cid="cANZneu"> 
+                                <a class="btn btn-link cANZneu" data-bind="enable:$model.$access.get() % 2048 &gt;= 1024,click:$model.deleteDoc.bind($model,$model.$activeDoc.get())" xid="a56" __cid="cANZneu">删除</a> 
+                              </div> 
+                            </div>  
+                            <div style="clear:both;" xid="div210" __cid="cANZneu" class="cANZneu"/> 
+                          </div> 
+                        </div> 
+                      </div>
+                    </td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 5px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 5px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(128, 128, 128); border-bottom-style: solid; color: rgb(0, 0, 255);" __cid="cANZneu" class="cANZneu">示例代码（onNewFromTemplate事件）</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 300px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 300px; border-right-width: 1px; border-right-color: rgb(128, 128, 128); border-right-style: solid;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 300px; border: 1px solid rgb(128, 128, 128);" componentId="divCode_SetTemplate" __cid="cANZneu" class="cANZneu">
+                      <div xmlns="http://www.w3.org/1999/xhtml" xid="divCode_SetTemplate" class=" x-cell-control cANZneu" __cid="cANZneu"/>
+                    </td>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cANZneu" xid="tabContent15" __cid="cANZneu"> 
+              <div class="x-cell-layout cANZneu" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout8" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cANZneu"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:95px;" __cid="cANZneu" class="cANZneu"> 
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="width: 15px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                    <td style="width: 800px;" class="first-row first-cell cANZneu" __cid="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td style="height: 19px;" class="first-col cANZneu" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">X5的文档和附件除了提供展现层的组件支持，同时了提供基于Java的文档系列API，用于开发者在代码中控制文档的上传、下载、删除等操作。</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">本案例的初始化脚本中提供了相应的代码，可供参考：</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　/BIZ/demo/common/logic/code/dsrc/InitAttachments.java</td>
+                  </tr>  
+                  <tr __cid="cANZneu" class="cANZneu">
+                    <td class="first-col cANZneu" style="HEIGHT:19px;" __cid="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu"/>
+                    <td style="height: 19px;" __cid="cANZneu" class="cANZneu">　　/BIZ/demo/common/logic/code/dsrc/DocTools.java</td>
+                  </tr> 
+                </table>
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

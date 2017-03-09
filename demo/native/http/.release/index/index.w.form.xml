@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window cAv2uEn" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cAv2uEn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/panel/panel,">
+  <xhtml:style xmlns:xhtml="http://www.w3.org/1999/xhtml">null</xhtml:style>  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cAv2uEn" class="cAv2uEn"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcANjuQ3-iosstatusbar cAv2uEn" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cAv2uEn"> 
+    <div class="x-panel-top cAv2uEn" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cAv2uEn"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cAv2uEn" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;测试&quot;}" __cid="cAv2uEn"> 
+        <div class="x-titlebar-left cAv2uEn" __cid="cAv2uEn"></div>  
+        <div class="x-titlebar-title cAv2uEn" __cid="cAv2uEn">测试</div>  
+        <div class="x-titlebar-right  cAv2uEn" __cid="cAv2uEn">
+          <div class="empty cAv2uEn" __cid="cAv2uEn"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cAv2uEn" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cAv2uEn">
+      <div xid="div1" style="height:35px;" __cid="cAv2uEn" class="cAv2uEn"/>  
+      <div xid="div2" style="height:52px;" __cid="cAv2uEn" class="cAv2uEn">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cAv2uEn" xid="post" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:postClick" data-config="{&quot;label&quot;:&quot;发送post请求&quot;}" __cid="cAv2uEn"> 
+          <i xid="i1" __cid="cAv2uEn" class="cAv2uEn"/>  
+          <span xid="span1" __cid="cAv2uEn" class="cAv2uEn">发送post请求</span>
+        </a>
+      </div>  
+      <div xid="div3" style="height:59px;" __cid="cAv2uEn" class="cAv2uEn">
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cAv2uEn" xid="get" style="width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:getClick" data-config="{&quot;label&quot;:&quot;发送get请求&quot;}" __cid="cAv2uEn"> 
+          <i xid="i2" __cid="cAv2uEn" class="cAv2uEn"/>  
+          <span xid="span2" __cid="cAv2uEn" class="cAv2uEn">发送get请求</span>
+        </a>
+      </div> 
+    </div>  
+    <style __cid="cAv2uEn" class="cAv2uEn">.x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcANjuQ3-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

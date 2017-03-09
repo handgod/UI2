@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window cn2QrIf" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cn2QrIf" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/textarea/textarea,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cn2QrIf" class="cn2QrIf"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pczuMzMr-iosstatusbar cn2QrIf" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cn2QrIf"> 
+    <div class="x-panel-top cn2QrIf" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cn2QrIf"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cn2QrIf" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;消息推送&quot;}" __cid="cn2QrIf"> 
+        <div class="x-titlebar-left cn2QrIf" __cid="cn2QrIf"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon cn2QrIf" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;&quot;}" __cid="cn2QrIf"> 
+            <i class="icon-chevron-left cn2QrIf" __cid="cn2QrIf"/>  
+            <span __cid="cn2QrIf" class="cn2QrIf"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title cn2QrIf" __cid="cn2QrIf">消息推送</div>  
+        <div class="x-titlebar-right  cn2QrIf" __cid="cn2QrIf"> 
+          <div class="empty cn2QrIf" __cid="cn2QrIf"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content cn2QrIf" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cn2QrIf"> 
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cn2QrIf" xid="labelEdit1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cn2QrIf"> 
+        <label class="x-label cn2QrIf" xid="targetsLabel" __cid="cn2QrIf">消息接收者</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit cn2QrIf" xid="targets" data-bind="component:{ref:$model.sendData.ref(&quot;targets&quot;),name:'$model/UI2/system/components/justep/input/input'}" __cid="cn2QrIf"/> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 cn2QrIf" xid="labelEdit2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cn2QrIf"> 
+        <label class="x-label cn2QrIf" xid="messageLabel" __cid="cn2QrIf">消息内容</label>  
+        <textarea component="$model/UI2/system/components/justep/textarea/textarea" class="form-control x-edit cn2QrIf" xid="message" data-bind="component:{ref:$model.sendData.ref(&quot;message&quot;),name:'$model/UI2/system/components/justep/textarea/textarea'}" __cid="cn2QrIf"/> 
+      </div>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default center-block cn2QrIf" xid="sendBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:sendBtnClick" data-config="{&quot;label&quot;:&quot;发送消息&quot;}" __cid="cn2QrIf"> 
+        <i xid="i1" __cid="cn2QrIf" class="cn2QrIf"/>  
+        <span xid="span1" __cid="cn2QrIf" class="cn2QrIf">发送消息</span> 
+      </a>  
+      <div component="$model/UI2/system/components/justep/list/list" class="x-list cn2QrIf" xid="list1" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;receiveData&quot;}" __cid="cn2QrIf"> 
+        <ul class="x-list-template hide cn2QrIf" xid="listTemplateUl1" __cid="cn2QrIf" data-bind="foreach:{data:$model.foreach_list1($element),afterRender:$model.foreach_afterRender_list1.bind($model,$element)}"> 
+          <li xid="li1" __cid="cn2QrIf" class="cn2QrIf"> 
+            <div component="$model/UI2/system/components/justep/output/output" class="x-output cn2QrIf" xid="output1" data-bind="component:{ref:ref(&quot;message&quot;),name:'$model/UI2/system/components/justep/output/output'}" __cid="cn2QrIf"/> 
+          </li> 
+        </ul> 
+      </div> 
+    </div>  
+    <style __cid="cn2QrIf" class="cn2QrIf">.x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pczuMzMr-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+  </div> 
+</div>

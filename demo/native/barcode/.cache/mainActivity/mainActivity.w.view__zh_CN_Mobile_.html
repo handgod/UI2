@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window oa cfEBRFr" component="$model/UI2/system/components/justep/window/window" design="device:m;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cfEBRFr" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/contents/content,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/contents/contents,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cfEBRFr" class="cfEBRFr"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/contents/contents" class="x-contents x-full cfEBRFr" xid="contents1" data-bind="component:{name:'$model/UI2/system/components/justep/contents/contents'}" data-config="{&quot;active&quot;:0}" __cid="cfEBRFr"> 
+    <div class="x-contents-content active cfEBRFr" xid="main" component="$model/UI2/system/components/justep/contents/content" data-bind="component:{name:'$model/UI2/system/components/justep/contents/content'}" __cid="cfEBRFr"> 
+      <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcQnIvuy-iosstatusbar cfEBRFr" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="cfEBRFr"> 
+        <div class="x-panel-top cfEBRFr" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cfEBRFr"> 
+          <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar cfEBRFr" xid="titleBar1" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;二维码扫描&quot;}" __cid="cfEBRFr"> 
+            <div class="x-titlebar-left cfEBRFr" xid="div1" __cid="cfEBRFr"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link cfEBRFr" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:backBtnClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;&quot;}" __cid="cfEBRFr"> 
+                <i xid="i2" class="icon-chevron-left cfEBRFr" __cid="cfEBRFr"/>  
+                <span xid="span1" __cid="cfEBRFr" class="cfEBRFr"/> 
+              </a> 
+            </div>  
+            <div class="x-titlebar-title cfEBRFr" xid="div2" __cid="cfEBRFr">二维码扫描</div>  
+            <div class="x-titlebar-right  cfEBRFr" xid="div3" __cid="cfEBRFr"> 
+              <div class="empty cfEBRFr" __cid="cfEBRFr"/> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="x-panel-content cfEBRFr" xid="content3" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="cfEBRFr"> 
+          <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group cfEBRFr" xid="controlGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}" data-config="{&quot;title&quot;:&quot;title&quot;}" __cid="cfEBRFr"> 
+            <div xid="iamgeDiv" style="text-align:center;" __cid="cfEBRFr" class="cfEBRFr"> 
+              <img src="@justepContextPath@/v_2f237c37a5404860ba380e44a05751a2l_zh_CNs_d_m/demo/native/barcode/justep.png" alt="" xid="image2" height="175px" style="width:175px;" __cid="cfEBRFr" class="cfEBRFr"/> 
+            </div>  
+            <div xid="div5" __cid="cfEBRFr" class="cfEBRFr"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn x-yellow device-button-white cfEBRFr" xid="scanBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:scanBtnClick" data-config="{&quot;disabled&quot;:true,&quot;label&quot;:&quot;扫一扫&quot;}" __cid="cfEBRFr"> 
+                <i xid="i1" __cid="cfEBRFr" class="cfEBRFr"/>  
+                <span xid="span3" __cid="cfEBRFr" class="cfEBRFr">扫一扫</span> 
+              </a> 
+            </div>  
+            <div xid="div7" style="height:35px;" class="list-row cfEBRFr" __cid="cfEBRFr"/>  
+            <div component="$model/UI2/system/components/justep/row/row" class="x-row list-row cfEBRFr" xid="emptyRow" style="height:48px;" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'},visible:$model.fileData.getCount() == 0" __cid="cfEBRFr"> 
+              <div class="x-col x-col-center cfEBRFr" xid="col1" __cid="cfEBRFr"> 
+                <label xid="label3" style="color:#C0C0C0;" __cid="cfEBRFr" class="cfEBRFr">无历史记录</label> 
+              </div> 
+            </div>  
+            <div component="$model/UI2/system/components/justep/list/list" class="x-list cfEBRFr" xid="fileList" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'},event:{click:$model._callModelFn.bind($model, 'fileListClick')}" data-config="{&quot;data&quot;:&quot;fileData&quot;}" __cid="cfEBRFr"> 
+              <ul class="x-list-template hide cfEBRFr" xid="listTemplateUl1" __cid="cfEBRFr" data-bind="foreach:{data:$model.foreach_fileList($element),afterRender:$model.foreach_afterRender_fileList.bind($model,$element)}"> 
+                <li xid="li1" class="x-flex list-row cfEBRFr" __cid="cfEBRFr"> 
+                  <div component="$model/UI2/system/components/justep/row/row" class="x-row cfEBRFr" xid="row2" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cfEBRFr"> 
+                    <div class="x-col cfEBRFr" xid="col4" __cid="cfEBRFr"> 
+                      <div component="$model/UI2/system/components/justep/row/row" class="x-row cfEBRFr" xid="row3" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cfEBRFr"> 
+                        <div class="x-col x-col-fixed cfEBRFr" xid="col7" style="width:auto;" __cid="cfEBRFr"> 
+                          <div component="$model/UI2/system/components/justep/output/output" class="x-flex1 x-output title-data cfEBRFr" xid="output3" data-bind="component:{ref:ref('filePath'),name:'$model/UI2/system/components/justep/output/output'}" __cid="cfEBRFr"/> 
+                        </div> 
+                      </div>  
+                      <div component="$model/UI2/system/components/justep/row/row" class="x-row cfEBRFr" xid="row4" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="cfEBRFr"> 
+                        <div xid="col10" class="x-col x-col-fixed cfEBRFr" style="width:auto;" __cid="cfEBRFr"> 
+                          <div component="$model/UI2/system/components/justep/output/output" class="x-flex1 x-output content-data cfEBRFr" xid="output2" data-bind="component:{ref:ref('createTime'),name:'$model/UI2/system/components/justep/output/output'}" __cid="cfEBRFr"/> 
+                        </div>  
+                        <div class="x-col cfEBRFr" xid="col3" __cid="cfEBRFr"> 
+                          <div component="$model/UI2/system/components/justep/output/output" class="x-output cfEBRFr" xid="output4" data-bind="component:{ref:ref('fileName'),name:'$model/UI2/system/components/justep/output/output'}" __cid="cfEBRFr"/> 
+                        </div> 
+                      </div> 
+                    </div>  
+                    <div class="x-col x-col-fixed x-col-center cfEBRFr" xid="col6" style="width:40px;" __cid="cfEBRFr"> 
+                      <i xid="i5" class="icon-social-youtube-outline cfEBRFr" style="font-size:25px;color:#C0C0C0;font-weight:100;" __cid="cfEBRFr"/> 
+                    </div> 
+                  </div> 
+                </li> 
+              </ul> 
+            </div>  
+            <div xid="div8" style="height:25px;" __cid="cfEBRFr" class="cfEBRFr"/>  
+            <div xid="div6" __cid="cfEBRFr" class="cfEBRFr"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn x-gray device-button-black cfEBRFr" xid="deleteBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteBtnClick" data-config="{&quot;label&quot;:&quot;清空历史记录&quot;}" __cid="cfEBRFr"> 
+                <i xid="i4" __cid="cfEBRFr" class="cfEBRFr"/>  
+                <span xid="span4" __cid="cfEBRFr" class="cfEBRFr">清空历史记录</span> 
+              </a> 
+            </div> 
+          </div> 
+        </div>  
+        <div class="x-panel-bottom device-bottom cfEBRFr" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" data-config="{&quot;height&quot;:100}" __cid="cfEBRFr"> 
+          <div xid="content" style="padding:10px 10px 10px 10px;" __cid="cfEBRFr" class="cfEBRFr"> 
+            <div component="$model/UI2/system/components/justep/output/output" class="x-output cfEBRFr" xid="titleOutput" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}" __cid="cfEBRFr"/>  
+            <div component="$model/UI2/system/components/justep/output/output" class="x-output cfEBRFr" xid="codeOutput" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}" __cid="cfEBRFr"/>  
+            <div component="$model/UI2/system/components/justep/output/output" class="x-output cfEBRFr" xid="fileOutput" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}" __cid="cfEBRFr"/> 
+          </div> 
+        </div>  
+        <style __cid="cfEBRFr" class="cfEBRFr">.x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: 100px;}.x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-bottom {height: 100px;}.iosstatusbar .x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcQnIvuy-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+      </div> 
+    </div> 
+  </div> 
+</div>

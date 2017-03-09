@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%" class="no-js">  
+  <head xmlns=""> 
+    <meta charset="utf-8"/>  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>  
+    <meta name="apple-mobile-web-app-capable" content="yes"/>  
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>  
+    <meta name="format-detection" content="telephone=no"/>  
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>  
+    <script src="../../../../../../v_4004192b5351479ca79392008562c2efl_zh_CNs_desktopd_pc/system/lib/base/modernizr-2.8.3.min.js"/>  
+    <script id="__varReplace">
+    	
+    	    	window.__justep = window.__justep || {};
+				window.__justep.isDebug = true;
+				window.__justep.__packageMode = "1";
+				window.__justep.__isPackage = false;;
+				window.__justep.url = location.href;
+				window.__justep.versionInfo = {};
+		 
+    	</script>  
+    <script id="__updateVersion">
+        
+				(function(url, mode){
+					if (("@"+"mode@") === mode) mode = "3";
+					if (("@"+"versionUrl@") === url) url = "system/service/common/app.j";
+					if ((mode!=="1" &amp;&amp; (mode!="2") &amp;&amp; (mode!="3"))) return;
+					var async = (mode=="1");
+					var x5Version = "noApp";
+					var x5AppAgents = /x5app\/([0-9.]*)/.exec(navigator.userAgent);
+					if(x5AppAgents &amp;&amp; x5AppAgents.length &gt; 1){
+					   	x5Version = x5AppAgents[1] || "";
+					} 
+					function createXhr(){
+						try {	
+							return new XMLHttpRequest();
+						}catch (tryMS) {	
+							var version = ["MSXML2.XMLHttp.6.0",
+							               "MSXML2.XMLHttp.3.0",
+							               "MSXML2.XMLHttp",
+							               "Miscrosoft.XMLHTTP"];
+							for(var i = 0; i &lt; version.length; i++){
+								try{
+							    	return new ActiveXObject(version[i]);
+								}catch(e){}
+							}
+						}
+						throw new Error("您的系统或浏览器不支持XHR对象！");
+					}
+					
+					function createGuid(){	
+						var guid = '';	
+						for (var i = 1; i &lt;= 32; i++){		
+							var n = Math.floor(Math.random()*16.0).toString(16);		
+							guid += n;		
+							if((i==8)||(i==12)||(i==16)||(i==20))			
+								guid += '-';	
+						}	
+						return guid;
+					}
+					
+					function parseUrl(href){
+						href = href.split("#")[0];
+						var items = href.split("?");
+						href = items[0];
+						var query = items[1] || "";
+						items = href.split("/");
+						var baseItems = [];
+						var pathItems = [];
+						var isPath = false;
+						for (var i=0; i&lt;items.length; i++){
+							if (mode == "3"){
+								if (items[i] &amp;&amp; (items[i].indexOf("v_") === 0) 
+										&amp;&amp; (items[i].indexOf("l_") !== -1)
+										&amp;&amp; (items[i].indexOf("s_") !== -1)
+										&amp;&amp; (items[i].indexOf("d_") !== -1)
+										|| (items[i]=="v_")){
+									isPath = true;
+									continue;
+								}
+							}else{
+								if (items[i] &amp;&amp; (items[i].indexOf("v-")===0) &amp;&amp; (items[i].charAt(items[i].length-1)=="-") ){
+									isPath = true;
+									continue;
+								}
+							}
+							if (isPath){
+								pathItems.push(items[i]);
+							}else{
+								baseItems.push(items[i]);	
+							}
+							
+						}
+						var base = baseItems.join("/");
+						if (base.charAt(base.length-1)!=="/") base += "/";
+						
+						var path = pathItems.join("/");
+						if (path.charAt(0) !== "/") path = "/" + path;
+						return [base, path, query];
+					}
+					
+					
+					var items = parseUrl(window.location.href);
+					var base = items[0];
+					var path = items[1];
+					var query = items[2];
+					var xhr = createXhr();
+					url += ((url.indexOf("?")!=-1) ? "&amp;" : "?") +"_=" + createGuid();
+					if (mode === "3"){
+						url += "&amp;url=" + path;
+						if (query)
+							url += "&amp;" + query;
+					}
+					xhr.open('GET', base + url, async);
+					
+					if (async){
+						xhr.onreadystatechange=function(){
+							if((xhr.readyState == 4) &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+								var versionInfo = JSON.parse(xhr.responseText);
+								window.__justep.versionInfo = versionInfo;
+								window.__justep.versionInfo.baseUrl = base;
+								if (query){
+									path = path + "?" + query;
+								}
+								path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+								var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+								versionInfo.resourceInfo.indexPageURL = indexUrl;
+								if(versionInfo.resourceInfo.resourceUpdateMode != "md5"){
+									if (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1){
+										versionInfo.resourceInfo.isNewVersion = true;
+									};
+								}
+							}
+						}
+					}
+					
+					try{
+						xhr.send(null);
+						if (!async &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+							var versionInfo = JSON.parse(xhr.responseText);
+							window.__justep.versionInfo = versionInfo;
+							window.__justep.versionInfo.baseUrl = base;
+							if ((mode==="3") &amp;&amp; window.__justep.isDebug){
+								/* 模式3且是调试模式不重定向 */
+							}else{
+								if (query){
+									path = path + "?" + query;
+								}
+								if(versionInfo.resourceInfo.resourceUpdateMode == "md5"){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									versionInfo.resourceInfo.indexPageURL = indexUrl; 
+								}else if (versionInfo.resourceInfo &amp;&amp; versionInfo.resourceInfo.version &amp;&amp; (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1)){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									window.location.href = indexUrl;
+								}
+							}
+						}
+					}catch(e2){}
+				}("@versionUrl@", "@mode@"));
+                 
+        </script>  
+    <link rel="stylesheet" href="../../../../../../v_71449daa097a4c6089c2162e80acb527l_zh_CNs_desktopd_pc/system/components/pc.addon.min.css" include="$model/UI2/system/components/justep/pagerBar/css/pagerBar,$model/UI2/system/components/justep/widgets/css/widgets,$model/UI2/system/components/justep/absoluteLayout/css/absoluteLayout,$model/UI2/system/components/justep/pagerLimitSelect/css/pagerLimitSelect,$model/UI2/system/components/justep/cellLayout/css/cellLayout,$model/UI2/system/components/justep/smartContainer/css/smartContainer"/>
+    <link rel="stylesheet" href="../../../../../../v_05e5648b852f4daa9c1c5f7cb775de2dl_zh_CNs_desktopd_pc/system/components/bootstrap.min.css" include="$model/UI2/system/components/bootstrap/lib/css/bootstrap,$model/UI2/system/components/bootstrap/lib/css/bootstrap-theme"/>
+    <link rel="stylesheet" href="../../../../../../v_41ac38b8ea404816a66d5bdacaee149el_zh_CNs_desktopd_pc/system/components/comp.min.css" include="$model/UI2/system/components/justep/lib/css2/dataControl,$model/UI2/system/components/justep/input/css/datePickerPC,$model/UI2/system/components/justep/messageDialog/css/messageDialog,$model/UI2/system/components/justep/lib/css3/round,$model/UI2/system/components/justep/input/css/datePicker,$model/UI2/system/components/justep/row/css/row,$model/UI2/system/components/justep/attachment/css/attachment,$model/UI2/system/components/justep/barcode/css/barcodeImage,$model/UI2/system/components/bootstrap/dropdown/css/dropdown,$model/UI2/system/components/justep/dataTables/css/dataTables,$model/UI2/system/components/justep/contents/css/contents,$model/UI2/system/components/justep/common/css/forms,$model/UI2/system/components/justep/locker/css/locker,$model/UI2/system/components/justep/menu/css/menu,$model/UI2/system/components/justep/scrollView/css/scrollView,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/dialog/css/dialog,$model/UI2/system/components/justep/bar/css/bar,$model/UI2/system/components/justep/popMenu/css/popMenu,$model/UI2/system/components/justep/lib/css/icons,$model/UI2/system/components/justep/lib/css4/e-commerce,$model/UI2/system/components/justep/toolBar/css/toolBar,$model/UI2/system/components/justep/popOver/css/popOver,$model/UI2/system/components/justep/panel/css/panel,$model/UI2/system/components/bootstrap/carousel/css/carousel,$model/UI2/system/components/justep/wing/css/wing,$model/UI2/system/components/bootstrap/scrollSpy/css/scrollSpy,$model/UI2/system/components/justep/titleBar/css/titleBar,$model/UI2/system/components/justep/lib/css1/linear,$model/UI2/system/components/justep/numberSelect/css/numberList,$model/UI2/system/components/justep/list/css/list,$model/UI2/system/components/justep/dataTables/css/dataTables"/>
+  </head>  
+  <body xmlns="" style="width:100%;height:100%;margin: 0;"> 
+    <script intro="none"/>  
+    <div id="applicationHost" class="applicationHost" style="width:100%;height:100%;" __component-context__="block">
+      <div xid="window" class="window cQ7fENz" component="$model/UI2/system/components/justep/window/window" style="height:100%;width:100%;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cQ7fENz" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/absoluteLayout/absoluteLayout,$model/UI2/system/components/justep/window/window,">  
+        <div component="$model/UI2/system/components/justep/model/model" xid="model1" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cQ7fENz" class="cQ7fENz"/>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control cQ7fENz" xid="input1" style="width:369px;" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cQ7fENz"/>  
+        <div class="x-absolute-layout cQ7fENz" component="$model/UI2/system/components/justep/absoluteLayout/absoluteLayout" style="overflow:auto;height:409px;width:812px;" xid="absoluteLayout1" data-bind="component:{name:'$model/UI2/system/components/justep/absoluteLayout/absoluteLayout'}" __cid="cQ7fENz"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button1" style="position:absolute;width:380px;top:5px;left:208px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i1" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span1" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button2" style="position:absolute;width:380px;top:196px;left:47px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i2" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span2" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button5" style="position:absolute;width:184px;height:42px;left:435px;top:159px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i5" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span5" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button6" style="position:absolute;width:167px;left:15px;top:333px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i6" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span6" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button7" style="position:absolute;left:351px;top:229px;width:105px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i7" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span7" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button8" style="position:absolute;width:230px;left:68px;top:151px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i8" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span8" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button9" style="position:absolute;left:264px;top:230px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i9" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span9" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button10" style="position:absolute;width:231px;left:67px;top:91px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i10" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span10" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button11" style="position:absolute;left:17px;top:232px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i11" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span11" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button12" style="position:absolute;top:229px;left:47px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i12" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span12" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button13" style="position:absolute;left:906px;top:159px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i13" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span13" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button14" style="position:absolute;left:338px;top:91px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i14" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span14" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button15" style="position:absolute;left:208px;top:334px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i15" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span15" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button16" style="position:absolute;left:291px;top:339px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i16" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span16" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a>  
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control cQ7fENz" xid="input2" style="position:absolute;width:286px;left:28px;top:329px;" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cQ7fENz"/>  
+          <input type="button" value="button" xid="input_button1" style="position:absolute;left:575px;top:42px;" __cid="cQ7fENz" class="cQ7fENz"/>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cQ7fENz" xid="button19" style="position:absolute;;left:512px;top:98px" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="cQ7fENz"> 
+            <i xid="i19" __cid="cQ7fENz" class="cQ7fENz"/>  
+            <span xid="span19" __cid="cQ7fENz" class="cQ7fENz"/> 
+          </a> 
+        </div> 
+      </div>
+    </div>  
+    <div id="downloadGCF" style="display:none;padding:50px;"> 
+      <span>您使用的浏览器需要下载插件才能使用,</span>  
+      <a id="downloadGCFLink" href="#">下载地址</a>  
+      <p>(安装后请重新打开浏览器)</p> 
+    </div>  
+    <script>
+    	
+    	            //判断浏览器, 判断GCF
+    	 			var browser = {
+    			        isIe: function () {
+    			            return navigator.appVersion.indexOf("MSIE") != -1;
+    			        },
+    			        navigator: navigator.appVersion,
+    			        getVersion: function() {
+    			            var version = 999; // we assume a sane browser
+    			            if (navigator.appVersion.indexOf("MSIE") != -1)
+    			                // bah, IE again, lets downgrade version number
+    			                version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+    			            return version;
+    			        }
+    			    };
+    				function isGCFInstalled(){
+    			      try{
+    			        var i = new ActiveXObject('ChromeTab.ChromeFrame');
+    			        if (i) {
+    			          return true;
+    			        }
+    			      }catch(e){}
+    			      return false;
+    				}
+    	            //判断浏览器, 判断GCF
+    	            var __continueRun = true;
+    				if (browser.isIe() &amp;&amp; (browser.getVersion() &lt; 10) &amp;&amp; !isGCFInstalled()) {
+    					document.getElementById("applicationHost").style.display = 'none';
+    					document.getElementById("downloadGCF").style.display = 'block';
+    					var downloadLink = "/" + location.pathname.match(/[^\/]+/)[0] + "/v8.msi";
+    					document.getElementById("downloadGCFLink").href = downloadLink; 
+    					__continueRun = false;
+    	            }
+		 	
+    	</script>  
+    <script id="_metaJS" src="../../../../../../v_bcbac338be604aa2b37cfc679303b42dl_zh_CNs_desktopd_pc/system/config/meta.js"> </script>  
+    <script id="_requireJS" src="../../../../../../v_74c73f68b1094dc7a2ae82b53b0ccb15l_zh_CNs_desktopd_pc/system/lib/require/require.2.1.10.js"> </script>  
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../../v_6dc69335694e4ea080756c552490c617l_zh_CNs_desktopd_pc/system/core.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../../v_d66fa441344c426a800e4d335ab3c52el_zh_CNs_desktopd_pc/system/common.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../../v_fb7a1417daa2453fa5a22c89b18876bfl_zh_CNs_desktopd_pc/system/components/comp.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../../v_7ad0aefea63f4e2aa54c3969895d0a46l_zh_CNs_desktopd_pc/system/components/pc.addon.min.js"></script>
+    <script id="_mainScript">
+        
+			if (__continueRun) {
+                window.__justep.cssReady = function(fn){
+                	var promises = [];
+                	for (var p in window.__justep.__ResourceEngine.__loadingCss){
+                		if(window.__justep.__ResourceEngine.__loadingCss.hasOwnProperty(p))
+                			promises.push(window.__justep.__ResourceEngine.__loadingCss[p].promise());
+                	}
+                	$.when.apply($, promises).done(fn);
+                };
+                
+            	window.__justep.__ResourceEngine = {
+            		readyRegExp : navigator.platform === 'PLAYSTATION 3' ? /^complete$/ : /^(complete|loaded)$/,
+            		url: window.location.href,	
+            		/*contextPath: 不包括语言 */
+            		contextPath: "",
+            		serverPath: "",
+            		__loadedJS: [],
+            		__loadingCss: {},
+            		onLoadCss: function(url, node){
+            			if (!this.__loadingCss[url]){
+            				this.__loadingCss[url] = $.Deferred();	
+                			if (node.attachEvent &amp;&amp;
+                                    !(node.attachEvent.toString &amp;&amp; node.attachEvent.toString().indexOf('[native code') &lt; 0) &amp;&amp;
+                                    !(typeof opera !== 'undefined' &amp;&amp; opera.toString() === '[object Opera]')) {
+                                node.attachEvent('onreadystatechange', this.onLinkLoad.bind(this));
+                            } else {
+                                node.addEventListener('load', this.onLinkLoad.bind(this), false);
+                                node.addEventListener('error', this.onLinkError.bind(this), false);
+                            }
+            			}
+            		},
+            		
+            		onLinkLoad: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+            	        if (evt.type === 'load' ||
+                                (this.readyRegExp.test(target.readyState))) {
+            	        	var url = target.getAttribute("href");
+            	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+            	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+            	        	}
+                        }
+            		},
+            		
+            		onLinkError: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+        	        	var url = target.getAttribute("href");
+        	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+        	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+        	        	}
+            		},
+            		
+            		initContextPath: function(){
+            			var baseURL = document.getElementById("_requireJS").src;
+            			var before = location.protocol + "//" + location.host;
+            			var after = "/system/lib/require/require.2.1.10";
+            			var i = baseURL.indexOf(after);
+            			if (i !== -1){
+    	        			var middle = baseURL.substring(before.length, i);
+    						var items = middle.split("/");
+    						
+    						
+    						if ((items[items.length-1].indexOf("v_") === 0) 
+    								&amp;&amp; (items[items.length-1].indexOf("l_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("s_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("d_") !== -1)
+    								|| (items[items.length-1]=="v_")){
+    							items.splice(items.length-1, 1);
+    						}
+    						
+    						
+    						if (items.length !== 1){
+    							window.__justep.__ResourceEngine.contextPath = items.join("/");
+    						}else{
+    							window.__justep.__ResourceEngine.contextPath = before;
+    						}
+    						var index = window.__justep.__ResourceEngine.contextPath.lastIndexOf("/");
+    						if (index != -1){
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath.substr(0, index);
+    						}else{
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath;
+    						}
+            			}else{
+            				throw new Error(baseURL + " hasn't  " + after);
+            			}
+            		},
+            	
+            		loadJs: function(urls){
+            			if (urls &amp;&amp; urls.length&gt;0){
+            				var loadeds = this._getResources("script", "src").concat(this.__loadedJS);
+    	       				for (var i=0; i&lt;urls.length; i++){
+								var url = urls[i];
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					this.__loadedJS[this.__loadedJS.length] = url;
+    	        					/*
+    	        					var script = document.createElement("script");
+    	        					script.src = url;
+    	        					document.head.appendChild(script);
+    	        					*/
+    	        					//$("head").append("&lt;script  src='" + url + "'/&gt;");
+									var url = require.toUrl("$UI" + url);
+    	        					$.ajax({
+    	        						url: url,
+    	        						dataType: "script",
+    	        						cache: true,
+    	        						async: false,
+    	        						success: function(){}
+    	        						});
+    	        				} 
+    	       				}
+            			}
+            		},
+            		
+            		loadCss: function(styles){
+           				var loadeds = this._getResources("link", "href");
+            			if (styles &amp;&amp; styles.length&gt;0){
+            				for (var i=0; i&lt;styles.length; i++){
+    	       					var url = window.__justep.__ResourceEngine.contextPath + styles[i].url
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					var include = styles[i].include || "";
+    	        					var link = $("&lt;link type='text/css' rel='stylesheet' href='" + url + "' include='" + include + "'/&gt;");
+    	        					this.onLoadCss(url, link[0]);
+    	        					$("head").append(link);
+    	        				} 
+            				}
+            			}
+            			
+            		},
+            		
+            		
+            		_isLoaded: function(url, loadeds){
+            			if (url){
+            				var newUrl = "";
+            				var items = url.split("/");
+            				var isVls = false;
+            				for (var i=0; i&lt;items.length; i++){
+            					if (isVls){
+                					newUrl += "/" + items[i];
+            					}else{
+                					if (items[i] &amp;&amp; (items[i].indexOf("v_")===0)
+            								&amp;&amp; (items[i].indexOf("l_")!==-1)
+            								&amp;&amp; (items[i].indexOf("s_")!==-1)
+            								&amp;&amp; (items[i].indexOf("d_")!==-1)
+            								|| (items[i]=="v_")){
+                						isVls = true;
+                					}
+            					}
+            				}
+            				if (!newUrl)
+            					newUrl = url;
+            				
+            				for (var i=0; i&lt;loadeds.length; i++){
+								var originUrl = this._getOriginUrl(loadeds[i]);
+								if (originUrl &amp;&amp; (originUrl.indexOf(newUrl)!==-1)){
+									return true;
+								}
+    						}
+            			}
+    					return false;
+            		},
+
+					_getOriginUrl: function(url){
+						var result = "";
+						if (url &amp;&amp; (url.indexOf(".md5_")!==-1)){
+							url = url.split("#")[0];
+							url = url.split("?")[0];
+							var items = url.split(".");
+							for (var i=0; i&lt;items.length; i++){
+								if ((i===items.length-2) &amp;&amp; (items[i].indexOf("md5_")!==-1)){
+									continue;
+								}else{
+									if (i&gt;0) result += ".";
+									result += items[i];
+								}
+							}
+						}else{
+							result = url;
+						}
+						return result;
+					},
+            		
+            		_getResources: function(tag, attr){
+    					var result = [];
+    					var scripts = $(tag);
+    					for (var i=0; i&lt;scripts.length; i++){
+    						var v = scripts[i][attr];
+    						if (v){
+    							result[result.length] = v;
+    						}
+    					}
+    					return result;
+            		}
+            	};
+            	
+            	window.__justep.__ResourceEngine.initContextPath();
+    			requirejs.config({
+    				baseUrl: window.__justep.__ResourceEngine.contextPath + '/v_0636f1049f23492f8592550697fdafc6l_zh_CNs_desktopd_pc/system/components/justep/absoluteLayout/demo',
+    			    paths: {
+    			    	/* 解决require.normalizeName与require.toUrl嵌套后不一致的bug   */
+    			    	'$model/UI2/v_': window.__justep.__ResourceEngine.contextPath + '/v_0636f1049f23492f8592550697fdafc6l_zh_CNs_desktopd_pc',
+    			    	'$model/UI2': window.__justep.__ResourceEngine.contextPath + '/v_0636f1049f23492f8592550697fdafc6l_zh_CNs_desktopd_pc',
+    			    	'$model': window.__justep.__ResourceEngine.serverPath,
+    			        'text': window.__justep.__ResourceEngine.contextPath + '/v_0636f1049f23492f8592550697fdafc6l_zh_CNs_desktopd_pc/system/lib/require/text.2.0.10',
+    			        'bind': window.__justep.__ResourceEngine.contextPath + '/v_0636f1049f23492f8592550697fdafc6l_zh_CNs_desktopd_pc/system/lib/bind/bind',
+    			        'jquery': window.__justep.__ResourceEngine.contextPath + '/v_0636f1049f23492f8592550697fdafc6l_zh_CNs_desktopd_pc/system/lib/jquery/jquery-1.11.1.min'
+    			    },
+    			    map: {
+    				        '*': {
+    				            res: '$model/UI2/system/lib/require/res',
+    				            cordova: '$model/UI2/system/lib/require/cordova',
+    				            w: '$model/UI2/system/lib/require/w',
+    				            css: '$model/UI2/system/lib/require/css'
+    				        }
+    				},
+    				waitSeconds: 300
+    			});
+    			
+    			requirejs(['require', 'jquery', '$model/UI2/system/lib/base/composition', '$model/UI2/system/lib/base/url', '$model/UI2/system/lib/route/hashbangParser', '$model/UI2/system/components/justep/versionChecker/versionChecker', '$model/UI2/system/components/justep/loadingBar/loadingBar', '$model/UI2/system/lib/jquery/domEvent',  '$model/UI2/system/lib/cordova/cordova'],  function (require, $, composition, URL, HashbangParser,versionChecker) { 
+    				document.addEventListener('deviceready', function() {
+    	                if (navigator &amp;&amp; navigator.splashscreen &amp;&amp; navigator.splashscreen.hide) {
+    	                	/*延迟隐藏，视觉效果更理想*/
+    	                	setTimeout(function() {navigator.splashscreen.hide();}, 800);
+    	                }
+    	            }, false);
+					setTimeout(function(){
+						versionChecker.check();
+					},2000);
+    				var context = {};
+    				context.model = '$model/UI2/system/components/justep/absoluteLayout/demo/mainActivity.w' + (document.location.search || "");
+    				context.view = $('#applicationHost').children()[0];
+    				var element = document.getElementById('applicationHost');
+
+					    				
+    				
+    				var ownerid = new URL(window.__justep.__ResourceEngine.url).getParam("$ownerid");
+    				var pwindow = opener;
+    				if (!pwindow &amp;&amp; window.parent &amp;&amp; window.parent.window){
+    					pwindow = window.parent.window;
+    				}
+    				if(ownerid &amp;&amp; pwindow 
+    						&amp;&amp; pwindow.__justep &amp;&amp; pwindow.__justep.windowOpeners
+    						&amp;&amp; pwindow.__justep.windowOpeners[ownerid]
+    						&amp;&amp; $.isFunction(pwindow.__justep.windowOpeners[ownerid].sendToWindow)){
+    					window.__justep.setParams = function(params){
+    						/* 给windowOpener提供再次传参数的接口  */
+    						params = params || {};
+    						composition.setParams(document.getElementById('applicationHost'), params);
+    					};
+    					var winOpener = pwindow.__justep.windowOpeners[ownerid];
+    					if(winOpener) winOpener.window = window;
+    					$(window).unload(function(event){
+    						if(winOpener &amp;&amp; winOpener.dispatchCloseEvent) winOpener.dispatchCloseEvent();
+    					});
+    					var params = winOpener.sendToWindow();
+						context.owner = winOpener;
+						context.params = params || {};
+	        			composition.compose(element, context);
+    				}else{
+        				var params =  {};
+    					var state = new HashbangParser(window.location.hash).parse().__state;
+    					if (state){
+    						params = state.get("");
+    						try{
+    							params = JSON.parse(params);
+    							if (params.hasOwnProperty("__singleValue__")){
+    								params = params.__singleValue__;
+    							}
+    						}catch(e1){}
+    					}
+    					context.noUpdateState = true;
+        				context.params = params;
+        				composition.compose(element, context);
+    				}
+    			});    
+            }
+		 	
+        </script> 
+  </body> 
+</html>

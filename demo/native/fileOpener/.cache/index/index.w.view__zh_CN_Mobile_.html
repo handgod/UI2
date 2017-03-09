@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" design="device:m;" xid="window" class="window ca2M3ee" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="ca2M3ee" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/panel/panel,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="ca2M3ee" class="ca2M3ee"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcRvaUfq-iosstatusbar ca2M3ee" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="ca2M3ee"> 
+    <div class="x-panel-top ca2M3ee" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ca2M3ee"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar ca2M3ee" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;文件打开插件实例&quot;}" __cid="ca2M3ee"> 
+        <div class="x-titlebar-left ca2M3ee" __cid="ca2M3ee"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon ca2M3ee" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;,&quot;label&quot;:&quot;&quot;}" __cid="ca2M3ee"> 
+            <i class="icon-chevron-left ca2M3ee" __cid="ca2M3ee"/>  
+            <span __cid="ca2M3ee" class="ca2M3ee"/> 
+          </a> 
+        </div>  
+        <div class="x-titlebar-title ca2M3ee" __cid="ca2M3ee">文件打开插件实例</div>  
+        <div class="x-titlebar-right  ca2M3ee" __cid="ca2M3ee"> 
+          <div class="empty ca2M3ee" __cid="ca2M3ee"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content container-fluid ca2M3ee" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ca2M3ee"> 
+      <p __cid="ca2M3ee" class="ca2M3ee">拍照，用于下面操作</p>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ca2M3ee" xid="takePhone" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:takePhoneClick" data-config="{&quot;label&quot;:&quot;拍照&quot;}" __cid="ca2M3ee"> 
+        <i xid="i4" __cid="ca2M3ee" class="ca2M3ee"/>  
+        <span xid="span4" __cid="ca2M3ee" class="ca2M3ee">拍照</span> 
+      </a>  
+      <p __cid="ca2M3ee" class="ca2M3ee">打开上面拍照保存的图片</p>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ca2M3ee" xid="openFile" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:openFileClick" data-config="{&quot;label&quot;:&quot;打开文件&quot;}" __cid="ca2M3ee"> 
+        <i xid="i1" __cid="ca2M3ee" class="ca2M3ee"/>  
+        <span xid="span1" __cid="ca2M3ee" class="ca2M3ee">打开文件</span> 
+      </a>  
+      <p __cid="ca2M3ee" class="ca2M3ee">以下适用于android</p>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 ca2M3ee" xid="labelInput2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="ca2M3ee"> 
+        <label class="x-label ca2M3ee" xid="label2" __cid="ca2M3ee">应用包名</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit ca2M3ee" xid="input2" data-bind="component:{ref:data.ref('unpackageId'),name:'$model/UI2/system/components/justep/input/input'}" __cid="ca2M3ee"/> 
+      </div>  
+      <p __cid="ca2M3ee" class="ca2M3ee">卸载应用</p>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ca2M3ee" xid="uninstall" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:uninstallClick" data-config="{&quot;label&quot;:&quot;卸载&quot;}" __cid="ca2M3ee"> 
+        <i xid="i2" __cid="ca2M3ee" class="ca2M3ee"/>  
+        <span xid="span2" __cid="ca2M3ee" class="ca2M3ee">卸载</span> 
+      </a>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label30 ca2M3ee" xid="labelInput3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="ca2M3ee"> 
+        <label class="x-label ca2M3ee" xid="label3" __cid="ca2M3ee">应用包名</label>  
+        <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit ca2M3ee" xid="input3" data-bind="component:{ref:data.ref('ispackageid'),name:'$model/UI2/system/components/justep/input/input'}" __cid="ca2M3ee"/> 
+      </div>  
+      <p __cid="ca2M3ee" class="ca2M3ee">判断app是否存在</p>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ca2M3ee" xid="checkappinstall" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:checkappinstallClick" data-config="{&quot;label&quot;:&quot;判断app是否存在&quot;}" __cid="ca2M3ee"> 
+        <i xid="i3" __cid="ca2M3ee" class="ca2M3ee"/>  
+        <span xid="span3" __cid="ca2M3ee" class="ca2M3ee">判断app是否存在</span> 
+      </a> 
+    </div>  
+    <style __cid="ca2M3ee" class="ca2M3ee">.x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcRvaUfq-iosstatusbar &gt;.x-panel-content {top: 48px;}</style> 
+  </div> 
+</div>

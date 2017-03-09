@@ -1,0 +1,1975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window cRBNf2y" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cRBNf2y" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/pagerBar/pagerBar,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/cellLayout/cellLayout,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/bootstrap/pagination/pagination,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/gridFilter/gridFilter,$model/UI2/system/components/bootstrap/tabs/tab,$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/grid/grid,$model/UI2/system/components/justep/gridSelect/gridSelect,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/bootstrap/tabs/tabs,$model/UI2/system/components/bootstrap/form/form(bootstrap),$model/UI2/system/components/justep/excelLayout/excelLayout,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="cRBNf2y" class="cRBNf2y"> 
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dReference_Orders" concept="DEMO_Orders" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default6" action="/demo/common/logic/action/queryDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <writer xid="default7" action="/demo/common/logic/action/saveDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <creator xid="default8" action="/demo/common/logic/action/createDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dCalculate_OrderDetails" concept="DEMO_OrderDetails" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default10" action="/demo/common/logic/action/queryDEMO_OrderDetailsAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <calculateRelation relation="fMoney" xid="calculateRelation1" type="String" label="金额" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <rule xid="rule1" __cid="cRBNf2y" class="cRBNf2y"> 
+        <col name="fMoney" xid="ruleCol1" __cid="cRBNf2y" class="cRBNf2y"> 
+          <calculate xid="calculate1" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default36" __cid="cRBNf2y" class="cRBNf2y">js:val('fUnitPrice') * val('fQuantity')</expr> 
+          </calculate> 
+        </col>  
+        <col name="fQuantity" xid="ruleCol2" __cid="cRBNf2y" class="cRBNf2y"> 
+          <required xid="required1" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default37" __cid="cRBNf2y" class="cRBNf2y"/> 
+          </required> 
+        </col> 
+      </rule> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dRule_Orders" concept="DEMO_Orders" confirmRefresh="false" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default13" action="/demo/common/logic/action/queryDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <writer xid="default14" action="/demo/common/logic/action/saveDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <creator xid="default15" action="/demo/common/logic/action/createDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <rule xid="rule2" __cid="cRBNf2y" class="cRBNf2y"> 
+        <readonly xid="readonly1" __cid="cRBNf2y" class="cRBNf2y"> 
+          <expr xid="default38" __cid="cRBNf2y" class="cRBNf2y">js:val("fStatus")== 'shipped'</expr> 
+        </readonly>  
+        <col name="fTotalMoney" xid="ruleCol3" __cid="cRBNf2y" class="cRBNf2y"> 
+          <calculate xid="calculate2" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default39" __cid="cRBNf2y" class="cRBNf2y">$model.comp('dRule_OrderDetails').sum('fMoney')</expr> 
+          </calculate> 
+        </col> 
+      </rule> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dRule_OrderDetails" concept="DEMO_OrderDetails" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default16" action="/demo/common/logic/action/queryDEMO_OrderDetailsAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <writer xid="default17" action="/demo/common/logic/action/saveDEMO_OrderDetailsAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <creator xid="default18" action="/demo/common/logic/action/createDEMO_OrderDetailsAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <master xid="default19" data="dRule_Orders" relation="fOrderID" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <rule xid="rule3" __cid="cRBNf2y" class="cRBNf2y"> 
+        <readonly xid="readonly2" __cid="cRBNf2y" class="cRBNf2y"> 
+          <expr xid="default40" __cid="cRBNf2y" class="cRBNf2y">$model.dRule_Orders.val("fStatus")== 'shipped'</expr> 
+        </readonly>  
+        <col name="fMoney" xid="ruleCol4" __cid="cRBNf2y" class="cRBNf2y"> 
+          <calculate xid="calculate3" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default41" __cid="cRBNf2y" class="cRBNf2y">$row.val("fQuantity") * $row.val("fUnitPrice") *(1- $row.val("fDiscount"))</expr> 
+          </calculate> 
+        </col>  
+        <col name="fQuantity" xid="ruleCol5" __cid="cRBNf2y" class="cRBNf2y"> 
+          <calculate xid="calculate4" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default42" __cid="cRBNf2y" class="cRBNf2y"/> 
+          </calculate>  
+          <constraint xid="constraint1" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default44" __cid="cRBNf2y" class="cRBNf2y">$row.val("fQuantity")&gt;=0</expr>  
+            <message xid="default47" __cid="cRBNf2y" class="cRBNf2y">数量必须大于等于0</message> 
+          </constraint> 
+        </col>  
+        <col name="fDiscount" xid="ruleCol6" __cid="cRBNf2y" class="cRBNf2y"> 
+          <constraint xid="constraint2" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default45" __cid="cRBNf2y" class="cRBNf2y">$row.val("fDiscount")&gt;=0</expr>  
+            <message xid="default48" __cid="cRBNf2y" class="cRBNf2y">折扣必须大于等于0</message> 
+          </constraint> 
+        </col>  
+        <col name="fUnitPrice" xid="ruleCol7" __cid="cRBNf2y" class="cRBNf2y"> 
+          <constraint xid="constraint3" __cid="cRBNf2y" class="cRBNf2y"> 
+            <expr xid="default46" __cid="cRBNf2y" class="cRBNf2y">$row.val("fUnitPrice")&gt;=0</expr>  
+            <message xid="default49" __cid="cRBNf2y" class="cRBNf2y">单价必须大于等于0</message> 
+          </constraint> 
+        </col> 
+      </rule> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dOrderBy_Orders" concept="DEMO_Orders" orderBy="fOrderNumber asc" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default21" action="/demo/common/logic/action/queryDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <writer xid="default22" action="/demo/common/logic/action/saveDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <creator xid="default23" action="/demo/common/logic/action/createDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dFilter_Orders" concept="DEMO_Orders" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default25" action="/demo/common/logic/action/queryDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <writer xid="default26" action="/demo/common/logic/action/saveDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <creator xid="default27" action="/demo/common/logic/action/createDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dMasterDetail_Orders" concept="DEMO_Orders" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default29" action="/demo/common/logic/action/queryDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <writer xid="default30" action="/demo/common/logic/action/saveDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <creator xid="default31" action="/demo/common/logic/action/createDEMO_OrdersAction" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dMasterDetail_OrderDetails" concept="DEMO_OrderDetails" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default32" action="/demo/common/logic/action/queryDEMO_OrderDetailsAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <writer xid="default33" action="/demo/common/logic/action/saveDEMO_OrderDetailsAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <creator xid="default34" action="/demo/common/logic/action/createDEMO_OrderDetailsAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <master xid="default35" data="dMasterDetail_Orders" relation="fOrderID" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dTreeGrid_Org" concept="SA_OPOrg" isTree="true" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default53" action="/system/logic/action/queryOrgAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <treeOption xid="default55" parentRelation="sParent" delayLoad="true" rootFilter="SA_OPOrg.sParent is null" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dTree_Org" concept="SA_OPOrg" isTree="false" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default54" action="/system/logic/action/queryOrgAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <treeOption xid="default56" parentRelation="sParent" delayLoad="true" rootFilter="SA_OPOrg.sParent is null" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dTreeSelect_Org" concept="SA_OPOrg" isTree="true" __cid="cRBNf2y" class="cRBNf2y"> 
+      <reader xid="default57" action="/system/logic/action/queryOrgAction" __cid="cRBNf2y" class="cRBNf2y"/>  
+      <treeOption xid="default58" parentRelation="sParent" delayLoad="true" rootFilter="SA_OPOrg.sParent is null" __cid="cRBNf2y" class="cRBNf2y"/> 
+    </div> 
+  </div>  
+  <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabs1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cRBNf2y" class="cRBNf2y"> 
+    <ul class="nav nav-tabs cRBNf2y" xid="ul1" __cid="cRBNf2y"> 
+      <li class="active cRBNf2y" xid="li1_1" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y"> 
+        <a content="tabContent1" xid="tabFirst" __cid="cRBNf2y" class="cRBNf2y">概述</a> 
+      </li>  
+      <li role="presentation" xid="li2_2" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent2" xid="tabEvents" __cid="cRBNf2y" class="cRBNf2y">事件</a> 
+      </li>  
+      <li xid="li3" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent3" xid="tabLoadData" __cid="cRBNf2y" class="cRBNf2y">加载数据</a> 
+      </li>  
+      <li xid="li4" bind-click="li4Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent4" xid="tabReference" __cid="cRBNf2y" class="cRBNf2y">数据组件与数据感知组件</a> 
+      </li>  
+      <li xid="li5" bind-click="li5Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent5" xid="tabCalculate" __cid="cRBNf2y" class="cRBNf2y">计算关系</a> 
+      </li>  
+      <li xid="li6" bind-click="li6Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent6" xid="tabRule" __cid="cRBNf2y" class="cRBNf2y">数据规则</a> 
+      </li>  
+      <li xid="li7" bind-click="li7Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent7" xid="tabOrderBy" __cid="cRBNf2y" class="cRBNf2y">分页与排序</a> 
+      </li>  
+      <li xid="li8" bind-click="li8Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent8" xid="tabFilter" __cid="cRBNf2y" class="cRBNf2y">查找与过滤</a> 
+      </li>  
+      <li xid="li9" bind-click="li9Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent9" xid="tabMasterDetail" __cid="cRBNf2y" class="cRBNf2y">主从关联</a> 
+      </li>  
+      <li xid="li12" bind-click="li12Click" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+        <a content="tabContent12" xid="tabTree" __cid="cRBNf2y" class="cRBNf2y">树形数据</a> 
+      </li> 
+    </ul>  
+    <div class="tab-content cRBNf2y" xid="div1_1" __cid="cRBNf2y"> 
+      <div class="tab-pane active cRBNf2y" xid="tabContent1" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:185px;" xid="cellLayout1" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:185px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1365px;HEIGHT:171px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 150px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 880px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">数据组件是X5数据感知组件体系的核心组件，它主要有以下能力：</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　1、为其他数据感知组件提供数据源和数据感知机制。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　2、支持数据规则的设置和解析，数据规则包含：必须、只读、可见、计算、约束、默认。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td colSpan="3" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　3、管理数据缓存和状态，数据状态包含：Data.STATE.NEW、Data.STATE.DELETE、Data.STATE.EDIT、Data.STATE.NONE。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">             其中Data定义为：var Data = require("$UI/system/components/justep/data/data")</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　4、提供数据的操作方法和事件，例如：加载数据、修改数据、删除数据等。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">X5的数据组件共有两个，分别是data和bizData：</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr> 
+          </table>
+        </div>  
+        <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabs2" style="height:350px;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cRBNf2y" class="cRBNf2y"> 
+          <ul class="nav nav-tabs cRBNf2y" xid="ul2" __cid="cRBNf2y"> 
+            <li class="active cRBNf2y" xid="li10" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y"> 
+              <a content="tabContent10" xid="tabItem10" __cid="cRBNf2y" class="cRBNf2y">data组件</a> 
+            </li>  
+            <li role="presentation" xid="li11" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+              <a content="tabContent11" xid="tabItem11" __cid="cRBNf2y" class="cRBNf2y">bizData组件</a> 
+            </li> 
+          </ul>  
+          <div class="tab-content cRBNf2y" xid="div2_1" __cid="cRBNf2y"> 
+            <div class="tab-pane active cRBNf2y" xid="tabContent10" __cid="cRBNf2y"> 
+              <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:400px;" xid="cellLayout2" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:400px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1335px;HEIGHT:230px;" __cid="cRBNf2y" class="cRBNf2y"> 
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 200px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">data组件是一个简单数据组件，一般用于定义和存储页面上的静态数据或临时数据。</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 2px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px; border-bottom-width: 1px; border-bottom-color: rgb(150, 150, 150); border-bottom-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px; border-bottom-width: 1px; border-bottom-color: rgb(150, 150, 150); border-bottom-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">data支持主从数据的关联，支持树形数据的定义和逐级延迟加载。</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150); text-align: center; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">属性</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150); text-align: center; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">说明</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">idColumn</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">标识ID的列</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">limit</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">数据分页的每页记录数，-1表示不分页</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">confirm-delete</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">是否删除提示</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">confirm-delete-text</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">删除提示文本</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">confirm-refresh</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">是否刷新提示</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">confirm-refresh-text</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">刷新提示文本</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">auto-load</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">自动加载数据，和auto-new属性互斥</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid; height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">auto-new</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">自动新增数据，和auto-load属性互斥</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cRBNf2y" xid="tabContent11" __cid="cRBNf2y"> 
+              <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout3" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1335px;HEIGHT:248px;" __cid="cRBNf2y" class="cRBNf2y"> 
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 200px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">bizData组件是与业务层绑定的数据组件，通过指定的concept、reader、writer、creator自动处理数据的加载、保存、创建等逻辑。</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td colSpan="2" style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">bizData支持主从数据的关联、缓存和批请求，支持树形数据的定义和逐级延迟加载。</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 2px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px; border-bottom-width: 1px; border-bottom-color: rgb(150, 150, 150); border-bottom-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px; border-bottom-width: 1px; border-bottom-color: rgb(150, 150, 150); border-bottom-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 2px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 18px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 18px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 18px; border: 1px solid rgb(150, 150, 150); text-align: center; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">属性</td>
+                    <td style="height: 18px; border: 1px solid rgb(150, 150, 150); text-align: center; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">说明</td>
+                    <td style="height: 18px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 18px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 18px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 18px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">concept</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">指定数据对应的概念</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">reader</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">指定加载数据使用的queryAction</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">writer</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">指定保存数据使用的saveAction</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">creator</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">指定创建数据使用的createAction</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">columns</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">指定页面返回的关系，为空时表示全部关系</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">offset</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">初始偏移，指定数据集打开后定位到第几条数据</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">limit</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">数据分页的每页记录数，-1表示不分页</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">orderBy</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">数据的排序方式</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">updateMode</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">数据更新模式：whereVersion（基于version判断数据并发冲突），whereAll（基于数据的原始值判断数据并发冲突）。</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr> 
+                </table>
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent2" __cid="cRBNf2y"> 
+        <div component="$model/UI2/system/components/justep/excelLayout/excelLayout" class="x-excel-layout cRBNf2y" style="width:100%; height: 100%;" xid="excelLayout1" src="$model/UI2/demo/components/process/data/events.xml" data-bind="component:{name:'$model/UI2/system/components/justep/excelLayout/excelLayout'}" __cid="cRBNf2y">
+          <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" border="0" cellpadding="0" cellspacing="0" class="no-editor-border cRBNf2y" style="width:1247px;height:663px;border-collapse: collapse; table-layout: fixed;" __cid="cRBNf2y">
+            <xhtml:tr height="0px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td width="25px" height="0px" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td width="148px" height="0px" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td width="1006px" height="0px" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td width="68px" height="0px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" colspan="2" style="Text-Align:Left;Vertical-Align:Middle;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据组件提供了数据的新增、删除、保存、加载、修改等基本操作，同时也为这些操作提供了丰富的事件扩展接口。</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" colspan="2" style="Text-Align:Left;Vertical-Align:Middle;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">虽然bizData组件和data组件的事件有所差别，但因为开发中最多用到的是bizData的事件，所以这里的介绍以bizData组件的事件为主。</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据新增事件</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据新增相关事件是由newData方法在执行过程中派发的</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onBeforeNew</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据新增前事件，可以通过设置event.cancel=true中断当前新增操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onAfterNew</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据新增后事件</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onNewError</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据新增失败后事件，可以用于自定义错误信息的处理</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onNewCreateParam</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">构造createAction参数的回调事件，可以用于为createAction的自定义扩展参数赋值</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onCustomNew</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">自定义新增，用于完全接管data组件的新增操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据删除事件</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据删除相关事件是由deleteData方法在执行过程中派发的，数据删除操作分为立即删除和非立即删除两种模式（direct-delete）</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onBeforeDelete</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据删除前事件，可以通过设置event.cancel=true中断当前删除操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onAfterDelete</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据删除后事件</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onDeleteError</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">直接删除数据失败后事件，可以用于自定义错误信息的处理</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onCustomDelete</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">自定义删除，用于完全接管data组件的删除操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据保存事件</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据保存相关事件是由saveData方法在执行过程中派发的，由于数据组件之间存在级联关系，并且保存需要严格的事务保证，所以整个保存过程都被包在一个批请求中</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onBeforeSave</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">（批请求中）保存前事件，可以通过设置event.cancel=true中断当前保存操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onAfterSave</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">（批请求中）数据保存后事件</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onSaveCreateParam</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">（批请求中）构造saveAction参数的回调事件，可以用于为saveAction的自定义扩展参数赋值</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onCustomSave</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">（批请求中）自定义保存，用于完全接管data组件的保存操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onSaveCommit</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">（批请求已结束）数据提交后事件</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onSaveError</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">（批请求已结束）数据保存失败后事件，可以用于自定义错误信息的处理</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据加载事件</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据加载相关事件是由refreshData、refreshPageData、loadTreeData等方法在执行过程中派发的</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onBeforeRefresh</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据刷新前事件，可以通过设置event.cancel=true中断当前刷新操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onAfterRefresh</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据刷新后事件</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onCustomRefresh</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">自定义刷新，用于完全接管data组件的刷新操作</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onRefreshCreateParam</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">构造queryAction参数的回调事件，可以用于为queryAction的自定义扩展参数赋值</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onRefreshError</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据刷新失败后事件，可以用于自定义错误信息的处理</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onLoadSlave</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">子表数据加载后事件，可以用于子表数据加载后的再加工</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;Color:#000000;Font-Weight:Bold;" __cid="cRBNf2y" class="cRBNf2y">数据改变事件</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onIndexChanging</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据行改变中事件，在事件参数中可以获取到改变前后的event.rowID和event.originalRowID</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onIndexChanged</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据行改变后事件，在事件参数中只能获取到改变后的event.rowID</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onValueChanging</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据值改变中事件，在事件参数中可以获取到event.rowID、event.column和改变前后的event.value、eventOriginalValue，并且可以通过event.value加工改变后的值</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onValueChanged</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据值改变后事件，在事件参数中可以获取到event.rowID、event.column和event.value</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+            <xhtml:tr height="17px" __cid="cRBNf2y" class="cRBNf2y">
+              <xhtml:td height="17px" style="Vertical-Align:Top;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">onDataChanged</xhtml:td>
+              <xhtml:td height="17px" style="Vertical-Align:Middle;border-Bottom:1px Solid #7F7F7F;border-Left:1px Solid #7F7F7F;border-Right:1px Solid #7F7F7F;border-Top:1px Solid #7F7F7F;Font-Family:宋体;" __cid="cRBNf2y" class="cRBNf2y">数据变化事件，包含新增、删除、刷新、修改引起的变化，可以用于在一个事件中统一感知数据的变化</xhtml:td>
+              <xhtml:td height="17px" __cid="cRBNf2y" class="cRBNf2y"/>
+            </xhtml:tr>
+          </xhtml:table>
+        </div> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent3" style="height:496px;" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout4" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:372px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">data组件的数据定义：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　数据结构：选中data组件，右键菜单中点击编辑列，在列编辑窗口中定义列名、数据类型、显示名称。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　初始数据：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　1、通过右键菜单“编辑数据”，在组件中内置初始数据。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　2、通过loadData函数加载json数据</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">bizData组件的数据定义：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　概念：通过concept属性指定概念。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　动作：通过reader、writer和creator三个属性指定queryAction、saveAction和createAction。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　关系：通过colunms属性指定返回的数据列。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">标准数据加载模式（通过上面的数据源定义加载数据）：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　1、自动加载模式：设置auto-load=true，数据模型初始化时（onModelConstructDone）数据组件会自动加载数据。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">　　2、组件延迟加载模式：gridSelect下拉选择组件中，为下拉数据源（option）提供了autoLoad属性，设置为true则在第一次下拉列表展开时自动加载数据。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">　　3、代码延迟加载模式：在代码中通过数据组件的loadData方法加载数据。本案例中每页数据都是延迟加载的，参见：tab页签的onSelect事件代码。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　注意：loadData和refreshData不同，loadData()只执行一次，内部判断数据加载后就不再执行；而refreshData()则每次强制重新加载。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">动态数据加载模式：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　在代码中，通过数据组件的loadData方法动态加载。参见：“动作案例/调用动作”中的“返回Table”。</td>
+            </tr> 
+          </table>
+        </div> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent4" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="height:87px;width:100%;" xid="cellLayout5" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="height:87px;width:100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:38px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">数据组件为其他数据感知组件提供数据源，数据感知组件一般通过bind-ref属性指定关联的数据。</td>
+            </tr> 
+          </table>
+        </div>  
+        <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="gridReference_Orders" data="dReference_Orders" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;name&quot;:&quot;fOrderNumber&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column1&quot;},{&quot;name&quot;:&quot;fOrderDate&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column2&quot;},{&quot;name&quot;:&quot;fShipName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column3&quot;},{&quot;name&quot;:&quot;fShipAddress&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column4&quot;},{&quot;name&quot;:&quot;fCompanyName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column5&quot;},{&quot;name&quot;:&quot;fContactName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column6&quot;},{&quot;name&quot;:&quot;fPhone&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column7&quot;}],&quot;data&quot;:&quot;dReference_Orders&quot;,&quot;height&quot;:&quot;200&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/>  
+        <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group cRBNf2y" xid="controlGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}" data-config="{&quot;collapsible&quot;:true}" __cid="cRBNf2y"> 
+          <div class="x-control-group-title cRBNf2y" xid="controlGroupTitle1" __cid="cRBNf2y"> 
+            <span xid="span5_1" __cid="cRBNf2y" class="cRBNf2y"/> 
+          </div>  
+          <div class="form-horizontal container-fluid cRBNf2y" component="$model/UI2/system/components/bootstrap/form/form(bootstrap)" xid="form1" __cid="cRBNf2y"> 
+            <div class="form-group cRBNf2y" xid="formGroup1" __cid="cRBNf2y"> 
+              <div class="col-sm-2 cRBNf2y" xid="col13" __cid="cRBNf2y"> 
+                <label class="control-label cRBNf2y" xid="controlLabel1" __cid="cRBNf2y">订单编号:</label> 
+              </div>  
+              <div class="col-sm-4 cRBNf2y" xid="col14" __cid="cRBNf2y"> 
+                <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input6" data-bind="component:{ref:dReference_Orders.ref('fOrderNumber'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+              </div>  
+              <div class="col-sm-2 cRBNf2y" xid="col15" __cid="cRBNf2y"> 
+                <label class="control-label cRBNf2y" xid="controlLabel2" __cid="cRBNf2y">订单日期:</label> 
+              </div>  
+              <div class="col-sm-4 cRBNf2y" xid="col16" __cid="cRBNf2y"> 
+                <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input7" data-bind="component:{ref:dReference_Orders.ref('fOrderDate'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+              </div> 
+            </div>  
+            <div class="form-group cRBNf2y" xid="formGroup2" __cid="cRBNf2y"> 
+              <div class="col-sm-2 cRBNf2y" xid="col17" __cid="cRBNf2y"> 
+                <label class="control-label cRBNf2y" xid="controlLabel3" __cid="cRBNf2y">收货人:</label> 
+              </div>  
+              <div class="col-sm-4 cRBNf2y" xid="col18" __cid="cRBNf2y"> 
+                <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input8" data-bind="component:{ref:dReference_Orders.ref('fShipName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+              </div>  
+              <div class="col-sm-2 cRBNf2y" xid="col19" __cid="cRBNf2y"> 
+                <label class="control-label cRBNf2y" xid="controlLabel4" __cid="cRBNf2y">收货地址:</label> 
+              </div>  
+              <div class="col-sm-4 cRBNf2y" xid="col20" __cid="cRBNf2y"> 
+                <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input9" data-bind="component:{ref:dReference_Orders.ref('fShipAddress'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+              </div> 
+            </div>  
+            <div class="form-group cRBNf2y" xid="formGroup3" __cid="cRBNf2y"> 
+              <div class="col-sm-2 cRBNf2y" xid="col7" __cid="cRBNf2y"> 
+                <label class="control-label cRBNf2y" xid="controlLabel5" __cid="cRBNf2y">公司名称:</label> 
+              </div>  
+              <div class="col-sm-4 cRBNf2y" xid="col6" __cid="cRBNf2y"> 
+                <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input3" data-bind="component:{ref:dReference_Orders.ref('fCompanyName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+              </div>  
+              <div class="col-sm-2 cRBNf2y" xid="col4" __cid="cRBNf2y"> 
+                <label class="control-label cRBNf2y" xid="controlLabel6" __cid="cRBNf2y">联系人名称:</label> 
+              </div>  
+              <div class="col-sm-4 cRBNf2y" xid="col5" __cid="cRBNf2y"> 
+                <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input2" data-bind="component:{ref:dReference_Orders.ref('fContactName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+              </div> 
+            </div>  
+            <div class="form-group cRBNf2y" xid="formGroup4" __cid="cRBNf2y"> 
+              <div class="col-sm-2 cRBNf2y" xid="col10" __cid="cRBNf2y"> 
+                <label class="control-label cRBNf2y" xid="controlLabel7" __cid="cRBNf2y">电话:</label> 
+              </div>  
+              <div class="col-sm-4 cRBNf2y" xid="col11" __cid="cRBNf2y"> 
+                <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input4" data-bind="component:{ref:dReference_Orders.ref('fPhone'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent5" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:300px;" xid="cellLayout6" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:300px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1215px;HEIGHT:200px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">在bizData组件中除了QueryAction返回的数据关系，还可以定义临时的计算关系，用于界面上的计算和显示。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">下面的案例展示计算关系常见的几种使用场景：</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">　　1、用于bizData中的临时计算列</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　1）从bizData的右键菜单中选择“增加计算关系”，设置name、label和type</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　2）从bizData的右键菜单中选择“编辑规则”，选择对应列</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　3）在数据规则的calculate中设置计算表达式（参见“数据规则”）</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">　    2、用于指定来源于QueryAction中自定义字段的数据类型：</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　由于自定义字段没有模型定义，所以需要在bizData组件中通过计算关系来指定数据类型。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; padding-left: 24px;" __cid="cRBNf2y" class="cRBNf2y">　</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr> 
+          </table>
+        </div>  
+        <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid2" data="dCalculate_OrderDetails" showRowNumber="true" multiselect="false" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;name&quot;:&quot;fProductName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column12&quot;},{&quot;name&quot;:&quot;fQuantityPerUnit&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column13&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fUnitPrice&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column8&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fQuantity&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column9&quot;},{&quot;name&quot;:&quot;fDiscount&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column10&quot;},{&quot;formatter&quot;:&quot;number&quot;,&quot;label&quot;:&quot;金额&quot;,&quot;name&quot;:&quot;fMoney&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column11&quot;}],&quot;data&quot;:&quot;dCalculate_OrderDetails&quot;,&quot;editors&quot;:&quot;D271525C233B43518C262BBC0B76E55D&quot;,&quot;height&quot;:&quot;200&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;multiselect&quot;:false,&quot;rownumbers&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/>  
+        <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="D271525C233B43518C262BBC0B76E55D" class="x-grid-editors cRBNf2y" bind-with="comp('grid2').getCellEditorsBindingObject()" __cid="cRBNf2y">
+          <xhtml:div xid="editor1" col="fUnitPrice" __cid="cRBNf2y" class="cRBNf2y"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input10" data-bind="component:{ref:ref('fUnitPrice'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+          </xhtml:div>
+          <xhtml:div xid="editor2" col="fQuantity" __cid="cRBNf2y" class="cRBNf2y"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input11" data-bind="component:{ref:ref('fQuantity'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+          </xhtml:div>
+        </xhtml:div>
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent6" __cid="cRBNf2y"> 
+        <div component="$model/UI2/system/components/bootstrap/tabs/tabs" xid="tabs4" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tabs'}" __cid="cRBNf2y" class="cRBNf2y"> 
+          <ul class="nav nav-tabs cRBNf2y" xid="ul4" __cid="cRBNf2y"> 
+            <li class="active cRBNf2y" xid="li14" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y"> 
+              <a content="tabContent14" xid="tabItem3" __cid="cRBNf2y" class="cRBNf2y">概述</a> 
+            </li>  
+            <li role="presentation" xid="li15" component="$model/UI2/system/components/bootstrap/tabs/tab" data-bind="component:{name:'$model/UI2/system/components/bootstrap/tabs/tab'}" __cid="cRBNf2y" class="cRBNf2y"> 
+              <a content="tabContent15" xid="tabItem4" __cid="cRBNf2y" class="cRBNf2y">案例</a> 
+            </li> 
+          </ul>  
+          <div class="tab-content cRBNf2y" xid="div4_1" __cid="cRBNf2y"> 
+            <div class="tab-pane active cRBNf2y" xid="tabContent14" __cid="cRBNf2y"> 
+              <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%; height: 100%;" xid="cellLayout7" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%; height: 100%;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:477px;" __cid="cRBNf2y" class="cRBNf2y"> 
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">数据组件支持数据规则的设置和解析，数据规则包含：必须、只读、计算、约束。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">开发者通过数据组件右键菜单中的“编辑规则”，定义概念规则或关系规则。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　概念规则是行规则，作用于整行数据，可以定义的规则只有“只读”规则。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　关系规则是列规则，作用于指定列数据，可以定义全部规则类型：必须、只读、计算、约束。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">数据规则采用表达式定义，其中：</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　必须、只读、计算、约束规则采用表达式，除了可以使用基本函数外，还支持Javascript函数扩展。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">规则属性说明：</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　required - 必须：当表达式计算结果为真，且数据为空时，关联的感知组件中会显示红色波浪线，并且数据不能保存显示提示alert。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　readonly - 只读：当表达式计算结果为真时，关联的感知组件不能编辑。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　calculate - 计算：表达式会自动计算把结果写入当前列数据，关联的感知组件会自动显示计算后的结果。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　constraint - 约束：当表达式计算结果为假时，关联的感知组件中会显示红色波浪线，并且数据不能保存显示提示alert。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">规则中调用js函数写法</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　$model.函数名()</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">注意：</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">　　1、由于没有修改的数据行不需要保存，所以保存时默认不验证未修改的数据行的规则。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">　　　开发者可以通过数据对象的validOnlyChangeData属性值控制是否验证所有数据（false表示验证所有数据）。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">　　2、数据规则的运算默认是被优化的，数据加载时只计算当前行的数据规则。</td>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">　　　</td>
+                  </tr> 
+                </table>
+              </div> 
+            </div>  
+            <div class="tab-pane cRBNf2y" xid="tabContent15" __cid="cRBNf2y"> 
+              <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:360px;" xid="cellLayout8" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+                <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:360px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1445px;HEIGHT:361px;" __cid="cRBNf2y" class="cRBNf2y"> 
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 160px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 150px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 160px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                    <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; text-align: center; border: 1px solid rgb(150, 150, 150); font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">数据组件</td>
+                    <td style="height: 19px; text-align: center; border: 1px solid rgb(150, 150, 150); font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">规则项</td>
+                    <td style="height: 19px; text-align: center; border: 1px solid rgb(150, 150, 150); font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">规则属性</td>
+                    <td style="height: 19px; text-align: center; border: 1px solid rgb(150, 150, 150); font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">表达式</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td rowSpan="4" style="height: 76px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">dRule_Orders</td>
+                    <td rowSpan="2" style="height: 38px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">DEMO_Orders</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">readonly</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">js:val("fStatus")== 'shipped'</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">行只读规则</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">已发货的数据只读，不能修改</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td rowSpan="2" style="height: 38px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">fTotalMoney</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">calculate</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150); color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">$model.comp('dRule_OrderDetails').sum('fMoney')</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">列计算规则</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150); color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">计算合计金额</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td rowSpan="10" style="height: 190px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">dRule_OrderDetails</td>
+                    <td rowSpan="2" style="height: 38px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">DEMO_OrderDetails</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">readonly</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">$model.dRule_Orders.val("fStatus")== 'shipped'</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">行只读规则</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">已发货的数据只读，不能修改</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td rowSpan="2" style="height: 38px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">fMoney</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">calculate</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">$row.val("fQuantity") * $row.val("fUnitPrice") *(1-   $row.val("fDiscount"))</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">列计算规则</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">计算明细金额</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td rowSpan="2" style="height: 38px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">fQuantity</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">constraint</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">val("fQuantity") &gt;= 0</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">列约束规则</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">数量不能小于零（保存数据时生效）</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td rowSpan="2" style="height: 38px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">fUnitPrice</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">constraint</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">val("fUnitPrice") &gt;= 0</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">列约束规则</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">单价不能小于零（保存数据时生效）</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td rowSpan="2" style="height: 38px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">fDiscount</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">constraint</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">val("fDiscount") &gt;= 0</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(150, 150, 150); border-right-style: solid;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">列约束规则</td>
+                    <td style="height: 19px; border: 1px solid rgb(150, 150, 150);" __cid="cRBNf2y" class="cRBNf2y">折扣不能小于零（保存数据时生效）</td>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr>  
+                  <tr __cid="cRBNf2y" class="cRBNf2y">
+                    <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                    <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+                  </tr> 
+                </table>
+              </div>  
+              <div component="$model/UI2/system/components/bootstrap/row/row" class="row cRBNf2y" xid="row1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cRBNf2y"> 
+                <div class="col col-xs-1 col-sm-12 col-md-12 col-lg-12 cRBNf2y" xid="col9" __cid="cRBNf2y"> 
+                  <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter x-cell-control cRBNf2y" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cRBNf2y"> 
+                    <label xid="label1" __cid="cRBNf2y" class="cRBNf2y">状态</label>  
+                    <div class="x-control cRBNf2y" component="$model/UI2/system/components/justep/gridFilter/gridFilter" xid="gridFilter1" filterData="dRule_Orders" filterCol="fStatus" __cid="cRBNf2y"> 
+                      <div class="x-gridSelect cRBNf2y" component="$model/UI2/system/components/justep/gridSelect/gridSelect" xid="gridSelect1" data-config="{&quot;autoOptionWidth&quot;:false,&quot;disabled&quot;:false,&quot;inputChangeable&quot;:false,&quot;inputFilterable&quot;:false,&quot;optionCfg&quot;:{&quot;colModel&quot;:[{&quot;name&quot;:&quot;value&quot;}],&quot;data&quot;:&quot;dRule_Status&quot;,&quot;label&quot;:&quot;value&quot;,&quot;value&quot;:&quot;key&quot;,&quot;xid&quot;:&quot;option1&quot;},&quot;optionHeight&quot;:300}" data-bind="component:{name:'$model/UI2/system/components/justep/gridSelect/gridSelect'}" __cid="cRBNf2y"> 
+                        <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-option cRBNf2y" __cid="cRBNf2y"/>
+                        <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" class="form-control x-gridSelect-input cRBNf2y" __cid="cRBNf2y"/>
+                        <xhtml:span xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-clear icon-close-circled hide cRBNf2y" __cid="cRBNf2y"/>
+                      </div> 
+                    </div>  
+                    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cRBNf2y" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'dRule_Orders.refresh'}" data-config="{&quot;icon&quot;:&quot;icon-android-search&quot;,&quot;label&quot;:&quot;查询&quot;}" __cid="cRBNf2y"> 
+                      <i xid="i1" class="icon-android-search cRBNf2y" __cid="cRBNf2y"/>  
+                      <span xid="span8" __cid="cRBNf2y" class="cRBNf2y">查询</span> 
+                    </a>  
+                    <label xid="label2" style="color:#FF0000;" __cid="cRBNf2y" class="cRBNf2y">注意：状态是“已发货”的数据按规则是只读的</label> 
+                  </div> 
+                </div>  
+                <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cRBNf2y" xid="col1" __cid="cRBNf2y"> 
+                  <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid1" data="dRule_Orders" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;editable&quot;:true,&quot;name&quot;:&quot;fOrderNumber&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column14&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;状态&quot;,&quot;name&quot;:&quot;fStatusName&quot;,&quot;width&quot;:&quot;60&quot;,&quot;xid&quot;:&quot;column18&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fShipName&quot;,&quot;width&quot;:&quot;60&quot;,&quot;xid&quot;:&quot;column15&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fShipAddress&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column16&quot;},{&quot;editable&quot;:true,&quot;label&quot;:&quot;金额&quot;,&quot;name&quot;:&quot;fTotalMoney&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column17&quot;}],&quot;data&quot;:&quot;dRule_Orders&quot;,&quot;editors&quot;:&quot;2DC8A1F4B0654E189D7F95FBC467FBD2&quot;,&quot;height&quot;:&quot;200&quot;,&quot;hiddenCaptionbar&quot;:true}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/>  
+                  <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="2DC8A1F4B0654E189D7F95FBC467FBD2" class="x-grid-editors cRBNf2y" bind-with="comp('grid1').getCellEditorsBindingObject()" __cid="cRBNf2y">
+                    <xhtml:div xid="editor3" col="fOrderNumber" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input12" data-bind="component:{ref:ref('fOrderNumber'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor4" col="fStatusName" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input13" data-bind="component:{ref:ref('fStatusName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor5" col="fShipName" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input14" data-bind="component:{ref:ref('fShipName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor6" col="fShipAddress" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input15" data-bind="component:{ref:ref('fShipAddress'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor7" col="fTotalMoney" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input16" data-bind="component:{ref:ref('fTotalMoney'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                  </xhtml:div>
+                </div>  
+                <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cRBNf2y" xid="col2" __cid="cRBNf2y"> 
+                  <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid3" data="dRule_OrderDetails" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;editable&quot;:true,&quot;name&quot;:&quot;fProductName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column23&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fUnitPrice&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column19&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fQuantity&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column20&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fDiscount&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column21&quot;},{&quot;editable&quot;:true,&quot;name&quot;:&quot;fMoney&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column22&quot;}],&quot;data&quot;:&quot;dRule_OrderDetails&quot;,&quot;editors&quot;:&quot;744BDACD9A864BB1ADBC2CC723912127&quot;,&quot;height&quot;:&quot;200&quot;,&quot;hiddenCaptionbar&quot;:true}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/>  
+                  <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" xid="744BDACD9A864BB1ADBC2CC723912127" class="x-grid-editors cRBNf2y" bind-with="comp('grid3').getCellEditorsBindingObject()" __cid="cRBNf2y">
+                    <xhtml:div xid="editor8" col="fProductName" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input17" data-bind="component:{ref:ref('fProductName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor9" col="fUnitPrice" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input18" data-bind="component:{ref:ref('fUnitPrice'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor13" col="fQuantity" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input22" data-bind="component:{ref:ref('fQuantity'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor11" col="fDiscount" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input20" data-bind="component:{ref:ref('fDiscount'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                    <xhtml:div xid="editor12" col="fMoney" __cid="cRBNf2y" class="cRBNf2y"> 
+                      <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="input21" data-bind="component:{ref:ref('fMoney'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/> 
+                    </xhtml:div>
+                  </xhtml:div>
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent7" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:270px;" xid="cellLayout9" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:270px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1015px;HEIGHT:228px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 1000px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">bizData组件支持数据分页加载：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　1、在设计时通过bizData的limit属性指定每页的数据行数；</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　2、配合分页导航组件实现数据分页加载模式。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">bizData组件支持数据排序，有以下三种使用方式：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　A、在设计时，通过order-by属性指定排序方式，参见：dOrderBy_Orders的order-by属性；</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　B、在运行时，用代码通过setOrderBy(field,type)动态指定排序方式（type：0-desc；1-asc），参见：排序按钮的onClick事件；</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　C、用户可以通过点击grid列头实现动态过滤，参见：下面grid中订单号、</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">             运费、订单日期、需求日期、发货日期的列属性。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">“分页”和“排序”本质上是在刷新数据时利用QueryAction的limit、offset参数和orderBy参数，构造动态KSQL语句实现的。</td>
+            </tr> 
+          </table>
+        </div>  
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row cRBNf2y" xid="row3" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cRBNf2y"> 
+          <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-4 cRBNf2y" xid="col21" __cid="cRBNf2y"> 
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit cRBNf2y" xid="labelEdit1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cRBNf2y"> 
+              <label class="x-label cRBNf2y" xid="label7" style="width:100px;" __cid="cRBNf2y">排序字段</label>  
+              <div class="x-edit cRBNf2y" xid="div8" __cid="cRBNf2y"> 
+                <div class="x-gridSelect cRBNf2y" component="$model/UI2/system/components/justep/gridSelect/gridSelect" xid="gridSelect2" data-config="{&quot;autoOptionWidth&quot;:false,&quot;disabled&quot;:false,&quot;inputChangeable&quot;:false,&quot;inputFilterable&quot;:false,&quot;optionCfg&quot;:{&quot;colModel&quot;:[{&quot;name&quot;:&quot;value&quot;}],&quot;data&quot;:&quot;dOrderBy_Fields&quot;,&quot;label&quot;:&quot;value&quot;,&quot;value&quot;:&quot;key&quot;,&quot;xid&quot;:&quot;option2&quot;},&quot;optionHeight&quot;:300}" data-bind="component:{ref:dTemp.ref('field'),name:'$model/UI2/system/components/justep/gridSelect/gridSelect',labelRef:dTemp.ref('fieldLabel')}" __cid="cRBNf2y"> 
+                  <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-option cRBNf2y" __cid="cRBNf2y"/>
+                  <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" class="form-control x-gridSelect-input cRBNf2y" __cid="cRBNf2y"/>
+                  <xhtml:span xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-clear icon-close-circled hide cRBNf2y" __cid="cRBNf2y"/>
+                </div> 
+              </div> 
+            </div> 
+          </div>  
+          <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-4 cRBNf2y" xid="col23" __cid="cRBNf2y"> 
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit cRBNf2y" xid="labelEdit2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cRBNf2y"> 
+              <label class="x-label cRBNf2y" xid="label8" style="width:100px;" __cid="cRBNf2y">排序方式</label>  
+              <div class="x-edit cRBNf2y" xid="div9" __cid="cRBNf2y"> 
+                <div class="x-gridSelect cRBNf2y" component="$model/UI2/system/components/justep/gridSelect/gridSelect" xid="gridSelect3" data-config="{&quot;autoOptionWidth&quot;:false,&quot;disabled&quot;:false,&quot;inputChangeable&quot;:false,&quot;inputFilterable&quot;:false,&quot;optionCfg&quot;:{&quot;colModel&quot;:[{&quot;name&quot;:&quot;value&quot;}],&quot;data&quot;:&quot;dOrderBy_Type&quot;,&quot;label&quot;:&quot;value&quot;,&quot;value&quot;:&quot;key&quot;,&quot;xid&quot;:&quot;option3&quot;},&quot;optionHeight&quot;:300}" data-bind="component:{ref:dTemp.ref('type'),name:'$model/UI2/system/components/justep/gridSelect/gridSelect',labelRef:dTemp.ref('typeLabel')}" __cid="cRBNf2y"> 
+                  <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-option cRBNf2y" __cid="cRBNf2y"/>
+                  <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" class="form-control x-gridSelect-input cRBNf2y" __cid="cRBNf2y"/>
+                  <xhtml:span xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-clear icon-close-circled hide cRBNf2y" __cid="cRBNf2y"/>
+                </div> 
+              </div> 
+            </div> 
+          </div>  
+          <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-4 cRBNf2y" xid="col24" __cid="cRBNf2y"> 
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cRBNf2y" xid="button5" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button5Click" data-config="{&quot;label&quot;:&quot;排序&quot;}" __cid="cRBNf2y"> 
+              <i xid="i5" __cid="cRBNf2y" class="cRBNf2y"/>  
+              <span xid="span11" __cid="cRBNf2y" class="cRBNf2y">排序</span> 
+            </a> 
+          </div>  
+          <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 cRBNf2y" xid="col12" __cid="cRBNf2y"> 
+            <div component="$model/UI2/system/components/justep/pagerBar/pagerBar" class="x-pagerbar container-fluid cRBNf2y" xid="pagerBar1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerBar/pagerBar'}" data-config="{&quot;data&quot;:&quot;dOrderBy_Orders&quot;}" __cid="cRBNf2y"> 
+              <div class="row cRBNf2y" xid="div1" __cid="cRBNf2y"> 
+                <div class="col-sm-3 cRBNf2y" xid="div2" __cid="cRBNf2y"> 
+                  <div class="x-pagerbar-length cRBNf2y" xid="div3" __cid="cRBNf2y"> 
+                    <label component="$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect" class="x-pagerlimitselect cRBNf2y" xid="pagerLimitSelect1" data-bind="component:{name:'$model/UI2/system/components/justep/pagerLimitSelect/pagerLimitSelect'}" data-config="{&quot;data&quot;:&quot;dOrderBy_Orders&quot;}" __cid="cRBNf2y"> 
+                      <span xid="span1" __cid="cRBNf2y" class="cRBNf2y">显示</span>  
+                      <select component="$model/UI2/system/components/justep/select/select" class="form-control input-sm cRBNf2y" xid="select1" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'}" __cid="cRBNf2y"> 
+                        <option value="10" xid="default2" __cid="cRBNf2y" class="cRBNf2y">10</option>  
+                        <option value="20" xid="default3" __cid="cRBNf2y" class="cRBNf2y">20</option>  
+                        <option value="50" xid="default4" __cid="cRBNf2y" class="cRBNf2y">50</option>  
+                        <option value="100" xid="default5" __cid="cRBNf2y" class="cRBNf2y">100</option> 
+                      </select>  
+                      <span xid="span3" __cid="cRBNf2y" class="cRBNf2y">条</span> 
+                    </label> 
+                  </div> 
+                </div>  
+                <div class="col-sm-3 cRBNf2y" xid="div4" __cid="cRBNf2y"> 
+                  <div class="x-pagerbar-info cRBNf2y" xid="div5" __cid="cRBNf2y">当前显示1-10条，共16条</div> 
+                </div>  
+                <div class="col-sm-6 cRBNf2y" xid="div6" __cid="cRBNf2y"> 
+                  <div class="x-pagerbar-pagination cRBNf2y" xid="div7" __cid="cRBNf2y"> 
+                    <ul class="pagination cRBNf2y" component="$model/UI2/system/components/bootstrap/pagination/pagination" xid="pagination1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/pagination/pagination'}" data-config="{&quot;data&quot;:&quot;dOrderBy_Orders&quot;}" __cid="cRBNf2y"> 
+                      <li class="prev cRBNf2y" xid="li1" __cid="cRBNf2y"> 
+                        <a href="#" xid="a1" __cid="cRBNf2y" class="cRBNf2y"> 
+                          <span aria-hidden="true" xid="span4" __cid="cRBNf2y" class="cRBNf2y">«</span>  
+                          <span class="sr-only cRBNf2y" xid="span5" __cid="cRBNf2y">Previous</span> 
+                        </a> 
+                      </li>  
+                      <li class="next cRBNf2y" xid="li2" __cid="cRBNf2y"> 
+                        <a href="#" xid="a2" __cid="cRBNf2y" class="cRBNf2y"> 
+                          <span aria-hidden="true" xid="span6" __cid="cRBNf2y" class="cRBNf2y">»</span>  
+                          <span class="sr-only cRBNf2y" xid="span9" __cid="cRBNf2y">Next</span> 
+                        </a> 
+                      </li> 
+                    </ul> 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div>  
+        <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid4" data="dOrderBy_Orders" serverSort="true" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;name&quot;:&quot;fOrderNumber&quot;,&quot;sorttype&quot;:&quot;text&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column24&quot;},{&quot;name&quot;:&quot;fOrderDate&quot;,&quot;sorttype&quot;:&quot;date&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column25&quot;},{&quot;name&quot;:&quot;fFreght&quot;,&quot;sorttype&quot;:&quot;float&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column28&quot;},{&quot;name&quot;:&quot;fRequiredDate&quot;,&quot;sorttype&quot;:&quot;date&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column26&quot;},{&quot;name&quot;:&quot;fShippedDate&quot;,&quot;sorttype&quot;:&quot;date&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column27&quot;},{&quot;name&quot;:&quot;fShipName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column29&quot;},{&quot;name&quot;:&quot;fShipAddress&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column30&quot;}],&quot;data&quot;:&quot;dOrderBy_Orders&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;serverSort&quot;:true,&quot;width&quot;:&quot;100%&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent8" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:250px;" xid="cellLayout10" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:250px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:238px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">数据查找：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　数据查找是通过数据组件的find方法，在“已加载的数据”中进行数据查找。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　参见：下面案例中“查找”按钮的onClick事件。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">数据过滤（bizData）：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　数据过滤是按照设置的过滤条件加载数据，从服务端只加载符合条件的数据到页面。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　过滤条件的设置有两种模式：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　设计时 - 通过数据组件右键菜单的“增加过滤条件”；</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　运行时 - 通过数据组件的setFilter(name, filter)方法。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　bizData组件可以设置多个过滤条件，同名的过滤条件会覆盖，不同名的过滤条件会以AND方式合并。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　参见：下面案例中“过滤”按钮的onClick事件。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">　　数据过滤本质上是在刷新数据时通过QueryAction的filter参数，动态构造KSQL语句实现的。</td>
+            </tr> 
+          </table>
+        </div>  
+        <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter cRBNf2y" xid="toolBar2" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cRBNf2y"> 
+          <label xid="label3" __cid="cRBNf2y" class="cRBNf2y">在当前数据中查找： 收货人</label>  
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="inputFind" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cRBNf2y" xid="btnFind" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:btnFindClick" data-config="{&quot;label&quot;:&quot;查找&quot;}" __cid="cRBNf2y"> 
+            <i xid="i2" __cid="cRBNf2y" class="cRBNf2y"/>  
+            <span xid="span2" __cid="cRBNf2y" class="cRBNf2y">查找</span> 
+          </a>  
+          <label xid="label4" __cid="cRBNf2y" class="cRBNf2y">从服务端过滤数据： 收货人</label>  
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control cRBNf2y" xid="inputFilter" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="cRBNf2y"/>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cRBNf2y" xid="btnFilter" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:btnFilterClick" data-config="{&quot;label&quot;:&quot;过滤&quot;}" __cid="cRBNf2y"> 
+            <i xid="i3" __cid="cRBNf2y" class="cRBNf2y"/>  
+            <span xid="span7" __cid="cRBNf2y" class="cRBNf2y">过滤</span> 
+          </a> 
+        </div>  
+        <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid5" data="dFilter_Orders" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;name&quot;:&quot;fStatus&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column36&quot;},{&quot;name&quot;:&quot;fOrderNumber&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column31&quot;},{&quot;name&quot;:&quot;fOrderDate&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column32&quot;},{&quot;name&quot;:&quot;fShipName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column33&quot;},{&quot;name&quot;:&quot;fShipCity&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column35&quot;},{&quot;name&quot;:&quot;fShipAddress&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column34&quot;}],&quot;data&quot;:&quot;dFilter_Orders&quot;,&quot;height&quot;:&quot;200&quot;,&quot;hiddenCaptionbar&quot;:true}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent9" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:150px;" xid="cellLayout11" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:150px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1335px;HEIGHT:114px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 1000px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+              <td class="first-row first-cell cRBNf2y" style="WIDTH:80px;" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">bizData组件支持多级主从关联：</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　1、“从数据”的bizData组件通过master/data和master/relation两个属性，分别指定“主数据”组件的ID和用于主从过滤的“外键关系”。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　2、“从数据”设置为数据自动加载模式（auto-load=true），当“主数据”加载或记录改变时，“从数据”会自动过滤加载。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　3、bizData会为加载过的“从数据”形成缓存，既优化性能，也保证修改过的“从数据”不会因为“主数据”变化而丢失。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　4、“主数据”的isChanged方法可以感知所有级联的“从数据”是否改变，同时“主数据”的saveData方法会自动级联保存所有的“从数据”。主从级联数据的保存会作为一个批请求，保证在同一个数据库事务中。</td>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr> 
+          </table>
+        </div>  
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row cRBNf2y" xid="row2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cRBNf2y"> 
+          <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cRBNf2y" xid="col3" __cid="cRBNf2y"> 
+            <label xid="label5" __cid="cRBNf2y" class="cRBNf2y">主数据：dMasterDetail_Orders</label>  
+            <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid6" data="dMasterDetail_Orders" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;name&quot;:&quot;fOrderNumber&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column37&quot;},{&quot;name&quot;:&quot;fOrderDate&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column38&quot;},{&quot;name&quot;:&quot;fFreght&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column39&quot;},{&quot;name&quot;:&quot;fShipName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column40&quot;},{&quot;name&quot;:&quot;fShipAddress&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column41&quot;}],&quot;data&quot;:&quot;dMasterDetail_Orders&quot;,&quot;height&quot;:&quot;200&quot;,&quot;hiddenCaptionbar&quot;:true}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/> 
+          </div>  
+          <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cRBNf2y" xid="col8" __cid="cRBNf2y"> 
+            <label xid="label6" __cid="cRBNf2y" class="cRBNf2y">从数据：dMasterDetail_OrderDetails</label>  
+            <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid7" data="dMasterDetail_OrderDetails" data-config="{&quot;altRows&quot;:true,&quot;colModel&quot;:[{&quot;name&quot;:&quot;fProductName&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column45&quot;},{&quot;name&quot;:&quot;fQuantityPerUnit&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column46&quot;},{&quot;name&quot;:&quot;fUnitPrice&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column42&quot;},{&quot;name&quot;:&quot;fQuantity&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column43&quot;},{&quot;name&quot;:&quot;fDiscount&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column44&quot;}],&quot;data&quot;:&quot;dMasterDetail_OrderDetails&quot;,&quot;height&quot;:&quot;200&quot;,&quot;hiddenCaptionbar&quot;:true}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/> 
+          </div> 
+        </div> 
+      </div>  
+      <div class="tab-pane cRBNf2y" xid="tabContent12" __cid="cRBNf2y"> 
+        <div class="x-cell-layout cRBNf2y" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:500px;" xid="cellLayout12" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cRBNf2y"> 
+          <table xmlns="" cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:500px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:815px;HEIGHT:352px;" __cid="cRBNf2y" class="cRBNf2y"> 
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 15px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+              <td style="width: 800px;" class="first-row first-cell cRBNf2y" __cid="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 19px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">bizData组件支持树形数据的定义和加载，与树形数据相关的属性包括：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">　　is-tree：true，指定数据是否以树形模式加载。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">　　limit：-1，树形数据不能以分页模式加载，limit必须设置为-1。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">　　treeOption/parentRelation：指定父关系（即存储父ID的字段），这个属性是数据构造成树形的关键属性，数据组件依赖父关系的值建立数据之间的上下级关系。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(0, 0, 255);" __cid="cRBNf2y" class="cRBNf2y">　　treeOption/rootFilter：指定树的根节点的过滤条件。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　　　（例如：“SA_OPOrg.sParent is null”表示以所有父字段为空的数据作为树的根节点；“SA_OPOrg='ORG01'”表示只以“起步软件”作为树的根节点）</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">　　　　注意：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">　　　　　　如果指定了根节点的过滤条件，数据为逐级加载模式，用户点击树形加号时每次只按需加载当前节点的下级数据，适用于大数据量的树形数据显示和操作；</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; color: rgb(255, 0, 0);" __cid="cRBNf2y" class="cRBNf2y">　　　　　　如果未指定根节点的过滤条件，数据为一次加载模式，全部数据会一次性全部加载到页面，在内存中动态构造成树形，当大数据量时有明显的性能瓶颈。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　tree-option/virtual-root：指定虚根的显示标签，如果为空则不显示虚根。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　treeOption/nodeKindRelation：指定一个字段用于存储节点类型（叶子节点 - nkLeaf），当新增和删除树形数据时数据组件会自动维护这个字段的值。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　   treeOption/delayLoad：是否逐级加载数据，为true的时候可以设置rootFilter属性</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td style="height: 10px;" class="first-col cRBNf2y" __cid="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 10px;" __cid="cRBNf2y" class="cRBNf2y"/>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px; font-weight: bold;" __cid="cRBNf2y" class="cRBNf2y">支持树形显示的组件包括：grid、treeSelect，与树形显示相关的属性包括：</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　expandColumn：在grid和gridSelect组件中，通过设置expandColumn指定树形展开列。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">　　appearance：在grid和gridSelect组件中，通过appearance的值（tree、treeGrid或grid）指定树形的显示模式（“树”或“树列表”）。</td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">       useVirtualRoot：设置是否显示虚根  </td>
+            </tr>  
+            <tr __cid="cRBNf2y" class="cRBNf2y">
+              <td class="first-col cRBNf2y" style="HEIGHT:19px;" __cid="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y"/>
+              <td style="height: 19px;" __cid="cRBNf2y" class="cRBNf2y">       virtualRootLable：虚根名称</td>
+            </tr> 
+          </table>
+        </div>  
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row cRBNf2y" xid="row4" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}" __cid="cRBNf2y"> 
+          <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 cRBNf2y" xid="col26" __cid="cRBNf2y"></div>  
+          <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cRBNf2y" xid="col22" __cid="cRBNf2y"> 
+            <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/grid/grid" hiddenCaptionbar="true" altRows="true" class="x-grid-no-bordered cRBNf2y" xid="grid8" data="dTreeGrid_Org" appearance="treeGrid" expandColumn="sName" useVirtualRoot="true" virtualRootLabel="组织机构" data-config="{&quot;altRows&quot;:true,&quot;appearance&quot;:&quot;treeGrid&quot;,&quot;colModel&quot;:[{&quot;name&quot;:&quot;sName&quot;,&quot;width&quot;:&quot;150&quot;,&quot;xid&quot;:&quot;column47&quot;},{&quot;name&quot;:&quot;sCode&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column48&quot;},{&quot;name&quot;:&quot;sOrgKindID&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column49&quot;},{&quot;name&quot;:&quot;sAddress&quot;,&quot;width&quot;:&quot;100&quot;,&quot;xid&quot;:&quot;column50&quot;}],&quot;data&quot;:&quot;dTreeGrid_Org&quot;,&quot;expandColumn&quot;:&quot;sName&quot;,&quot;height&quot;:&quot;240&quot;,&quot;hiddenCaptionbar&quot;:true,&quot;useVirtualRoot&quot;:true,&quot;virtualRootLabel&quot;:&quot;组织机构&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/grid/grid'}" __cid="cRBNf2y"/> 
+          </div>  
+          <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-6 cRBNf2y" xid="col25" __cid="cRBNf2y"> 
+            <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit cRBNf2y" xid="labelEdit3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}" __cid="cRBNf2y"> 
+              <label class="x-label cRBNf2y" xid="label9" style="width:200px;" __cid="cRBNf2y">gridSelect组件的“树”模式</label>  
+              <div class="x-edit cRBNf2y" xid="div14" __cid="cRBNf2y"> 
+                <div class="x-gridSelect cRBNf2y" component="$model/UI2/system/components/justep/gridSelect/gridSelect" xid="gridSelect5" data-config="{&quot;autoOptionWidth&quot;:false,&quot;disabled&quot;:false,&quot;inputChangeable&quot;:false,&quot;inputFilterable&quot;:false,&quot;optionCfg&quot;:{&quot;appearance&quot;:&quot;tree&quot;,&quot;colModel&quot;:[{&quot;name&quot;:&quot;sName&quot;}],&quot;data&quot;:&quot;dTreeSelect_Org&quot;,&quot;expandColumn&quot;:&quot;sName&quot;,&quot;label&quot;:&quot;sName&quot;,&quot;useVirtualRoot&quot;:true,&quot;value&quot;:&quot;SA_OPOrg&quot;,&quot;virtualRootLabel&quot;:&quot;组织机构&quot;,&quot;xid&quot;:&quot;option5&quot;},&quot;optionHeight&quot;:300}" data-bind="component:{ref:dTemp.ref('treeSelectKey'),name:'$model/UI2/system/components/justep/gridSelect/gridSelect',labelRef:dTemp.ref('treeSelectValue')}" __cid="cRBNf2y"> 
+                  <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-option cRBNf2y" __cid="cRBNf2y"/>
+                  <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" class="form-control x-gridSelect-input cRBNf2y" __cid="cRBNf2y"/>
+                  <xhtml:span xmlns:xhtml="http://www.w3.org/1999/xhtml" class="x-gridSelect-clear icon-close-circled hide cRBNf2y" __cid="cRBNf2y"/>
+                </div> 
+              </div> 
+            </div>
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

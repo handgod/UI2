@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%" class="no-js">  
+  <head xmlns=""> 
+    <meta charset="utf-8"/>  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>  
+    <meta name="apple-mobile-web-app-capable" content="yes"/>  
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>  
+    <meta name="format-detection" content="telephone=no"/>  
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>  
+    <script src="../../../../../v_b380d1e646874789864a3e98d59c73eel_zh_CNs_desktopd_pc/system/lib/base/modernizr-2.8.3.min.js"/>  
+    <script id="__varReplace">
+    	
+    	    	window.__justep = window.__justep || {};
+				window.__justep.isDebug = true;
+				window.__justep.__packageMode = "1";
+				window.__justep.__isPackage = false;;
+				window.__justep.url = location.href;
+				window.__justep.versionInfo = {};
+		 
+    	</script>  
+    <script id="__updateVersion">
+        
+				(function(url, mode){
+					if (("@"+"mode@") === mode) mode = "3";
+					if (("@"+"versionUrl@") === url) url = "system/service/common/app.j";
+					if ((mode!=="1" &amp;&amp; (mode!="2") &amp;&amp; (mode!="3"))) return;
+					var async = (mode=="1");
+					var x5Version = "noApp";
+					var x5AppAgents = /x5app\/([0-9.]*)/.exec(navigator.userAgent);
+					if(x5AppAgents &amp;&amp; x5AppAgents.length &gt; 1){
+					   	x5Version = x5AppAgents[1] || "";
+					} 
+					function createXhr(){
+						try {	
+							return new XMLHttpRequest();
+						}catch (tryMS) {	
+							var version = ["MSXML2.XMLHttp.6.0",
+							               "MSXML2.XMLHttp.3.0",
+							               "MSXML2.XMLHttp",
+							               "Miscrosoft.XMLHTTP"];
+							for(var i = 0; i &lt; version.length; i++){
+								try{
+							    	return new ActiveXObject(version[i]);
+								}catch(e){}
+							}
+						}
+						throw new Error("您的系统或浏览器不支持XHR对象！");
+					}
+					
+					function createGuid(){	
+						var guid = '';	
+						for (var i = 1; i &lt;= 32; i++){		
+							var n = Math.floor(Math.random()*16.0).toString(16);		
+							guid += n;		
+							if((i==8)||(i==12)||(i==16)||(i==20))			
+								guid += '-';	
+						}	
+						return guid;
+					}
+					
+					function parseUrl(href){
+						href = href.split("#")[0];
+						var items = href.split("?");
+						href = items[0];
+						var query = items[1] || "";
+						items = href.split("/");
+						var baseItems = [];
+						var pathItems = [];
+						var isPath = false;
+						for (var i=0; i&lt;items.length; i++){
+							if (mode == "3"){
+								if (items[i] &amp;&amp; (items[i].indexOf("v_") === 0) 
+										&amp;&amp; (items[i].indexOf("l_") !== -1)
+										&amp;&amp; (items[i].indexOf("s_") !== -1)
+										&amp;&amp; (items[i].indexOf("d_") !== -1)
+										|| (items[i]=="v_")){
+									isPath = true;
+									continue;
+								}
+							}else{
+								if (items[i] &amp;&amp; (items[i].indexOf("v-")===0) &amp;&amp; (items[i].charAt(items[i].length-1)=="-") ){
+									isPath = true;
+									continue;
+								}
+							}
+							if (isPath){
+								pathItems.push(items[i]);
+							}else{
+								baseItems.push(items[i]);	
+							}
+							
+						}
+						var base = baseItems.join("/");
+						if (base.charAt(base.length-1)!=="/") base += "/";
+						
+						var path = pathItems.join("/");
+						if (path.charAt(0) !== "/") path = "/" + path;
+						return [base, path, query];
+					}
+					
+					
+					var items = parseUrl(window.location.href);
+					var base = items[0];
+					var path = items[1];
+					var query = items[2];
+					var xhr = createXhr();
+					url += ((url.indexOf("?")!=-1) ? "&amp;" : "?") +"_=" + createGuid();
+					if (mode === "3"){
+						url += "&amp;url=" + path;
+						if (query)
+							url += "&amp;" + query;
+					}
+					xhr.open('GET', base + url, async);
+					
+					if (async){
+						xhr.onreadystatechange=function(){
+							if((xhr.readyState == 4) &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+								var versionInfo = JSON.parse(xhr.responseText);
+								window.__justep.versionInfo = versionInfo;
+								window.__justep.versionInfo.baseUrl = base;
+								if (query){
+									path = path + "?" + query;
+								}
+								path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+								var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+								versionInfo.resourceInfo.indexPageURL = indexUrl;
+								if(versionInfo.resourceInfo.resourceUpdateMode != "md5"){
+									if (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1){
+										versionInfo.resourceInfo.isNewVersion = true;
+									};
+								}
+							}
+						}
+					}
+					
+					try{
+						xhr.send(null);
+						if (!async &amp;&amp; (xhr.status == 200) &amp;&amp; xhr.responseText){
+							var versionInfo = JSON.parse(xhr.responseText);
+							window.__justep.versionInfo = versionInfo;
+							window.__justep.versionInfo.baseUrl = base;
+							if ((mode==="3") &amp;&amp; window.__justep.isDebug){
+								/* 模式3且是调试模式不重定向 */
+							}else{
+								if (query){
+									path = path + "?" + query;
+								}
+								if(versionInfo.resourceInfo.resourceUpdateMode == "md5"){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									versionInfo.resourceInfo.indexPageURL = indexUrl; 
+								}else if (versionInfo.resourceInfo &amp;&amp; versionInfo.resourceInfo.version &amp;&amp; (window.__justep.url.indexOf(versionInfo.resourceInfo.version) == -1)){
+									path = versionInfo.resourceInfo.indexURL || path; /* 如果返回indexPath则使用indexPath，否则使用当前的path */
+									var indexUrl = versionInfo.baseUrl + versionInfo.resourceInfo.version + path;
+									window.location.href = indexUrl;
+								}
+							}
+						}
+					}catch(e2){}
+				}("@versionUrl@", "@mode@"));
+                 
+        </script>  
+    <link rel="stylesheet" href="../../../../../v_2ed974e0dfe9453d8cbe3742c15cd26fl_zh_CNs_desktopd_pc/system/components/pc.addon.min.css" include="$model/UI2/system/components/justep/pagerBar/css/pagerBar,$model/UI2/system/components/justep/widgets/css/widgets,$model/UI2/system/components/justep/absoluteLayout/css/absoluteLayout,$model/UI2/system/components/justep/pagerLimitSelect/css/pagerLimitSelect,$model/UI2/system/components/justep/cellLayout/css/cellLayout,$model/UI2/system/components/justep/smartContainer/css/smartContainer"/>
+    <link rel="stylesheet" href="../../../../../v_5fafbd1e7b644cf092f52b33fa2b7ae0l_zh_CNs_desktopd_pc/system/components/bootstrap.min.css" include="$model/UI2/system/components/bootstrap/lib/css/bootstrap,$model/UI2/system/components/bootstrap/lib/css/bootstrap-theme"/>
+    <link rel="stylesheet" href="../../../../../v_3351aa008a6849f4b162a1b436f0f929l_zh_CNs_desktopd_pc/system/components/comp.min.css" include="$model/UI2/system/components/justep/lib/css2/dataControl,$model/UI2/system/components/justep/input/css/datePickerPC,$model/UI2/system/components/justep/messageDialog/css/messageDialog,$model/UI2/system/components/justep/lib/css3/round,$model/UI2/system/components/justep/input/css/datePicker,$model/UI2/system/components/justep/row/css/row,$model/UI2/system/components/justep/attachment/css/attachment,$model/UI2/system/components/justep/barcode/css/barcodeImage,$model/UI2/system/components/bootstrap/dropdown/css/dropdown,$model/UI2/system/components/justep/dataTables/css/dataTables,$model/UI2/system/components/justep/contents/css/contents,$model/UI2/system/components/justep/common/css/forms,$model/UI2/system/components/justep/locker/css/locker,$model/UI2/system/components/justep/menu/css/menu,$model/UI2/system/components/justep/scrollView/css/scrollView,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/dialog/css/dialog,$model/UI2/system/components/justep/bar/css/bar,$model/UI2/system/components/justep/popMenu/css/popMenu,$model/UI2/system/components/justep/lib/css/icons,$model/UI2/system/components/justep/lib/css4/e-commerce,$model/UI2/system/components/justep/toolBar/css/toolBar,$model/UI2/system/components/justep/popOver/css/popOver,$model/UI2/system/components/justep/panel/css/panel,$model/UI2/system/components/bootstrap/carousel/css/carousel,$model/UI2/system/components/justep/wing/css/wing,$model/UI2/system/components/bootstrap/scrollSpy/css/scrollSpy,$model/UI2/system/components/justep/titleBar/css/titleBar,$model/UI2/system/components/justep/lib/css1/linear,$model/UI2/system/components/justep/numberSelect/css/numberList,$model/UI2/system/components/justep/list/css/list,$model/UI2/system/components/justep/dataTables/css/dataTables"/>
+  </head>  
+  <body xmlns="" style="width:100%;height:100%;margin: 0;"> 
+    <script intro="none"/>  
+    <div id="applicationHost" class="applicationHost" style="width:100%;height:100%;" __component-context__="block">
+      <div xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" __id="id_1" extends="$UI/demo/fn/process/processFnExample/mainActivity.w" component="$model/UI2/system/components/justep/window/window" xid="window" class="window window cEVNZZn" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="cEVNZZn" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/cellLayout/cellLayout,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/process/process,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/bizData,$model/UI2/system/components/justep/toolBar/toolBar,">  
+        <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad" __cid="cEVNZZn" class="cEVNZZn"> 
+          <div xmlns:xui="http://www.justep.com/xui" component="$model/UI2/system/components/justep/data/bizData" autoLoad="true" xid="dataMain" concept="DEMO_Orders" autoNew="false" onAfterNew="dataMainAfterNew" xui:update-mode="merge" __cid="cEVNZZn" class="cEVNZZn">  
+            <reader xid="default1" action="/demo/common/logic/action/queryDEMO_OrdersAction" __cid="cEVNZZn" class="cEVNZZn"/>  
+            <writer xid="default2" action="/demo/common/logic/action/saveDEMO_OrdersAction" __cid="cEVNZZn" class="cEVNZZn"/>  
+            <creator xid="default3" action="/demo/common/logic/action/createDEMO_OrdersAction" __cid="cEVNZZn" class="cEVNZZn"/> 
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter cEVNZZn" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}" __cid="cEVNZZn"> 
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cEVNZZn" xid="button1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process1.advance'}" data-config="{&quot;label&quot;:&quot;流转&quot;}" __cid="cEVNZZn"> 
+            <i xid="i1" __cid="cEVNZZn" class="cEVNZZn"/>  
+            <span xid="span1" __cid="cEVNZZn" class="cEVNZZn">流转</span> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cEVNZZn" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process1.back'}" data-config="{&quot;label&quot;:&quot;回退&quot;}" __cid="cEVNZZn"> 
+            <i xid="i2" __cid="cEVNZZn" class="cEVNZZn"/>  
+            <span xid="span2" __cid="cEVNZZn" class="cEVNZZn">回退</span> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cEVNZZn" xid="button3" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'dataMain.save'}" data-config="{&quot;label&quot;:&quot;保存&quot;}" __cid="cEVNZZn"> 
+            <i xid="i3" __cid="cEVNZZn" class="cEVNZZn"/>  
+            <span xid="span3" __cid="cEVNZZn" class="cEVNZZn">保存</span> 
+          </a>  
+          <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default cEVNZZn" xid="button4" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'process1.showChart'}" data-config="{&quot;label&quot;:&quot;流程图&quot;}" __cid="cEVNZZn"> 
+            <i xid="i4" __cid="cEVNZZn" class="cEVNZZn"/>  
+            <span xid="span4" __cid="cEVNZZn" class="cEVNZZn">流程图</span> 
+          </a> 
+        </div>  
+        <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="wdTestProcessFn" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-config="{&quot;height&quot;:&quot;60%&quot;,&quot;src&quot;:&quot;$model/UI2/demo/common/process/dialogs/testFn.w&quot;,&quot;status&quot;:&quot;normal&quot;,&quot;width&quot;:&quot;60%&quot;}" __cid="cEVNZZn" class="cEVNZZn"> 
+          <div class="x-dialog-overlay cEVNZZn" __cid="cEVNZZn"/>  
+          <div class="x-dialog cEVNZZn" style="display:none;" __cid="cEVNZZn"> 
+            <div class="x-dialog-title cEVNZZn" __cid="cEVNZZn"> 
+              <button class="close cEVNZZn" __cid="cEVNZZn"> 
+                <span __cid="cEVNZZn" class="cEVNZZn">×</span> 
+              </button>  
+              <div class="x-dialog-title-text cEVNZZn" __cid="cEVNZZn"/> 
+            </div>  
+            <div class="x-dialog-body cEVNZZn" __cid="cEVNZZn"/> 
+          </div> 
+        </span>  
+        <div component="$model/UI2/system/components/justep/process/process" xid="process1" data="dataMain" __cid="cEVNZZn" class="cEVNZZn"/>  
+        <div class="x-cell-layout cEVNZZn" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:150px;" xid="cellLayout1" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cEVNZZn"> 
+          <table cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:150px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:860px;HEIGHT:76px;" __cid="cEVNZZn" class="cEVNZZn"> 
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td class="first-row first-cell cEVNZZn" style="WIDTH:80px;" __cid="cEVNZZn"/>  
+              <td class="first-row first-cell cEVNZZn" style="WIDTH:80px;" __cid="cEVNZZn"/>  
+              <td style="width: 180px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td class="first-row first-cell cEVNZZn" style="WIDTH:80px;" __cid="cEVNZZn"/>  
+              <td style="width: 180px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td class="first-row first-cell cEVNZZn" style="WIDTH:80px;" __cid="cEVNZZn"/>  
+              <td style="width: 180px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(192, 192, 192); border-right-style: solid;" __cid="cEVNZZn" class="cEVNZZn">主键值</td>  
+              <td style="height: 19px; border: 1px solid rgb(192, 192, 192);" componentId="output1" __cid="cEVNZZn" class="cEVNZZn"> 
+                <div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/output/output" class="x-output x-cell-control cEVNZZn" xid="output1" data-bind="component:{ref:dataMain.ref('DEMO_Orders'),name:'$model/UI2/system/components/justep/output/output'}" __cid="cEVNZZn"></div> 
+              </td>  
+              <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(192, 192, 192); border-right-style: solid;" __cid="cEVNZZn" class="cEVNZZn">订单编号</td>  
+              <td style="height: 19px; border: 1px solid rgb(192, 192, 192);" componentId="input1" __cid="cEVNZZn" class="cEVNZZn"> 
+                <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cEVNZZn" xid="input1" data-bind="component:{ref:dataMain.ref('fOrderNumber'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cEVNZZn"></input> 
+              </td>  
+              <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(192, 192, 192); border-right-style: solid;" __cid="cEVNZZn" class="cEVNZZn">订单日期</td>  
+              <td style="height: 19px; border: 1px solid rgb(192, 192, 192);" componentId="input2" __cid="cEVNZZn" class="cEVNZZn"> 
+                <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cEVNZZn" xid="input2" data-bind="component:{ref:dataMain.ref('fOrderDate'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cEVNZZn"></input> 
+              </td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(192, 192, 192); border-right-style: solid;" __cid="cEVNZZn" class="cEVNZZn">运费</td>  
+              <td style="height: 19px; border: 1px solid rgb(192, 192, 192);" componentId="input3" __cid="cEVNZZn" class="cEVNZZn"> 
+                <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cEVNZZn" xid="input3" data-bind="component:{ref:dataMain.ref('fFreght'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cEVNZZn"></input> 
+              </td>  
+              <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(192, 192, 192); border-right-style: solid;" __cid="cEVNZZn" class="cEVNZZn">收货人</td>  
+              <td style="height: 19px; border: 1px solid rgb(192, 192, 192);" componentId="input4" __cid="cEVNZZn" class="cEVNZZn"> 
+                <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cEVNZZn" xid="input4" data-bind="component:{ref:dataMain.ref('fShipName'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cEVNZZn"></input> 
+              </td>  
+              <td style="height: 19px; border-right-width: 1px; border-right-color: rgb(192, 192, 192); border-right-style: solid;" __cid="cEVNZZn" class="cEVNZZn">收货地址</td>  
+              <td style="height: 19px; border: 1px solid rgb(192, 192, 192);" componentId="input5" __cid="cEVNZZn" class="cEVNZZn"> 
+                <input xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/input/input" class="form-control x-cell-control cEVNZZn" xid="input5" data-bind="component:{ref:dataMain.ref('fShipAddress'),name:'$model/UI2/system/components/justep/input/input'}" __cid="cEVNZZn"></input> 
+              </td> 
+            </tr> 
+          </table> 
+        </div>  
+        <div class="x-cell-layout cEVNZZn" component="$model/UI2/system/components/justep/cellLayout/cellLayout" style="width:100%;height:500px;" xid="cellLayout2" data-bind="component:{name:'$model/UI2/system/components/justep/cellLayout/cellLayout'}" __cid="cEVNZZn"> 
+          <table cellspacing="0" cellpadding="0" rowHeight="19" columnWidth="80" style="width:100%;height:500px;;border-collapse:collapse;table-layout:fixed;width:1px;;WIDTH:1065px;HEIGHT:570px;" __cid="cEVNZZn" class="cEVNZZn"> 
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 15px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 210px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 10px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 300px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 10px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 210px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 10px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="width: 300px;" class="first-row first-cell cEVNZZn" __cid="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn">测试</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 17px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 17px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="8" style="height: 17px; color: rgb(0, 0, 255);" __cid="cEVNZZn" class="cEVNZZn">本案例用于演示和测试流程中的模型函数，在流程图的条件分支环节中可以看到使用表单数据做流程规则的用法。</td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="8" style="height: 19px; color: rgb(0, 0, 255);" __cid="cEVNZZn" class="cEVNZZn">本案例的流程模型参见：/BIZ/demo/fn/process/processFnExample/processFnExampleProcess.process.m。</td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="8" style="height: 19px; color: rgb(0, 0, 255);" __cid="cEVNZZn" class="cEVNZZn">在流程模型中，除了会用到流程类的模型函数，还会大量用到组织类的模型函数及其他函数，相关内容请参看《函数案例》。</td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="8" style="height: 8px; color: rgb(0, 0, 255); border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 25px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 25px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="8" style="height: 25px; background-color: rgb(51, 102, 255); color: rgb(255, 255, 255); font-weight: bold; text-align: center;" __cid="cEVNZZn" class="cEVNZZn">流程函数</td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 19px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">获取当前环节</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label2" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label2" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">currentActivity()</label> 
+              </td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">获取当前环节名称</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label9" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label9" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">currentActivityLabel()</label> 
+              </td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn">获取当前流程</td>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label3" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label3" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">currentProcess()</label> 
+              </td>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn">获取当前流程名称</td>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label10" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label10" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">currentProcessLabel()</label> 
+              </td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">获取指定环节的提交者</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label4" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label4" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">findActivityCreator('businessActivity1')</label> 
+              </td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">获取指定环节的执行者</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label11" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label11" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">findActivityExecutor('businessActivity1')</label> 
+              </td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">获取指定环节的提交者所在机构</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label5" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label5" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">findActivityCreatorOgn('businessActivity1')</label> 
+              </td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">获取指定环节的执行者所在机构</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label12" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label12" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">findActivityExecutorOgn('businessActivity1')</label> 
+              </td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 15px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 15px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 15px; text-align: center; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 15px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="6" style="height: 15px; color: rgb(0, 0, 255); border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn">在这组函数里：'START'表示首环节；'ALL'表示所有环节</td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cEVNZZn" class="cEVNZZn">判断流程是否正在启动</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label6" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label6" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">isStartingProcess()</label> 
+              </td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; font-weight: bold; text-align: right;" __cid="cEVNZZn" class="cEVNZZn">判断流程是否已经结束</td>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" componentId="label13" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label13" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">isProcessFinished()</label> 
+              </td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 25px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 25px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="8" style="height: 25px; border-top-style: solid; border-top-width: 1px; border-color: rgb(192, 192, 192); text-align: center; background-color: rgb(153, 204, 0); color: rgb(255, 255, 255); font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">流程中获取表单数据</td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn">获取流程关联的数据主键值</td>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label7" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label7" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">getProcessData1()</label> 
+              </td>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-top-color: rgb(192, 192, 192); border-bottom-color: rgb(192, 192, 192); border-left-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; border-top-style: solid; border-top-width: 1px; border-color: rgb(192, 192, 192);" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: right; font-weight: bold; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn">获取表单中的运费</td>  
+              <td style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="6" style="height: 19px; border-bottom-width: 1px; border-bottom-color: rgb(192, 192, 192); border-bottom-style: solid;" componentId="label8" __cid="cEVNZZn" class="cEVNZZn"> 
+                <label xmlns="http://www.w3.org/1999/xhtml" xid="label8" class=" x-cell-control cEVNZZn" title="process" __cid="cEVNZZn">relationValue('DEMO_Orders', getProcessData1(), null, null, 'fFreght', '/demo/common/data')</label> 
+              </td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 7px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px; text-align: center; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td colSpan="8" style="height: 19px; color: rgb(255, 0, 0); font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn">这里列出的只有一部分常用的模型函数，更多的模型函数请参看《X5 API手册》或模型表达式设计器。</td> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px; text-align: center; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: center; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 12px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 12px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 7px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 7px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 7px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 9px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 9px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td style="height: 8px;" class="first-col cEVNZZn" __cid="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 8px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr>  
+            <tr __cid="cEVNZZn" class="cEVNZZn"> 
+              <td class="first-col cEVNZZn" style="HEIGHT:19px;" __cid="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: center; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px; text-align: center; font-weight: bold;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/>  
+              <td style="height: 19px;" __cid="cEVNZZn" class="cEVNZZn"/> 
+            </tr> 
+          </table> 
+        </div> 
+      </div>
+    </div>  
+    <div id="downloadGCF" style="display:none;padding:50px;"> 
+      <span>您使用的浏览器需要下载插件才能使用,</span>  
+      <a id="downloadGCFLink" href="#">下载地址</a>  
+      <p>(安装后请重新打开浏览器)</p> 
+    </div>  
+    <script>
+    	
+    	            //判断浏览器, 判断GCF
+    	 			var browser = {
+    			        isIe: function () {
+    			            return navigator.appVersion.indexOf("MSIE") != -1;
+    			        },
+    			        navigator: navigator.appVersion,
+    			        getVersion: function() {
+    			            var version = 999; // we assume a sane browser
+    			            if (navigator.appVersion.indexOf("MSIE") != -1)
+    			                // bah, IE again, lets downgrade version number
+    			                version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+    			            return version;
+    			        }
+    			    };
+    				function isGCFInstalled(){
+    			      try{
+    			        var i = new ActiveXObject('ChromeTab.ChromeFrame');
+    			        if (i) {
+    			          return true;
+    			        }
+    			      }catch(e){}
+    			      return false;
+    				}
+    	            //判断浏览器, 判断GCF
+    	            var __continueRun = true;
+    				if (browser.isIe() &amp;&amp; (browser.getVersion() &lt; 10) &amp;&amp; !isGCFInstalled()) {
+    					document.getElementById("applicationHost").style.display = 'none';
+    					document.getElementById("downloadGCF").style.display = 'block';
+    					var downloadLink = "/" + location.pathname.match(/[^\/]+/)[0] + "/v8.msi";
+    					document.getElementById("downloadGCFLink").href = downloadLink; 
+    					__continueRun = false;
+    	            }
+		 	
+    	</script>  
+    <script id="_metaJS" src="../../../../../v_dc8fe9f079944faf8f8305583911694al_zh_CNs_desktopd_pc/system/config/meta.js"> </script>  
+    <script id="_requireJS" src="../../../../../v_2b950d9752c14264b282094ea34f9e1cl_zh_CNs_desktopd_pc/system/lib/require/require.2.1.10.js"> </script>  
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_8bbfcb3d6c474b6a8d921f086ff6f432l_zh_CNs_desktopd_pc/system/core.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_b55662dcd6b2416da3abb1c2e0a2ce74l_zh_CNs_desktopd_pc/system/common.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_c16e169086c646deac1fe152c0db0de5l_zh_CNs_desktopd_pc/system/components/comp.min.js"></script>
+    <script xmlns:xhtml="http://www.w3.org/1999/xhtml" src="../../../../../v_9d4bfba99d884ef582741b491c0c66a3l_zh_CNs_desktopd_pc/system/components/pc.addon.min.js"></script>
+    <script id="_mainScript">
+        
+			if (__continueRun) {
+                window.__justep.cssReady = function(fn){
+                	var promises = [];
+                	for (var p in window.__justep.__ResourceEngine.__loadingCss){
+                		if(window.__justep.__ResourceEngine.__loadingCss.hasOwnProperty(p))
+                			promises.push(window.__justep.__ResourceEngine.__loadingCss[p].promise());
+                	}
+                	$.when.apply($, promises).done(fn);
+                };
+                
+            	window.__justep.__ResourceEngine = {
+            		readyRegExp : navigator.platform === 'PLAYSTATION 3' ? /^complete$/ : /^(complete|loaded)$/,
+            		url: window.location.href,	
+            		/*contextPath: 不包括语言 */
+            		contextPath: "",
+            		serverPath: "",
+            		__loadedJS: [],
+            		__loadingCss: {},
+            		onLoadCss: function(url, node){
+            			if (!this.__loadingCss[url]){
+            				this.__loadingCss[url] = $.Deferred();	
+                			if (node.attachEvent &amp;&amp;
+                                    !(node.attachEvent.toString &amp;&amp; node.attachEvent.toString().indexOf('[native code') &lt; 0) &amp;&amp;
+                                    !(typeof opera !== 'undefined' &amp;&amp; opera.toString() === '[object Opera]')) {
+                                node.attachEvent('onreadystatechange', this.onLinkLoad.bind(this));
+                            } else {
+                                node.addEventListener('load', this.onLinkLoad.bind(this), false);
+                                node.addEventListener('error', this.onLinkError.bind(this), false);
+                            }
+            			}
+            		},
+            		
+            		onLinkLoad: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+            	        if (evt.type === 'load' ||
+                                (this.readyRegExp.test(target.readyState))) {
+            	        	var url = target.getAttribute("href");
+            	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+            	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+            	        	}
+                        }
+            		},
+            		
+            		onLinkError: function(evt){
+            	        var target = (evt.currentTarget || evt.srcElement);
+        	        	var url = target.getAttribute("href");
+        	        	if (url &amp;&amp; window.__justep.__ResourceEngine.__loadingCss[url]){
+        	        		window.__justep.__ResourceEngine.__loadingCss[url].resolve(url);
+        	        	}
+            		},
+            		
+            		initContextPath: function(){
+            			var baseURL = document.getElementById("_requireJS").src;
+            			var before = location.protocol + "//" + location.host;
+            			var after = "/system/lib/require/require.2.1.10";
+            			var i = baseURL.indexOf(after);
+            			if (i !== -1){
+    	        			var middle = baseURL.substring(before.length, i);
+    						var items = middle.split("/");
+    						
+    						
+    						if ((items[items.length-1].indexOf("v_") === 0) 
+    								&amp;&amp; (items[items.length-1].indexOf("l_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("s_") !== -1)
+    								&amp;&amp; (items[items.length-1].indexOf("d_") !== -1)
+    								|| (items[items.length-1]=="v_")){
+    							items.splice(items.length-1, 1);
+    						}
+    						
+    						
+    						if (items.length !== 1){
+    							window.__justep.__ResourceEngine.contextPath = items.join("/");
+    						}else{
+    							window.__justep.__ResourceEngine.contextPath = before;
+    						}
+    						var index = window.__justep.__ResourceEngine.contextPath.lastIndexOf("/");
+    						if (index != -1){
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath.substr(0, index);
+    						}else{
+    							window.__justep.__ResourceEngine.serverPath = window.__justep.__ResourceEngine.contextPath;
+    						}
+            			}else{
+            				throw new Error(baseURL + " hasn't  " + after);
+            			}
+            		},
+            	
+            		loadJs: function(urls){
+            			if (urls &amp;&amp; urls.length&gt;0){
+            				var loadeds = this._getResources("script", "src").concat(this.__loadedJS);
+    	       				for (var i=0; i&lt;urls.length; i++){
+								var url = urls[i];
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					this.__loadedJS[this.__loadedJS.length] = url;
+    	        					/*
+    	        					var script = document.createElement("script");
+    	        					script.src = url;
+    	        					document.head.appendChild(script);
+    	        					*/
+    	        					//$("head").append("&lt;script  src='" + url + "'/&gt;");
+									var url = require.toUrl("$UI" + url);
+    	        					$.ajax({
+    	        						url: url,
+    	        						dataType: "script",
+    	        						cache: true,
+    	        						async: false,
+    	        						success: function(){}
+    	        						});
+    	        				} 
+    	       				}
+            			}
+            		},
+            		
+            		loadCss: function(styles){
+           				var loadeds = this._getResources("link", "href");
+            			if (styles &amp;&amp; styles.length&gt;0){
+            				for (var i=0; i&lt;styles.length; i++){
+    	       					var url = window.__justep.__ResourceEngine.contextPath + styles[i].url
+    	        				if(!this._isLoaded(url, loadeds)){
+    	        					var include = styles[i].include || "";
+    	        					var link = $("&lt;link type='text/css' rel='stylesheet' href='" + url + "' include='" + include + "'/&gt;");
+    	        					this.onLoadCss(url, link[0]);
+    	        					$("head").append(link);
+    	        				} 
+            				}
+            			}
+            			
+            		},
+            		
+            		
+            		_isLoaded: function(url, loadeds){
+            			if (url){
+            				var newUrl = "";
+            				var items = url.split("/");
+            				var isVls = false;
+            				for (var i=0; i&lt;items.length; i++){
+            					if (isVls){
+                					newUrl += "/" + items[i];
+            					}else{
+                					if (items[i] &amp;&amp; (items[i].indexOf("v_")===0)
+            								&amp;&amp; (items[i].indexOf("l_")!==-1)
+            								&amp;&amp; (items[i].indexOf("s_")!==-1)
+            								&amp;&amp; (items[i].indexOf("d_")!==-1)
+            								|| (items[i]=="v_")){
+                						isVls = true;
+                					}
+            					}
+            				}
+            				if (!newUrl)
+            					newUrl = url;
+            				
+            				for (var i=0; i&lt;loadeds.length; i++){
+								var originUrl = this._getOriginUrl(loadeds[i]);
+								if (originUrl &amp;&amp; (originUrl.indexOf(newUrl)!==-1)){
+									return true;
+								}
+    						}
+            			}
+    					return false;
+            		},
+
+					_getOriginUrl: function(url){
+						var result = "";
+						if (url &amp;&amp; (url.indexOf(".md5_")!==-1)){
+							url = url.split("#")[0];
+							url = url.split("?")[0];
+							var items = url.split(".");
+							for (var i=0; i&lt;items.length; i++){
+								if ((i===items.length-2) &amp;&amp; (items[i].indexOf("md5_")!==-1)){
+									continue;
+								}else{
+									if (i&gt;0) result += ".";
+									result += items[i];
+								}
+							}
+						}else{
+							result = url;
+						}
+						return result;
+					},
+            		
+            		_getResources: function(tag, attr){
+    					var result = [];
+    					var scripts = $(tag);
+    					for (var i=0; i&lt;scripts.length; i++){
+    						var v = scripts[i][attr];
+    						if (v){
+    							result[result.length] = v;
+    						}
+    					}
+    					return result;
+            		}
+            	};
+            	
+            	window.__justep.__ResourceEngine.initContextPath();
+    			requirejs.config({
+    				baseUrl: window.__justep.__ResourceEngine.contextPath + '/v_c4d12853c1d746d088ddc790190074c8l_zh_CNs_desktopd_pc/demo/fn/process/processFnExample',
+    			    paths: {
+    			    	/* 解决require.normalizeName与require.toUrl嵌套后不一致的bug   */
+    			    	'$model/UI2/v_': window.__justep.__ResourceEngine.contextPath + '/v_c4d12853c1d746d088ddc790190074c8l_zh_CNs_desktopd_pc',
+    			    	'$model/UI2': window.__justep.__ResourceEngine.contextPath + '/v_c4d12853c1d746d088ddc790190074c8l_zh_CNs_desktopd_pc',
+    			    	'$model': window.__justep.__ResourceEngine.serverPath,
+    			        'text': window.__justep.__ResourceEngine.contextPath + '/v_c4d12853c1d746d088ddc790190074c8l_zh_CNs_desktopd_pc/system/lib/require/text.2.0.10',
+    			        'bind': window.__justep.__ResourceEngine.contextPath + '/v_c4d12853c1d746d088ddc790190074c8l_zh_CNs_desktopd_pc/system/lib/bind/bind',
+    			        'jquery': window.__justep.__ResourceEngine.contextPath + '/v_c4d12853c1d746d088ddc790190074c8l_zh_CNs_desktopd_pc/system/lib/jquery/jquery-1.11.1.min'
+    			    },
+    			    map: {
+    				        '*': {
+    				            res: '$model/UI2/system/lib/require/res',
+    				            cordova: '$model/UI2/system/lib/require/cordova',
+    				            w: '$model/UI2/system/lib/require/w',
+    				            css: '$model/UI2/system/lib/require/css'
+    				        }
+    				},
+    				waitSeconds: 300
+    			});
+    			
+    			requirejs(['require', 'jquery', '$model/UI2/system/lib/base/composition', '$model/UI2/system/lib/base/url', '$model/UI2/system/lib/route/hashbangParser', '$model/UI2/system/components/justep/versionChecker/versionChecker', '$model/UI2/system/components/justep/loadingBar/loadingBar', '$model/UI2/system/lib/jquery/domEvent',  '$model/UI2/system/lib/cordova/cordova'],  function (require, $, composition, URL, HashbangParser,versionChecker) { 
+    				document.addEventListener('deviceready', function() {
+    	                if (navigator &amp;&amp; navigator.splashscreen &amp;&amp; navigator.splashscreen.hide) {
+    	                	/*延迟隐藏，视觉效果更理想*/
+    	                	setTimeout(function() {navigator.splashscreen.hide();}, 800);
+    	                }
+    	            }, false);
+					setTimeout(function(){
+						versionChecker.check();
+					},2000);
+    				var context = {};
+    				context.model = '$model/UI2/demo/fn/process/processFnExample/businessActivity3.w' + (document.location.search || "");
+    				context.view = $('#applicationHost').children()[0];
+    				var element = document.getElementById('applicationHost');
+
+					    				
+    				
+    				var ownerid = new URL(window.__justep.__ResourceEngine.url).getParam("$ownerid");
+    				var pwindow = opener;
+    				if (!pwindow &amp;&amp; window.parent &amp;&amp; window.parent.window){
+    					pwindow = window.parent.window;
+    				}
+    				if(ownerid &amp;&amp; pwindow 
+    						&amp;&amp; pwindow.__justep &amp;&amp; pwindow.__justep.windowOpeners
+    						&amp;&amp; pwindow.__justep.windowOpeners[ownerid]
+    						&amp;&amp; $.isFunction(pwindow.__justep.windowOpeners[ownerid].sendToWindow)){
+    					window.__justep.setParams = function(params){
+    						/* 给windowOpener提供再次传参数的接口  */
+    						params = params || {};
+    						composition.setParams(document.getElementById('applicationHost'), params);
+    					};
+    					var winOpener = pwindow.__justep.windowOpeners[ownerid];
+    					if(winOpener) winOpener.window = window;
+    					$(window).unload(function(event){
+    						if(winOpener &amp;&amp; winOpener.dispatchCloseEvent) winOpener.dispatchCloseEvent();
+    					});
+    					var params = winOpener.sendToWindow();
+						context.owner = winOpener;
+						context.params = params || {};
+	        			composition.compose(element, context);
+    				}else{
+        				var params =  {};
+    					var state = new HashbangParser(window.location.hash).parse().__state;
+    					if (state){
+    						params = state.get("");
+    						try{
+    							params = JSON.parse(params);
+    							if (params.hasOwnProperty("__singleValue__")){
+    								params = params.__singleValue__;
+    							}
+    						}catch(e1){}
+    					}
+    					context.noUpdateState = true;
+        				context.params = params;
+        				composition.compose(element, context);
+    				}
+    			});    
+            }
+		 	
+        </script> 
+  </body> 
+</html>

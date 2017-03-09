@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window ceAzeEf" component="$model/UI2/system/components/justep/window/window" design="device:m;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="ceAzeEf" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/buttonGroup,$model/UI2/system/components/justep/panel/panel,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" __cid="ceAzeEf" class="ceAzeEf"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full pcIvAjAn-iosstatusbar ceAzeEf" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}" __cid="ceAzeEf"> 
+    <div class="x-panel-top ceAzeEf" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ceAzeEf"> 
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar ceAzeEf" xid="titleBar1" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;查看用户信息&quot;}" __cid="ceAzeEf"> 
+        <div class="x-titlebar-left ceAzeEf" xid="left1" __cid="ceAzeEf"/>  
+        <div class="x-titlebar-title ceAzeEf" xid="title1" __cid="ceAzeEf">查看用户信息</div>  
+        <div class="x-titlebar-right  ceAzeEf" xid="right1" __cid="ceAzeEf">
+          <div class="empty ceAzeEf" __cid="ceAzeEf"/>
+        </div> 
+      </div> 
+    </div>  
+    <div class="x-panel-content ceAzeEf" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ceAzeEf"> 
+      <div component="$model/UI2/system/components/justep/list/list" class="x-list ceAzeEf" xid="userList" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;userData&quot;,&quot;limit&quot;:5}" __cid="ceAzeEf"> 
+        <ul class="x-list-template hide ceAzeEf" xid="listTemplateUl1" bind-foreach="{data:$model.foreach_userList($element),afterRender:$model.foreach_afterRender_userList.bind($model,$element)}" __cid="ceAzeEf"> 
+          <li xid="li1" __cid="ceAzeEf" class="ceAzeEf"> 
+            <div component="$model/UI2/system/components/justep/row/row" class="x-row ceAzeEf" xid="row1" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="ceAzeEf"> 
+              <div class="x-col ceAzeEf" xid="col1" __cid="ceAzeEf"> 
+                <div component="$model/UI2/system/components/justep/output/output" class="x-output ceAzeEf" xid="output1" data-bind="component:{ref:ref(&quot;userName&quot;),name:'$model/UI2/system/components/justep/output/output'}" __cid="ceAzeEf"/> 
+              </div>  
+              <div class="x-col ceAzeEf" xid="col2" __cid="ceAzeEf"> 
+                <div component="$model/UI2/system/components/justep/output/output" class="x-output ceAzeEf" xid="output2" data-bind="component:{ref:ref(&quot;password&quot;),name:'$model/UI2/system/components/justep/output/output'}" __cid="ceAzeEf"/> 
+              </div>  
+              <div class="x-col ceAzeEf" xid="col3" __cid="ceAzeEf"> 
+                <div component="$model/UI2/system/components/justep/output/output" class="x-output ceAzeEf" xid="output3" data-bind="component:{ref:ref(&quot;address&quot;),name:'$model/UI2/system/components/justep/output/output'}" __cid="ceAzeEf"/> 
+              </div> 
+            </div> 
+          </li> 
+        </ul> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/button/buttonGroup" class="btn-group btn-group-justified center-block ceAzeEf" xid="buttonGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/button/buttonGroup'}" data-config="{&quot;tabbed&quot;:true}" __cid="ceAzeEf"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ceAzeEf" xid="prePage" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:prePageClick" data-config="{&quot;label&quot;:&quot;上一页&quot;}" __cid="ceAzeEf"> 
+          <i xid="i1" __cid="ceAzeEf" class="ceAzeEf"/>  
+          <span xid="span1" __cid="ceAzeEf" class="ceAzeEf">上一页</span> 
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default ceAzeEf" xid="nextPage" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:nextPageClick" data-config="{&quot;label&quot;:&quot;下一页&quot;}" __cid="ceAzeEf"> 
+          <i xid="i2" __cid="ceAzeEf" class="ceAzeEf"/>  
+          <span xid="span2" __cid="ceAzeEf" class="ceAzeEf">下一页</span> 
+        </a> 
+      </div> 
+    </div>  
+    <div class="x-panel-bottom ceAzeEf" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}" __cid="ceAzeEf"/>  
+    <style __cid="ceAzeEf" class="ceAzeEf">.x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-top {height: 48px;}.x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-top,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-top {height: 68px;}.iosstatusbar .x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-content,.iosstatusbar .x-panel .x-panel-content .x-has-iosstatusbar.x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.pcIvAjAn-iosstatusbar &gt;.x-panel-content {top: 48px;}</style>
+  </div> 
+</div>

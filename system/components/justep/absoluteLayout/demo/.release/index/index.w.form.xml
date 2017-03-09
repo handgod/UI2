@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window czei22a" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __cid="czei22a" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/loadingBar/loadingBar,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/output/output,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/button/radio,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/window/window,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:loadData" __cid="czei22a" class="czei22a"></div>  
+  <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar czei22a" xid="titleBar1" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&quot;title&quot;:&quot;todos&quot;}" __cid="czei22a"> 
+    <div class="x-titlebar-left czei22a" xid="div1" __cid="czei22a"> 
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-only-icon czei22a" xid="backBtn1" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'window.close'}" data-config="{&quot;icon&quot;:&quot;icon-chevron-left&quot;}" __cid="czei22a"> 
+        <i class="icon-chevron-left czei22a" xid="i8" __cid="czei22a"/>  
+        <span xid="span8" __cid="czei22a" class="czei22a"/> 
+      </a> 
+    </div>  
+    <div class="x-titlebar-title czei22a" xid="div2" __cid="czei22a">todos</div>  
+    <div class="x-titlebar-right  czei22a" xid="div3" __cid="czei22a">
+      <div class="empty czei22a" __cid="czei22a"/>
+    </div> 
+  </div>  
+  <div component="$model/UI2/system/components/justep/row/row" class="x-row x-row-center czei22a" xid="row1" style="padding: 0px;" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="czei22a"> 
+    <div xid="col1" style="padding: 15px 10px;" class="split-line czei22a" __cid="czei22a"> 
+      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox czei22a" xid="allCompletedCheckbox" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{ref:tempData.ref('allCompleted'),name:'$model/UI2/system/components/justep/button/checkbox'}" data-events="onChange:allCompletedCheckboxChange" __cid="czei22a">
+        <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="czei22a" class="czei22a"/>
+        <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="czei22a" class="czei22a"/>
+      </span> 
+    </div>  
+    <div class="x-col czei22a" xid="col2" __cid="czei22a"> 
+      <input component="$model/UI2/system/components/justep/input/input" class="form-control czei22a" xid="titleInput" bind-keydown="titleInputKeydown" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" __cid="czei22a"/> 
+    </div>  
+    <div xid="col3" __cid="czei22a" class="czei22a"> 
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-sm btn-only-icon czei22a" xid="addBtn" style="color:#008000;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:addTodo" data-config="{&quot;icon&quot;:&quot;icon-android-add&quot;,&quot;label&quot;:&quot;&quot;}" __cid="czei22a"> 
+        <i xid="i2" class="icon-android-add czei22a" __cid="czei22a"/>  
+        <span xid="span2" __cid="czei22a" class="czei22a"/> 
+      </a> 
+    </div> 
+  </div>  
+  <div component="$model/UI2/system/components/justep/list/list" class="x-list czei22a" xid="list1" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;todoData&quot;,&quot;filter&quot;:&quot;js:$model.tempData.val('status')=='All' || ($model.tempData.val('status')=='Active' &amp;&amp; !$row.val('completed')) || ($model.tempData.val('status')=='Completed' &amp;&amp; $row.val('completed'))&quot;}" __cid="czei22a"> 
+    <ul class="x-list-template hide czei22a" xid="listTemplateUl1" bind-foreach="{data:$model.foreach_list1($element),afterRender:$model.foreach_afterRender_list1.bind($model,$element)}" __cid="czei22a"> 
+      <li xid="li1" __cid="czei22a" class="czei22a"> 
+        <div component="$model/UI2/system/components/justep/row/row" class="x-row x-row-center top-line czei22a" xid="row2" style="padding: 0px" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="czei22a"> 
+          <div xid="col4" style="padding: 10px 10px;" class="split-line czei22a" __cid="czei22a"> 
+            <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox czei22a" xid="checkbox1" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{ref:ref('completed'),name:'$model/UI2/system/components/justep/button/checkbox'}" __cid="czei22a">
+              <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox" __cid="czei22a" class="czei22a"/>
+              <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="czei22a" class="czei22a"/>
+            </span> 
+          </div>  
+          <div class="x-col czei22a" xid="col5" __cid="czei22a"> 
+            <div component="$model/UI2/system/components/justep/output/output" class="x-output czei22a" xid="output1" bind-css="{'title-completed': val('completed')}" data-bind="component:{ref:ref('title'),name:'$model/UI2/system/components/justep/output/output'}" __cid="czei22a"/> 
+          </div>  
+          <div xid="col6" __cid="czei22a" class="czei22a"> 
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link btn-sm btn-only-icon czei22a" xid="deleteBtn" style="color:#FF0000;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:deleteBtnClick" data-config="{&quot;icon&quot;:&quot;icon-android-close&quot;,&quot;label&quot;:&quot;&quot;}" __cid="czei22a"> 
+              <i xid="i4" class="icon-android-close czei22a" __cid="czei22a"/>  
+              <span xid="span4" __cid="czei22a" class="czei22a"/> 
+            </a> 
+          </div> 
+        </div> 
+      </li> 
+    </ul> 
+  </div>  
+  <div component="$model/UI2/system/components/justep/row/row" class="x-row x-row-center top-line czei22a" xid="row3" bind-visible="$model.todoData.getCount() &gt; 0" style="height:35px;background-color:#D0D0FF;" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}" __cid="czei22a"> 
+    <div class="x-col czei22a" xid="col7" bind-text="($model.todoData.getCount() - tempData.val('completedCount')) + ' items left'" __cid="czei22a"/>  
+    <div xid="col8" __cid="czei22a" class="czei22a"> 
+      <span component="$model/UI2/system/components/justep/button/radio" class="x-radio x-radio-sm czei22a" xid="radio2" name="statusRadio" checkedValue="All" label="All" data-config="{&quot;checked&quot;:false,&quot;checkedValue&quot;:&quot;All&quot;,&quot;disabled&quot;:false,&quot;label&quot;:&quot;All&quot;,&quot;name&quot;:&quot;statusRadio&quot;}" data-bind="component:{ref:tempData.ref('status'),name:'$model/UI2/system/components/justep/button/radio'}" __cid="czei22a">
+        <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="radio" name="statusRadio" __cid="czei22a" class="czei22a"/>
+        <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="czei22a" class="czei22a">All</xhtml:label>
+      </span>  
+      <span component="$model/UI2/system/components/justep/button/radio" class="x-radio x-radio-sm czei22a" xid="radio3" name="statusRadio" label="Active" checkedValue="Active" data-config="{&quot;checked&quot;:false,&quot;checkedValue&quot;:&quot;Active&quot;,&quot;disabled&quot;:false,&quot;label&quot;:&quot;Active&quot;,&quot;name&quot;:&quot;statusRadio&quot;}" data-bind="component:{ref:tempData.ref('status'),name:'$model/UI2/system/components/justep/button/radio'}" __cid="czei22a">
+        <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="radio" name="statusRadio" __cid="czei22a" class="czei22a"/>
+        <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="czei22a" class="czei22a">Active</xhtml:label>
+      </span>  
+      <span component="$model/UI2/system/components/justep/button/radio" class="x-radio x-radio-sm czei22a" xid="radio4" name="statusRadio" label="Completed" checkedValue="Completed" data-config="{&quot;checked&quot;:false,&quot;checkedValue&quot;:&quot;Completed&quot;,&quot;disabled&quot;:false,&quot;label&quot;:&quot;Completed&quot;,&quot;name&quot;:&quot;statusRadio&quot;}" data-bind="component:{ref:tempData.ref('status'),name:'$model/UI2/system/components/justep/button/radio'}" __cid="czei22a">
+        <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="radio" name="statusRadio" __cid="czei22a" class="czei22a"/>
+        <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml" __cid="czei22a" class="czei22a">Completed</xhtml:label>
+      </span> 
+    </div>  
+    <div class="x-col czei22a" xid="col9" __cid="czei22a"> 
+      <a component="$model/UI2/system/components/justep/button/button" class="btn x-yellow btn-sm czei22a" xid="clearCompletedBtn" bind-text="'Clear completed (' + $model.tempData.val('completedCount') + ')'" style="float:right;" bind-visible="$model.tempData.val('completedCount') &gt; 0" bind-click="clearCompletedBtnClick" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&quot;label&quot;:&quot;&quot;}" __cid="czei22a"> 
+        <i xid="i1" __cid="czei22a" class="czei22a"/>  
+        <span xid="span1" __cid="czei22a" class="czei22a"/> 
+      </a> 
+    </div> 
+  </div>  
+  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default czei22a" xid="button2" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button2Click" data-config="{&quot;label&quot;:&quot;button&quot;}" __cid="czei22a"> 
+    <i xid="i5" __cid="czei22a" class="czei22a"/>  
+    <span xid="span5" __cid="czei22a" class="czei22a"/> 
+  </a>  
+  <input component="$model/UI2/system/components/justep/input/input" class="form-control czei22a" xid="input1" style="width:813px;" data-bind="component:{ref:tempData.ref('col3'),name:'$model/UI2/system/components/justep/input/input'}" __cid="czei22a"/> 
+</div>
